@@ -1,6 +1,6 @@
 
 const jestEmptyComponent = function (){
-    return "str"
+    return "div"
 }
 
 export default jestEmptyComponent()
