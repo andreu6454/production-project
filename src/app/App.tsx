@@ -6,7 +6,7 @@ import {useTheme} from "app/providers/ThemeProvider";
 import {classNames} from "shared/lib/classNames/classNames";
 import {AppRouter} from "app/providers/router";
 import {Navbar} from "widgets/Navbar";
-import {SideBar} from "widgets/SideBar";
+import {Sidebar} from "widgets/Sidebar";
 
 
 const App = () => {
@@ -20,7 +20,7 @@ const App = () => {
                 <Navbar/>
 
                 <div className={"content-page"}>
-                    <SideBar/>
+                    <Sidebar/>
                     <AppRouter/>
                 </div>
             </Suspense>
