@@ -1,4 +1,4 @@
-name: testing, buildin
+name: testing, building
 on:
   push:
     branches: [ master ]
