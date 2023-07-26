@@ -1,4 +1,4 @@
-import {Button} from "shared/ui/Button/Button";
+import {Button, ButtonTheme} from "shared/ui/Button/Button";
 import {useEffect, useState} from "react";
 
 
@@ -16,7 +16,7 @@ export const BugButton = () => {
 
 
     return (
-        <Button onClick={throwError}>
+        <Button theme={ButtonTheme.BACKGROUND_INVERTED} onClick={throwError}>
             throw error
         </Button>
     );
