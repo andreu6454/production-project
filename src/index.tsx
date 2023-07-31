@@ -6,16 +6,19 @@ import 'app/styles/index.scss'
 import "shared/config/i18n/i18n";
 import {ErrorBoundary} from "app/providers/ErrorBoundary";
 import React from "react";
+import {StoreProvider} from "app/providers/StoreProvider";
 
 
 render(
     // @ts-ignore
     <ErrorBoundary>
-        <BrowserRouter>
-            <ThemeProvider>
-                <App/>
-            </ThemeProvider>
-        </BrowserRouter>
+        <StoreProvider>
+            <BrowserRouter>
+                <ThemeProvider>
+                    <App/>
+                </ThemeProvider>
+            </BrowserRouter>
+        </StoreProvider>
     </ErrorBoundary>,
     document.getElementById('root')
 )
