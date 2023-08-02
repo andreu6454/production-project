@@ -15,7 +15,7 @@ export const Input = memo((props: InputProps) => {
 
     const {
         className,
-        value ,
+        value,
         onChange,
         type = 'text',
         placeholder,
@@ -24,7 +24,7 @@ export const Input = memo((props: InputProps) => {
     } = props
 
     useEffect(() => {
-        if(autofocus){
+        if (autofocus) {
             setIsFocused(true)
             ref.current.focus()
         }

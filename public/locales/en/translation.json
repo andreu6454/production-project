@@ -10,5 +10,8 @@
   "О сайте": "About",
   "Войти": "Login",
   "Введите username": "Enter username",
-  "Введите пароль": "Enter password"
+  "Введите пароль": "Enter password",
+  "Форма авторизации": "Authorisation",
+  "Вы ввели неверный логин или пароль": "Incorrect username or password",
+  "Выйти": "Logout"
 }
