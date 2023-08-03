@@ -33,19 +33,6 @@
   align-items: center;
 }
 
-.link{
-  margin-left: 10px;
-}
-
-.item{
-  margin-top: 10px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-.icon{
-  fill: var(--inverted-primary-color);
-}
 
 
 .collapsed {
@@ -60,9 +47,4 @@
     margin-left: 0;
   }
 
-  .link{
-    opacity: 0;
-    transition: 0.2s opacity;
-    width: 0;
-  }
 }
