@@ -15,5 +15,6 @@
   "Вы ввели неверный логин или пароль": "Incorrect username or password",
   "Выйти": "Logout",
   "Profile page": "Profile page",
-  "Профиль": "Profile"
+  "Профиль": "Profile",
+  "error": "error"
 }
