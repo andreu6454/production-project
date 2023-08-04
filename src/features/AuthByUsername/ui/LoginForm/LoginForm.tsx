@@ -17,7 +17,7 @@ import {useAppDispatch} from "shared/lib/hooks/useAppDispatch/useAppDispatch";
 
 interface LoginFormProps {
     className?: string;
-    onSuccess?: () => void;
+    onSuccess: () => void;
 }
 
 const initialReducers: ReducersList = {

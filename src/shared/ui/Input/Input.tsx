@@ -1,6 +1,6 @@
 import {classNames} from "shared/lib/classNames/classNames";
 import cls from './Input.module.scss'
-import {ChangeEvent, InputHTMLAttributes, memo, useEffect, useRef, useState} from "react";
+import {ChangeEvent, InputHTMLAttributes, memo, MutableRefObject, useEffect, useRef, useState} from "react";
 
 type HTMLInputProps = Omit<InputHTMLAttributes<HTMLInputElement>, 'value' | 'onChange'>
 
@@ -22,6 +22,7 @@ export const Input = memo((props: InputProps) => {
         autofocus,
         ...otherProps
     } = props
+    const ref = useRef() as MutableRefObject<HTMLInputElement>
 
     useEffect(() => {
         if (autofocus) {
@@ -30,7 +31,7 @@ export const Input = memo((props: InputProps) => {
         }
     }, [autofocus]);
 
-    const ref = useRef<HTMLInputElement>(null)
+
     const [isFocused, setIsFocused] = useState(false)
     const [caretPosition, setCaretPosition] = useState(0)
 

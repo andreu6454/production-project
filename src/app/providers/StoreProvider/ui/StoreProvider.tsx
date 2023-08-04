@@ -7,14 +7,12 @@ import {useNavigate} from "react-router-dom";
 interface StoreProvidersProps {
     children: ReactNode;
     initialState?: StateSchema,
-    // asyncReducers?: DeepPartial<ReducersMapObject<StateSchema>>
 }
 
 export const StoreProvider = (props: StoreProvidersProps) => {
     const {
         children,
         initialState,
-        // asyncReducers
     } = props
 
     const navigate = useNavigate()
@@ -22,7 +20,6 @@ export const StoreProvider = (props: StoreProvidersProps) => {
     const store =
         createReduxStore(
             initialState,
-            // asyncReducers as ReducersMapObject<StateSchema>,
             navigate)
 
     return (
