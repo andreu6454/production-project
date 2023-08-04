@@ -12,13 +12,13 @@ import {StoreProvider} from "app/providers/StoreProvider";
 render(
     // @ts-ignore
     <ErrorBoundary>
-        <StoreProvider>
-            <BrowserRouter>
+        <BrowserRouter>
+            <StoreProvider>
                 <ThemeProvider>
                     <App/>
                 </ThemeProvider>
-            </BrowserRouter>
-        </StoreProvider>
+            </StoreProvider>
+        </BrowserRouter>
     </ErrorBoundary>,
     document.getElementById('root')
 )
