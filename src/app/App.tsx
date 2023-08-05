@@ -7,7 +7,7 @@ import {AppRouter} from "app/providers/router";
 import {Navbar} from "widgets/Navbar";
 import {Sidebar} from "widgets/Sidebar";
 import {useDispatch} from "react-redux";
-import {userActions} from "enteties/User";
+import {userActions} from "entities/User";
 
 
 const App = () => {

@@ -1,8 +1,8 @@
-import {CounterSchema} from "enteties/Counter";
-import {UserSchema} from "enteties/User";
+import {CounterSchema} from "entities/Counter";
+import {UserSchema} from "entities/User";
 import {LoginSchema} from "features/AuthByUsername";
 import {AnyAction, CombinedState, EnhancedStore, Reducer, ReducersMapObject} from "@reduxjs/toolkit";
-import {ProfileSchema} from "enteties/Profile";
+import {ProfileSchema} from "entities/Profile";
 import {AxiosInstance} from "axios";
 import {To} from "react-router-dom";
 import {NavigateOptions} from "react-router";

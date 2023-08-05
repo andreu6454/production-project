@@ -9,13 +9,14 @@ import {
     profileActions,
     ProfileCard,
     profileReducer
-} from "enteties/Profile";
+} from "entities/Profile";
 import {useCallback, useEffect} from "react";
 import {useAppDispatch} from "shared/lib/hooks/useAppDispatch/useAppDispatch";
 import {useSelector} from "react-redux";
 import {ProfilePageHeader} from "./ProfilePageHeader/ProfilePageHeader";
-import {getProfileForm} from "enteties/Profile/model/selectors/getProfileForm/getProfileForm";
-import {Country, Currency} from "shared/const/common";
+import {getProfileForm} from "entities/Profile/model/selectors/getProfileForm/getProfileForm";
+import {Currency} from "entities/Currency/model/types/types";
+import {Country} from "entities/Country/model/types/Country";
 
 interface ProfilePageProps {
     className?: string;
@@ -49,6 +50,22 @@ const ProfilePage = ({className}: ProfilePageProps) => {
         dispatch(profileActions.updateProfile({city: value || ''}))
     }, [dispatch])
 
+    const onChangeUsername = useCallback((value?: string) => {
+        dispatch(profileActions.updateProfile({username: value || ''}))
+    }, [dispatch])
+
+    const onChangeAvatar = useCallback((value?: string) => {
+        dispatch(profileActions.updateProfile({avatar: value || ''}))
+    }, [dispatch])
+
+    const onChangeCurrency = useCallback((value: Currency) => {
+        dispatch(profileActions.updateProfile({currency: value}))
+    }, [dispatch])
+
+    const onChangeCountry = useCallback((value: Country) => {
+        dispatch(profileActions.updateProfile({country: value}))
+    }, [dispatch])
+
     const onChangeAge = useCallback((value?: string) => {
         let regExp = /^[0-9]/
         if (regExp.test(value || '')) {
@@ -56,13 +73,6 @@ const ProfilePage = ({className}: ProfilePageProps) => {
         }
     }, [dispatch])
 
-    const onChangeCountry = useCallback((value?: Country) => {
-        dispatch(profileActions.updateProfile({country: value}))
-    }, [dispatch])
-
-    const onChangeCurrency = useCallback((value?: Currency) => {
-        dispatch(profileActions.updateProfile({currency: value}))
-    }, [dispatch])
 
     return (
         <DynamicModuleLoader reducers={Reducers} name={'profile'} removeAfterUnmount>
@@ -74,13 +84,18 @@ const ProfilePage = ({className}: ProfilePageProps) => {
                     onChangeLastname={onChangeLastname}
                     onChangeAge={onChangeAge}
                     onChangeCity={onChangeCity}
-                    onChangeCountry={onChangeCountry}
+                    onChangeUsername={onChangeUsername}
+                    onChangeAvatar={onChangeAvatar}
                     onChangeCurrency={onChangeCurrency}
+                    onChangeCountry={onChangeCountry}
                     data={form}
-                    isLoading={isLoading} error={error}/>
+                    isLoading={isLoading}
+                    error={error}
+                />
             </div>
         </DynamicModuleLoader>
     );
 };
 
 export default ProfilePage
+

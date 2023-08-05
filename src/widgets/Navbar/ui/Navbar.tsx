@@ -5,7 +5,7 @@ import {Button, ButtonTheme} from "shared/ui/Button/Button";
 import {useTranslation} from "react-i18next";
 import {LoginModal} from "features/AuthByUsername";
 import {useDispatch, useSelector} from "react-redux";
-import {getUserAuthData, userActions} from "enteties/User";
+import {getUserAuthData, userActions} from "entities/User";
 
 interface NavbarProps {
     className?: string;
