@@ -18,7 +18,6 @@ export const fetchProfileData =
                     throw new Error()
                 }
 
-
                 return response.data
             } catch (e) {
                 console.log(e)
