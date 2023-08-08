@@ -1,21 +1,45 @@
 import {classNames} from "shared/lib/classNames/classNames";
 import cls from './ArticleDetailsPage.module.scss'
 import {useTranslation} from "react-i18next";
-import {memo} from "react";
+import {memo, useEffect} from "react";
 import {ArticleDetails} from "entities/Article";
 import {useParams} from "react-router-dom";
 import {Text, TextTheme} from "shared/ui/Text/Text";
+import {CommentList} from "entities/Comment";
+import {DynamicModuleLoader, ReducersList} from "shared/lib/components/DynamicModuleLoader/DynamicModuleLoader";
+import {
+    articleDetailsCommentsReducer,
+    getArticleComments
+} from "pages/ArticleDetailsPage/model/slices/articleDetailsCommentsSlice";
+import {useSelector} from "react-redux";
+import {getArticleCommentsIsLoading} from "pages/ArticleDetailsPage/model/selectors/comments";
+import {useAppDispatch} from "shared/lib/hooks/useAppDispatch/useAppDispatch";
+import {
+    fetchCommentsByArticleId
+} from "pages/ArticleDetailsPage/model/services/fetchCommentsByArticleId/fetchCommentsByArticleId";
 
 interface ArticleDetailsPageProps {
     className?: string;
 }
 
+const reducers: ReducersList = {
+    ArticleDetailsComments: articleDetailsCommentsReducer
+}
+
 const ArticleDetailsPage = ({className}: ArticleDetailsPageProps) => {
     const {t} = useTranslation('article-details')
+    const comment = useSelector(getArticleComments.selectAll)
+    const commentsIsLoading = useSelector(getArticleCommentsIsLoading)
+
+    const dispatch = useAppDispatch()
 
     const {id} = useParams<{ id: string }>()
 
-    if(!id){
+    useEffect(() => {
+        dispatch(fetchCommentsByArticleId(id))
+    }, []);
+
+    if (!id) {
         return (
             <div className={classNames(cls.ArticleDetailesPage, {}, [className])}>
                 <Text theme={TextTheme.ERROR} title={"Ошибка"} text={t("Статья не найдена")}/>
@@ -23,10 +47,15 @@ const ArticleDetailsPage = ({className}: ArticleDetailsPageProps) => {
         )
     }
 
+
     return (
-        <div className={classNames(cls.ArticleDetailesPage, {}, [className])}>
-            <ArticleDetails id={id}/>
-        </div>
+        <DynamicModuleLoader name={"ArticleDetailsComments"} removeAfterUnmount reducers={reducers}>
+            <div className={classNames(cls.ArticleDetailesPage, {}, [className])}>
+                <ArticleDetails id={id}/>
+                <Text className={cls.commentTitle} title={t("Комментарии")}/>
+                <CommentList isLoading={commentsIsLoading} comments={comment}/>
+            </div>
+        </DynamicModuleLoader>
     );
 };
 
