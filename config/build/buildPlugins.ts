@@ -24,13 +24,13 @@ export function buildPlugins({paths, isDev, apiUrl, project}: BuildOptions): web
         }),
     ]
 
-
     if (isDev) {
         plugins.push(new webpack.HotModuleReplacementPlugin())
         plugins.push(new ReactRefreshPlugin())
         plugins.push(new BundleAnalyzerPlugin({
             openAnalyzer: false,
         }))
+        plugins.push(new ReactRefreshPlugin())
     }
     return plugins
 }

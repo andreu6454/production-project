@@ -34,9 +34,9 @@ export function buildLoaders({isDev}: BuildOptions): webpack.RuleSetRule[] {
                             "en"
                         ],
                         "keyAsDefaultValue": true
-                    }]
-                ]
-
+                    }],
+                    isDev && require.resolve('react-refresh/babel'),
+                ].filter(Boolean),
             }
         }
     }

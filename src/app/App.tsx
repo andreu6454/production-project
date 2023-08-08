@@ -6,12 +6,13 @@ import {classNames} from "shared/lib/classNames/classNames";
 import {AppRouter} from "app/providers/router";
 import {Navbar} from "widgets/Navbar";
 import {Sidebar} from "widgets/Sidebar";
-import {useDispatch} from "react-redux";
-import {userActions} from "entities/User";
+import {useDispatch, useSelector} from "react-redux";
+import {getUserInited, userActions} from "entities/User";
 
 
 const App = () => {
     const {theme} = useTheme()
+    const inited = useSelector(getUserInited)
 
     const dispatch = useDispatch()
 
@@ -26,7 +27,7 @@ const App = () => {
                 <Navbar/>
                 <div className={"content-page"}>
                     <Sidebar/>
-                    <AppRouter/>
+                    {inited && <AppRouter/>}
                 </div>
             </Suspense>
 
