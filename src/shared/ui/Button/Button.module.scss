@@ -2,6 +2,14 @@
   cursor: pointer;
   color: var(--primary-color);
   padding: 10px 15px;
+
+  &:hover {
+    transform: scale(90%);
+  }
+
+  &:active {
+    opacity: 40%;
+  }
 }
 
 .clear, .clearInverted {
