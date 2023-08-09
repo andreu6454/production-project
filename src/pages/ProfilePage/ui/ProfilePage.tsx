@@ -5,7 +5,8 @@ import {
     fetchProfileData,
     getProfileError,
     getProfileIsLoading,
-    getProfileReadonly, getProfileValidateErrors,
+    getProfileReadonly,
+    getProfileValidateErrors,
     profileActions,
     ProfileCard,
     profileReducer
@@ -18,6 +19,7 @@ import {getProfileForm} from "entities/Profile/model/selectors/getProfileForm/ge
 import {Currency} from "entities/Currency/model/types/types";
 import {Country} from "entities/Country/model/types/Country";
 import {Text, TextTheme} from "shared/ui/Text/Text";
+import {useParams} from "react-router-dom";
 
 interface ProfilePageProps {
     className?: string;
@@ -36,9 +38,14 @@ const ProfilePage = ({className}: ProfilePageProps) => {
     const isLoading = useSelector(getProfileIsLoading)
     const validateErrors = useSelector(getProfileValidateErrors)
 
+    const {id} = useParams<{ id: string }>()
+
+
     useEffect(() => {
-        dispatch(fetchProfileData())
-    }, [dispatch]);
+        if (id) {
+            dispatch(fetchProfileData(id))
+        }
+    }, [dispatch, id]);
 
     const onChangeFirstname = useCallback((value?: string) => {
         dispatch(profileActions.updateProfile({first: value || ''}))

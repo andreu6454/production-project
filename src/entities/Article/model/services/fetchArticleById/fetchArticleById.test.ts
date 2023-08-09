@@ -1,5 +1,4 @@
 import {TestAsyncThunk} from "shared/lib/tests/TestAsyncThunk/TestAsyncThunk";
-import {fetchProfileData} from "entities/Profile";
 import {fetchArticleById} from "entities/Article/model/services/fetchArticleById/fetchArticleById";
 
 const testData = {
@@ -27,11 +26,11 @@ describe('fetchArticleById.test', () => {
     })
 
     test('error', async () => {
-        const thunk = new TestAsyncThunk(fetchProfileData)
+        const thunk = new TestAsyncThunk(fetchArticleById)
 
         thunk.api.get.mockReturnValue(Promise.resolve({status: 403}))
 
-        const result = await thunk.callThunk()
+        const result = await thunk.callThunk("1")
 
         expect(result.meta.requestStatus).toBe('rejected')
 

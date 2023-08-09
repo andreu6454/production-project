@@ -1,8 +1,8 @@
 .AppLink{
   color: var(--primary-color);
-
+  width: max-content;
   &:hover {
-    transform: scale(90%);
+    color: var(--inverted-secondary-color) ;
   }
   &:active {
     opacity: 40%;

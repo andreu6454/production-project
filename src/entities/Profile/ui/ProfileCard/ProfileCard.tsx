@@ -77,13 +77,6 @@ export const ProfileCard = (props: ProfileCardProps) => {
 
                 <div className={cls.avatarWrapper}>
                     {data?.avatar && <Avatar alt={''} src={data?.avatar} size={300}/>}
-                    {!readonly && <Input
-                        onChange={onChangeAvatar}
-                        value={data?.avatar}
-                        placeholder={t('Введите ссылку на аватар')}
-                        className={cls.input}
-                        readOnly={readonly}
-                    />}
                 </div>
 
                 <div className={cls.inputsWrapper}>
@@ -133,6 +126,13 @@ export const ProfileCard = (props: ProfileCardProps) => {
                         className={cls.input}
                         value={data?.country}
                         readonly={readonly}
+                    />
+                    <Input
+                        onChange={onChangeAvatar}
+                        value={data?.avatar}
+                        placeholder={t('Введите ссылку на аватар')}
+                        className={cls.input}
+                        readOnly={readonly}
                     />
                 </div>
             </div>
