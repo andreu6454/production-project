@@ -20,6 +20,7 @@ import {Currency} from "entities/Currency/model/types/types";
 import {Country} from "entities/Country/model/types/Country";
 import {Text, TextTheme} from "shared/ui/Text/Text";
 import {useParams} from "react-router-dom";
+import {Page} from "shared/ui/Page/Page";
 
 interface ProfilePageProps {
     className?: string;
@@ -85,7 +86,7 @@ const ProfilePage = ({className}: ProfilePageProps) => {
 
     return (
         <DynamicModuleLoader reducers={Reducers} name={'profile'} removeAfterUnmount>
-            <div className={classNames(cls.ProfilePage, {}, [className])}>
+            <Page className={classNames(cls.ProfilePage, {}, [className])}>
                 <ProfilePageHeader/>
                 {
                     !!validateErrors?.length && validateErrors.map(err => (
@@ -106,7 +107,7 @@ const ProfilePage = ({className}: ProfilePageProps) => {
                     isLoading={isLoading}
                     error={error}
                 />
-            </div>
+            </Page>
         </DynamicModuleLoader>
     );
 };
