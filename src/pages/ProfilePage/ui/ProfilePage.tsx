@@ -20,7 +20,7 @@ import {Currency} from "entities/Currency/model/types/types";
 import {Country} from "entities/Country/model/types/Country";
 import {Text, TextTheme} from "shared/ui/Text/Text";
 import {useParams} from "react-router-dom";
-import {Page} from "shared/ui/Page/Page";
+import {Page} from "widgets/Page/Page";
 
 interface ProfilePageProps {
     className?: string;

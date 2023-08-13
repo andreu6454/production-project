@@ -10,6 +10,7 @@ import {ArticleDetailsSchema} from "entities/Article";
 import {ArticleDetailsCommentsSchema} from "pages/ArticleDetailsPage";
 import {AddCommentFormSchema} from "features/AddCommentForm";
 import {ArticlePageSchema} from "pages/ArticlesPage";
+import {scrollRestorationSchema} from "widgets/Page/ScrollRestoration";
 
 
 export interface StateSchema {
@@ -22,7 +23,8 @@ export interface StateSchema {
     articleDetails?: ArticleDetailsSchema,
     ArticleDetailsComments?: ArticleDetailsCommentsSchema,
     addCommentForm?: AddCommentFormSchema,
-    articlesPage?: ArticlePageSchema
+    articlesPage?: ArticlePageSchema,
+    scrollRestoration?: scrollRestorationSchema
 }
 
 export type StateSchemaKey = keyof StateSchema;

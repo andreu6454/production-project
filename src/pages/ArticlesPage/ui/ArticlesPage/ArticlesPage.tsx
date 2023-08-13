@@ -12,7 +12,7 @@ import {
     getArticlesPageView
 } from "../../model/selectors/articlePageSelectors";
 import {ArticlesViewSelector} from "features/ArticlesViewSelector";
-import {Page} from "shared/ui/Page/Page";
+import {Page} from "widgets/Page/Page";
 import {fetchNextArticlesPage} from "../../model/services/fetchNextArticlesPage/fetchNextArticlesPage";
 import {Text} from "shared/ui/Text/Text";
 import {initArticlesPage} from "../../model/services/initArticlesPage/initArticlesPage";
