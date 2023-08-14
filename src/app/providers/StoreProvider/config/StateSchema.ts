@@ -16,6 +16,7 @@ import {scrollRestorationSchema} from "widgets/Page/ScrollRestoration";
 export interface StateSchema {
     counter: CounterSchema,
     user: UserSchema,
+    scrollRestoration: scrollRestorationSchema
 
     // async reducers
     loginForm?: LoginSchema,
@@ -24,7 +25,6 @@ export interface StateSchema {
     ArticleDetailsComments?: ArticleDetailsCommentsSchema,
     addCommentForm?: AddCommentFormSchema,
     articlesPage?: ArticlePageSchema,
-    scrollRestoration?: scrollRestorationSchema
 }
 
 export type StateSchemaKey = keyof StateSchema;
