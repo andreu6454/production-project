@@ -61,7 +61,7 @@ export const ArticlesPageFilters = memo((props: ArticlesPageFilterProps) => {
         dispatch(articlePageActions.setOrder(order))
         dispatch(articlePageActions.setPage(1))
         fetchData()
-    }, [dispatch])
+    }, [dispatch,fetchData])
 
     const onChangeSearch = useCallback((search: string) => {
         dispatch(articlePageActions.setSearch(search))
@@ -73,7 +73,7 @@ export const ArticlesPageFilters = memo((props: ArticlesPageFilterProps) => {
         dispatch(articlePageActions.setType(value))
         dispatch(articlePageActions.setPage(1))
         fetchData()
-    }, [dispatch, debouncedFetchData])
+    }, [dispatch, fetchData])
 
 
     return (
