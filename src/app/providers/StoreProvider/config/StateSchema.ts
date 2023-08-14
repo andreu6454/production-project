@@ -7,7 +7,7 @@ import {AxiosInstance} from "axios";
 import {To} from "react-router-dom";
 import {NavigateOptions} from "react-router";
 import {ArticleDetailsSchema} from "entities/Article";
-import {ArticleDetailsCommentsSchema} from "pages/ArticleDetailsPage";
+import {ArticleDetailsPageSchema} from "pages/ArticleDetailsPage";
 import {AddCommentFormSchema} from "features/AddCommentForm";
 import {ArticlePageSchema} from "pages/ArticlesPage";
 import {scrollRestorationSchema} from "widgets/Page/ScrollRestoration";
@@ -22,9 +22,9 @@ export interface StateSchema {
     loginForm?: LoginSchema,
     profile?: ProfileSchema,
     articleDetails?: ArticleDetailsSchema,
-    ArticleDetailsComments?: ArticleDetailsCommentsSchema,
     addCommentForm?: AddCommentFormSchema,
     articlesPage?: ArticlePageSchema,
+    articleDetailsPage?: ArticleDetailsPageSchema
 }
 
 export type StateSchemaKey = keyof StateSchema;
