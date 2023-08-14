@@ -27,9 +27,7 @@ export const fetchNextArticlesPage =
             const isLoading = getArticlesPageIsLoading(getState())
 
             if (hasMore && !isLoading) {
-                dispatch(fetchArticlesList({
-                    page: page + 1
-                }))
+                dispatch(fetchArticlesList({replace: false}))
                 dispatch(articlePageActions.setPage(page + 1))
             }
         }

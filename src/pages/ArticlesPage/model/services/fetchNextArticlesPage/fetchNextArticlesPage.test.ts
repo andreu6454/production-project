@@ -14,14 +14,14 @@ describe('fetchNextArticlesPage.test', () => {
                 entities: {},
                 limit: 5,
                 isLoading: false,
-                hasMore: true
+                hasMore: true,
             }
         })
 
         await thunk.callThunk()
 
         expect(thunk.dispatch).toBeCalledTimes(4)
-        expect(fetchArticlesList).toBeCalledWith({page: 3})
+        expect(fetchArticlesList).toBeCalledWith({replace: false})
     })
 
     test('fetchArticleList not called (hasMore false)', async () => {

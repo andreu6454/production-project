@@ -1,3 +1,7 @@
+export {ArticleSortField} from "entities/Article/model/types/article";
+
+export {ArticleType} from "entities/Article/model/types/article";
+
 export {ArticleList} from "entities/Article/ui/ArticleList/ArticleList";
 
 export {ArticleView} from "entities/Article/model/types/article";
