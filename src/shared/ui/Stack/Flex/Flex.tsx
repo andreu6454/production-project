@@ -1,6 +1,6 @@
 import {classNames, Mods} from "shared/lib/classNames/classNames";
 import cls from './Flex.module.scss'
-import {DetailedHTMLProps, HTMLAttributes, memo, ReactNode} from "react";
+import {DetailedHTMLProps, HTMLAttributes, memo, ReactNode, RefObject} from "react";
 
 
 export type FlexJustify = 'start' | 'center' | 'end' | 'between';
@@ -41,7 +41,7 @@ export interface FlexProps extends DivProps{
     direction?: FlexDirection;
     gap?: FlexGap;
     max?: boolean;
-
+    ref?: ((instance: HTMLDivElement | null) => void) | RefObject<HTMLDivElement> | null | undefined
 }
 
 export const Flex = memo((props: FlexProps) => {
