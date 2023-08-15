@@ -1,6 +1,6 @@
 import {classNames, Mods} from "shared/lib/classNames/classNames";
 import cls from './Flex.module.scss'
-import {memo, ReactNode} from "react";
+import {DetailedHTMLProps, HTMLAttributes, memo, ReactNode} from "react";
 
 
 export type FlexJustify = 'start' | 'center' | 'end' | 'between';
@@ -31,7 +31,9 @@ const directionClasses: Record<FlexDirection, string> = {
     column: cls.directionColumn,
 }
 
-export interface FlexProps {
+type DivProps = DetailedHTMLProps<HTMLAttributes<HTMLDivElement>, HTMLDivElement>;
+
+export interface FlexProps extends DivProps{
     className?: string;
     children: ReactNode;
     justify?: FlexJustify;
@@ -39,6 +41,7 @@ export interface FlexProps {
     direction?: FlexDirection;
     gap?: FlexGap;
     max?: boolean;
+
 }
 
 export const Flex = memo((props: FlexProps) => {
@@ -50,6 +53,7 @@ export const Flex = memo((props: FlexProps) => {
         direction = 'row',
         gap = '4',
         max,
+        ...other
     } = props
 
     const classes = [
@@ -65,7 +69,10 @@ export const Flex = memo((props: FlexProps) => {
     }
 
     return (
-        <div className={classNames(cls.Flex, mods, classes)}>
+        <div
+            className={classNames(cls.Flex, mods, classes)}
+            {...other}
+        >
             {children}
         </div>
     );
