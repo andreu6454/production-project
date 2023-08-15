@@ -1,5 +1,4 @@
 import {classNames} from "shared/lib/classNames/classNames";
-import cls from './LoginModal.module.scss'
 import {Modal} from "shared/ui/Modal/Modal";
 import {Suspense} from "react";
 import {LoginFormAsync} from "features/AuthByUsername/ui/LoginForm/LoginForm.async";
@@ -17,7 +16,7 @@ export const LoginModal = ({className, isOpen, onClose}: LoginModalProps) => {
         <Modal
             isOpen={isOpen}
             onClose={onClose}
-            className={classNames(cls.LoginModal, {}, [className])}
+            className={classNames('', {}, [className])}
             lazy={true}
         >
             <Suspense fallback={<Loader/>}>

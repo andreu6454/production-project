@@ -14,6 +14,7 @@ import {getLoginIsLoading} from "../../model/selectors/getLoginIsLoading/getLogi
 import {getLoginError} from "../../model/selectors/getLoginError/getLoginError";
 import {DynamicModuleLoader, ReducersList} from "shared/lib/components/DynamicModuleLoader/DynamicModuleLoader";
 import {useAppDispatch} from "shared/lib/hooks/useAppDispatch/useAppDispatch";
+import {VStack} from "shared/ui/Stack";
 
 interface LoginFormProps {
     className?: string;
@@ -51,7 +52,11 @@ const LoginForm = memo(({className, onSuccess}: LoginFormProps) => {
 
     return (
         <DynamicModuleLoader removeAfterUnmount name={'loginForm'} reducers={initialReducers}>
-            <div className={classNames(cls.LoginForm, {}, [className])}>
+            <VStack
+                align={'start'}
+                max
+                className={classNames(cls.LoginForm, {}, [className])}
+            >
                 <Text title={t("Форма авторизации")}/>
                 {error && <Text text={error} theme={TextTheme.ERROR}/>}
                 <Input onChange={onChangeUsername}
@@ -77,7 +82,7 @@ const LoginForm = memo(({className, onSuccess}: LoginFormProps) => {
                     {t('Войти')}
                 </Button>
 
-            </div>
+            </VStack>
         </DynamicModuleLoader>
     );
 });

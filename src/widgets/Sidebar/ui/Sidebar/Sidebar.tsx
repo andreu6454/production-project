@@ -7,6 +7,7 @@ import {Button, ButtonSize, ButtonTheme} from "shared/ui/Button/Button";
 import {SidebarItem} from "../SidebarItem/SidebarItem";
 import {useSelector} from "react-redux";
 import {getSidebarItems} from "../../model/selectors/getSidebarItems";
+import {VStack} from "shared/ui/Stack";
 
 interface SideBarProps {
     className?: string;
@@ -17,6 +18,7 @@ const Sidebar = memo(({className}: SideBarProps) => {
 
     const sidebarItemsList = useSelector(getSidebarItems)
     const onToggle = () => {
+        console.log(123)
         setCollapsed(prevState => !prevState)
     }
 
@@ -45,9 +47,9 @@ const Sidebar = memo(({className}: SideBarProps) => {
                 {collapsed ? ">" : "<"}
             </Button>
 
-            <div className={cls.items}>
+            <VStack gap={'0'} className={cls.items}>
                 {itemsList}
-            </div>
+            </VStack>
 
             <div className={cls.switchers}>
 
