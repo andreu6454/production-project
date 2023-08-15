@@ -21,6 +21,7 @@ export const StoreProvider = (props: StoreProvidersProps) => {
         )
 
     return (
+        //@ts-ignore
         <Provider store={store}>
             <>
                 {children}
