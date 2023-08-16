@@ -22,6 +22,7 @@ import {SortOrder} from "shared/types";
 import {fetchArticlesList} from "../../model/services/fetchArticlesList/fetchArticlesList";
 import {useDebounce} from "shared/lib/hooks/useDebounce/useDebounce";
 import {ArticleTypeTabs} from "features/ArticleTypeTabs/ArticleTypeTabs";
+import {HStack, VStack} from "shared/ui/Stack";
 
 interface ArticlesPageFilterProps {
     className?: string;
@@ -61,7 +62,7 @@ export const ArticlesPageFilters = memo((props: ArticlesPageFilterProps) => {
         dispatch(articlePageActions.setOrder(order))
         dispatch(articlePageActions.setPage(1))
         fetchData()
-    }, [dispatch,fetchData])
+    }, [dispatch, fetchData])
 
     const onChangeSearch = useCallback((search: string) => {
         dispatch(articlePageActions.setSearch(search))
@@ -77,8 +78,12 @@ export const ArticlesPageFilters = memo((props: ArticlesPageFilterProps) => {
 
 
     return (
-        <div className={classNames(cls.ArticlesPageFilter, {}, [className])}>
-            <div className={cls.sortWrapper}>
+        <VStack
+            gap={'0'}
+            align={'start'}
+            max
+            className={classNames(cls.ArticlesPageFilter, {}, [className])}>
+            <HStack max className={cls.sortWrapper}>
                 <ArticleSortSelector
                     sort={sort}
                     order={order}
@@ -86,14 +91,15 @@ export const ArticlesPageFilters = memo((props: ArticlesPageFilterProps) => {
                     onChangeSort={onChangeSort}
                 />
                 <ArticlesViewSelector view={view} onViewClick={onChangeView}/>
-            </div>
+            </HStack>
             <Card className={cls.search}>
                 <Input onChange={onChangeSearch} value={search} placeholder={t("Поиск")}/>
             </Card>
             <ArticleTypeTabs
                 className={cls.tabs}
                 onChangeType={onChangeType}
-                value={type}/>
-        </div>
+                value={type}
+            />
+        </VStack>
     );
 });

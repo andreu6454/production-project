@@ -70,13 +70,15 @@ export const ArticleDetails
 
     if (isLoading) {
         content = (
-            <>
-                <Skeleton className={cls.avatar} width={200} height={200} border={"50%"}/>
+            <VStack max align={'start'} gap={'8'}>
+                <VStack max>
+                    <Skeleton className={cls.avatar} width={200} height={200} border={"50%"}/>
+                </VStack>
                 <Skeleton className={cls.title} width={300} height={24}/>
                 <Skeleton className={cls.skeleton} width={600} height={24}/>
                 <Skeleton className={cls.skeleton} width={"100%"} height={180}/>
                 <Skeleton className={cls.skeleton} width={"100%"} height={180}/>
-            </>
+            </VStack>
         )
     } else if (error) {
         content = (

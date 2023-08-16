@@ -554,6 +554,30 @@
       "userId": "666",
       "text": "asdsadsss",
       "id": "Fj9FITH"
+    },
+    {
+      "articleId": "1",
+      "userId": "666",
+      "text": "new comment",
+      "id": "B02_kg5"
+    },
+    {
+      "articleId": "1",
+      "userId": "666",
+      "text": "new comment",
+      "id": "X3ZZ7d2"
+    },
+    {
+      "articleId": "1",
+      "userId": "666",
+      "text": "new comment",
+      "id": "YfyMCja"
+    },
+    {
+      "articleId": "11",
+      "userId": "666",
+      "text": " -_-",
+      "id": "4dAT2CH"
     }
   ],
   "users": [
@@ -588,7 +612,7 @@
       "id": "666",
       "first": "Андрей",
       "lastname": "cdts",
-      "age": 66,
+      "age": 21,
       "currency": "RUB",
       "country": "Russia",
       "city": "Saint-Petersburg",

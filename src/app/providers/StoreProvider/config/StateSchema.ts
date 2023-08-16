@@ -2,7 +2,6 @@ import {CounterSchema} from "entities/Counter";
 import {UserSchema} from "entities/User";
 import {LoginSchema} from "features/AuthByUsername";
 import {AnyAction, CombinedState, EnhancedStore, Reducer, ReducersMapObject} from "@reduxjs/toolkit";
-import {ProfileSchema} from "entities/Profile";
 import {AxiosInstance} from "axios";
 import {To} from "react-router-dom";
 import {NavigateOptions} from "react-router";
@@ -11,12 +10,15 @@ import {ArticleDetailsPageSchema} from "pages/ArticleDetailsPage";
 import {AddCommentFormSchema} from "features/AddCommentForm";
 import {ArticlePageSchema} from "pages/ArticlesPage";
 import {scrollRestorationSchema} from "widgets/Page/ScrollRestoration";
+import {rtkApi} from "shared/api/rtkApi";
+import {ProfileSchema} from "features/editableProfileCard";
 
 
 export interface StateSchema {
     counter: CounterSchema,
     user: UserSchema,
     scrollRestoration: scrollRestorationSchema
+    [rtkApi.reducerPath]: ReturnType<typeof rtkApi.reducer>
 
     // async reducers
     loginForm?: LoginSchema,
@@ -25,6 +27,7 @@ export interface StateSchema {
     addCommentForm?: AddCommentFormSchema,
     articlesPage?: ArticlePageSchema,
     articleDetailsPage?: ArticleDetailsPageSchema
+
 }
 
 export type StateSchemaKey = keyof StateSchema;
