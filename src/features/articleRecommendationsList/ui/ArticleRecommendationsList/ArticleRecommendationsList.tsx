@@ -17,7 +17,8 @@ export const ArticleRecommendationsList = memo((props: ArticleRecommendationsLis
 
     const {data: articles, isLoading, error} = useArticleRecommendationsList(4)
 
-    if (isLoading || error) {
+    // временная заглушка
+    if (isLoading || error || !articles) {
         return null
     }
 
@@ -28,6 +29,7 @@ export const ArticleRecommendationsList = memo((props: ArticleRecommendationsLis
         >
             <Text size={TextSize.L} title={t("Рекомендуем")}/>
             <ArticleList
+                virtualized={false}
                 target={"_blank"}
                 articles={articles}
                 isLoading={isLoading}
