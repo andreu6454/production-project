@@ -585,15 +585,30 @@
       "id": "1",
       "username": "admin",
       "password": "123",
-      "role": "admin",
+      "roles": [
+        "ADMIN"
+      ],
       "avatar": "https://i.pinimg.com/736x/86/95/54/8695540db1e9224367ed9d1a4884ccfc.jpg"
     },
     {
       "id": "666",
       "username": "cdts",
       "password": "666",
-      "role": "user",
+      "roles": [
+        "ADMIN",
+        "USER"
+      ],
       "avatar": "https://i.pinimg.com/564x/71/af/c8/71afc81a9bdb88723d4b36425021e869.jpg"
+    },
+    {
+      "id": "2",
+      "username": "test",
+      "password": "test",
+      "roles": [
+        "USER",
+        "MANAGER"
+      ],
+      "avatar": "https://zet-art.ru/wp-content/uploads/2022/08/unnamed.png"
     }
   ],
   "profile": [
