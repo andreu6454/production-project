@@ -43,9 +43,11 @@ export const ArticleDetailsComments = memo((props: ArticleDetailsCommentsProps) 
             gap={'8'}
             align={'start'}
             className={classNames('', {}, [className])}>
+
             <Text size={TextSize.L} title={t("Комментарии")}/>
             <AddCommentForm onSendComment={onSendComment}/>
             <CommentList isLoading={commentsIsLoading} comments={comments}/>
+
         </VStack>
     );
 });
