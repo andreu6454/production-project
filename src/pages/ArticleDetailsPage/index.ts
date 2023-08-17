@@ -1,7 +1,7 @@
-export {ArticleDetailsPageSchema} from "pages/ArticleDetailsPage/model/types";
+export type {ArticleDetailsPageSchema} from "pages/ArticleDetailsPage/model/types";
 
 
-export {
+export type{
     ArticleDetailsRecommendationSchema
 } from "./model/types/ArticleDetailsRecommendationSchema";
 
