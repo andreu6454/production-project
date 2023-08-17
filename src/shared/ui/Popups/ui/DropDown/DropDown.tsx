@@ -47,7 +47,7 @@ export const DropDown = (props: DropDownProps) => {
                                 disabled={item.disabled}
                                 type={'button'}
                                 onClick={item.onClick}
-                                className={classNames(cls.item, {[popupCls.active]: active})}
+                                className={classNames(cls.item, {[cls.itemActive]: active})}
                             >
                                 {item.content}
                             </button>)
