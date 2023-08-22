@@ -1,2 +1,2 @@
-export {CountrySelect} from "entities/Country/ui/CountrySelect/CountrySelect";
+export {CountrySelect} from "./ui/CountrySelect/CountrySelect";
 

@@ -1,17 +1,17 @@
-import {CounterSchema} from "entities/Counter";
-import {UserSchema} from "entities/User";
-import {LoginSchema} from "features/AuthByUsername";
+import {CounterSchema} from "@/entities/Counter";
+import {UserSchema} from "@/entities/User";
+import {LoginSchema} from "@/features/AuthByUsername";
 import {AnyAction, CombinedState, EnhancedStore, Reducer, ReducersMapObject} from "@reduxjs/toolkit";
 import {AxiosInstance} from "axios";
 import {To} from "react-router-dom";
 import {NavigateOptions} from "react-router";
-import {ArticleDetailsSchema} from "entities/Article";
-import {ArticleDetailsPageSchema} from "pages/ArticleDetailsPage";
-import {AddCommentFormSchema} from "features/AddCommentForm";
-import {ArticlePageSchema} from "pages/ArticlesPage";
-import {scrollRestorationSchema} from "widgets/Page/ScrollRestoration";
-import {rtkApi} from "shared/api/rtkApi";
-import {ProfileSchema} from "features/editableProfileCard";
+import {ArticleDetailsSchema} from "@/entities/Article";
+import {ArticleDetailsPageSchema} from "@/pages/ArticleDetailsPage";
+import {AddCommentFormSchema} from "@/features/AddCommentForm";
+import {ArticlePageSchema} from "@/pages/ArticlesPage";
+import {scrollRestorationSchema} from "@/widgets/Page/ScrollRestoration";
+import {rtkApi} from "@/shared/api/rtkApi";
+import {ProfileSchema} from "@/features/editableProfileCard";
 
 
 export interface StateSchema {

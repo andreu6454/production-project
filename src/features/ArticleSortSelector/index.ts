@@ -1,2 +1,2 @@
-export {ArticleSortSelector} from "features/ArticleSortSelector/ui/ArticleSortSelector";
+export {ArticleSortSelector} from "./ui/ArticleSortSelector";
 

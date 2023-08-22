@@ -1,13 +1,13 @@
-import {classNames} from "shared/lib/classNames/classNames";
+import {classNames} from "@/shared/lib/classNames/classNames";
 import cls from './ArticlesPage.module.scss'
 import {memo, useCallback} from "react";
-import {DynamicModuleLoader, ReducersList} from "shared/lib/components/DynamicModuleLoader/DynamicModuleLoader";
+import {DynamicModuleLoader, ReducersList} from "@/shared/lib/components/DynamicModuleLoader/DynamicModuleLoader";
 import {articlePageReducer} from "../..//model/slices/articlePageSlice";
-import {useAppDispatch} from "shared/lib/hooks/useAppDispatch/useAppDispatch";
-import {Page} from "widgets/Page/Page";
+import {useAppDispatch} from "@/shared/lib/hooks/useAppDispatch/useAppDispatch";
+import {Page} from "@/widgets/Page/Page";
 import {fetchNextArticlesPage} from "../../model/services/fetchNextArticlesPage/fetchNextArticlesPage";
-import {ArticlesPageFilters} from "pages/ArticlesPage/ui/ArticlesPageFilter/ArticlesPageFilters";
-import {ArticleInfiniteList} from "pages/ArticlesPage/ui/ArticleinfiniteList/ArticleInfiniteList";
+import {ArticlesPageFilters} from "@/pages/ArticlesPage/ui/ArticlesPageFilter/ArticlesPageFilters";
+import {ArticleInfiniteList} from "@/pages/ArticlesPage/ui/ArticleinfiniteList/ArticleInfiniteList";
 
 interface ArticlesPageProps {
     className?: string;

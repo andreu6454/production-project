@@ -1,18 +1,18 @@
-import {classNames} from "shared/lib/classNames/classNames";
+import {classNames} from "@/shared/lib/classNames/classNames";
 import {memo, useCallback, useEffect} from "react";
 import {useTranslation} from "react-i18next";
-import {Text, TextSize} from "shared/ui/Text/Text";
-import {AddCommentForm} from "features/AddCommentForm";
-import {CommentList} from "entities/Comment";
-import {VStack} from "shared/ui/Stack";
+import {Text, TextSize} from "@/shared/ui/Text/Text";
+import {AddCommentForm} from "@/features/AddCommentForm";
+import {CommentList} from "@/entities/Comment";
+import {VStack} from "@/shared/ui/Stack";
 import {useSelector} from "react-redux";
 import {getArticleComments} from "../../model/slices/articleDetailsCommentsSlice";
 import {getArticleCommentsIsLoading} from "../../model/selectors/comments";
 import {addCommentForArticle} from "../../model/services/addCommentForArticle/addCommentForArticle";
-import {useAppDispatch} from "shared/lib/hooks/useAppDispatch/useAppDispatch";
+import {useAppDispatch} from "@/shared/lib/hooks/useAppDispatch/useAppDispatch";
 import {
     fetchCommentsByArticleId
-} from "pages/ArticleDetailsPage/model/services/fetchCommentsByArticleId/fetchCommentsByArticleId";
+} from "@/pages/ArticleDetailsPage/model/services/fetchCommentsByArticleId/fetchCommentsByArticleId";
 
 interface ArticleDetailsCommentsProps {
     className?: string;

@@ -1,5 +1,5 @@
-import {StateSchema} from "app/providers/StoreProvider";
-import {getLoginError} from "features/AuthByUsername/model/selectors/getLoginError/getLoginError";
+import {StateSchema} from "@/app/providers/StoreProvider";
+import {getLoginError} from "@/features/AuthByUsername/model/selectors/getLoginError/getLoginError";
 import {getProfileIsLoading} from "./getProfileIsLoading";
 
 describe('getProfileIsLoading.test', () => {

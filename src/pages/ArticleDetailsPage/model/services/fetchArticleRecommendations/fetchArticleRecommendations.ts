@@ -1,7 +1,7 @@
 import {createAsyncThunk} from "@reduxjs/toolkit";
-import {Article} from "entities/Article";
-import {ThunkConfig} from "app/providers/StoreProvider";
-import i18n from "shared/config/i18n/i18n";
+import {Article} from "@/entities/Article";
+import {ThunkConfig} from "@/app/providers/StoreProvider";
+import i18n from "@/shared/config/i18n/i18n";
 
 export const fetchArticleRecommendations =
     createAsyncThunk<
@@ -11,7 +11,7 @@ export const fetchArticleRecommendations =
     >(
         'articleDetails/fetchArticleRecommendations',
         async (_, thunkAPI) => {
-            const {extra, rejectWithValue, getState} = thunkAPI
+            const {extra, rejectWithValue} = thunkAPI
 
             try {
 

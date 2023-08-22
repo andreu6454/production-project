@@ -1,6 +1,7 @@
-import {classNames, Mods} from "shared/lib/classNames/classNames";
+import {classNames, Mods} from "@/shared/lib/classNames/classNames";
 import cls from './Input.module.scss'
 import {ChangeEvent, InputHTMLAttributes, memo, MutableRefObject, useEffect, useRef, useState} from "react";
+import {HStack} from "@/shared/ui/Stack";
 
 type HTMLInputProps = Omit<InputHTMLAttributes<HTMLInputElement>, 'value' | 'onChange' | 'readOnly'>
 
@@ -60,9 +61,9 @@ export const Input = memo((props: InputProps) => {
 
 
     return (
-        <div className={classNames(cls.InputWrapper, mods, [className])}>
+        <HStack className={classNames('', mods, [className])}>
             {placeholder && <div className={cls.placeholder}>
-                {`${placeholder}>`}
+                {`${placeholder} >`}
             </div>}
             <div className={cls.caretWrapper}>
                 <input
@@ -82,6 +83,6 @@ export const Input = memo((props: InputProps) => {
                     className={cls.caret}
                 />)}
             </div>
-        </div>
+        </HStack>
     );
 });

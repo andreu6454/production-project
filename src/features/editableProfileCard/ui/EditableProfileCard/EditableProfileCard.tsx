@@ -1,11 +1,11 @@
-import {classNames} from 'shared/lib/classNames/classNames';
+import {classNames} from '@/shared/lib/classNames/classNames';
 import {memo, useCallback, useEffect} from 'react';
-import {useAppDispatch} from "shared/lib/hooks/useAppDispatch/useAppDispatch";
+import {useAppDispatch} from "@/shared/lib/hooks/useAppDispatch/useAppDispatch";
 import {useSelector} from "react-redux";
-import {Currency} from "entities/Currency/model/types/types";
-import {Country} from "entities/Country/model/types/Country";
-import {Text, TextTheme} from "shared/ui/Text/Text";
-import {VStack} from "shared/ui/Stack";
+import {Currency} from "@/entities/Currency/model/types/types";
+import {Country} from "@/entities/Country/model/types/Country";
+import {Text, TextTheme} from "@/shared/ui/Text/Text";
+import {VStack} from "@/shared/ui/Stack";
 import {getProfileForm} from "../../model/selectors/getProfileForm/getProfileForm";
 import {getProfileError} from "../../model/selectors/getProfileError/getProfileError";
 import {getProfileReadonly} from "../../model/selectors/getProfileReadonly/getProfileReadonly";
@@ -17,8 +17,8 @@ import {
 } from "../../model/selectors/getProfileValidateErrors/getProfileValidateErrors";
 import {fetchProfileData} from "../../model/services/fetchProfileData/fetchProfileData";
 import {profileActions, profileReducer} from "../../model/slice/profileSlice";
-import {ProfileCard} from "entities/Profile";
-import {DynamicModuleLoader, ReducersList} from "shared/lib/components/DynamicModuleLoader/DynamicModuleLoader";
+import {ProfileCard} from "@/entities/Profile";
+import {DynamicModuleLoader, ReducersList} from "@/shared/lib/components/DynamicModuleLoader/DynamicModuleLoader";
 
 interface EditableProfileCardProps {
     className?: string;

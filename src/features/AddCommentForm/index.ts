@@ -1,4 +1,4 @@
-export {AddCommentFormAsync as AddCommentForm} from "features/AddCommentForm/ui/AddCommentForm/AddCommentForm.async";
+export {AddCommentFormAsync as AddCommentForm} from "./ui/AddCommentForm/AddCommentForm.async";
 
-export type {AddCommentFormSchema} from "features/AddCommentForm/model/types/addCommentForm";
+export type {AddCommentFormSchema} from "./model/types/addCommentForm";
 

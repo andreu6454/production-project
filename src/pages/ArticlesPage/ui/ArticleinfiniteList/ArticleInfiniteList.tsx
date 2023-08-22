@@ -1,18 +1,18 @@
-import {classNames} from "shared/lib/classNames/classNames";
+import {classNames} from "@/shared/lib/classNames/classNames";
 import cls from './ArticleinfiniteList.module.scss'
 import {memo, useEffect} from "react";
-import {ArticleList} from "entities/Article";
+import {ArticleList} from "@/entities/Article";
 import {useSelector} from "react-redux";
-import {getArticles} from "pages/ArticlesPage/model/slices/articlePageSlice";
+import {getArticles} from "@/pages/ArticlesPage/model/slices/articlePageSlice";
 import {
     getArticlesPageError,
     getArticlesPageIsLoading,
     getArticlesPageView
-} from "pages/ArticlesPage/model/selectors/articlePageSelectors";
-import {initArticlesPage} from "pages/ArticlesPage/model/services/initArticlesPage/initArticlesPage";
-import {useAppDispatch} from "shared/lib/hooks/useAppDispatch/useAppDispatch";
+} from "@/pages/ArticlesPage/model/selectors/articlePageSelectors";
+import {initArticlesPage} from "@/pages/ArticlesPage/model/services/initArticlesPage/initArticlesPage";
+import {useAppDispatch} from "@/shared/lib/hooks/useAppDispatch/useAppDispatch";
 import {useSearchParams} from "react-router-dom";
-import {Text, TextTheme} from "shared/ui/Text/Text";
+import {Text, TextTheme} from "@/shared/ui/Text/Text";
 
 interface ArticleInfiniteListProps {
     className?: string;

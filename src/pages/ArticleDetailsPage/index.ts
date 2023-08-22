@@ -1,4 +1,4 @@
-export type {ArticleDetailsPageSchema} from "pages/ArticleDetailsPage/model/types";
+export type {ArticleDetailsPageSchema} from "./model/types";
 
 
 export type{

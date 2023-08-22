@@ -1,8 +1,8 @@
 import {useState} from 'react';
 import {useTranslation} from "react-i18next";
-import {Counter} from "entities/Counter";
-import {Input} from "shared/ui/Input/Input";
-import {Page} from "widgets/Page/Page";
+import {Counter} from "@/entities/Counter";
+import {Input} from "@/shared/ui/Input/Input";
+import {Page} from "@/widgets/Page/Page";
 
 const MainPage = () => {
     const {t} = useTranslation('main')

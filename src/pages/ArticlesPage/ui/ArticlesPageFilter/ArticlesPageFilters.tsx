@@ -1,9 +1,9 @@
-import {classNames} from "shared/lib/classNames/classNames";
+import {classNames} from "@/shared/lib/classNames/classNames";
 import cls from './ArticlesPageFilters.module.scss'
 import {memo, useCallback} from "react";
 import {useTranslation} from "react-i18next";
-import {ArticlesViewSelector} from "features/ArticlesViewSelector";
-import {ArticleView} from "entities/Article";
+import {ArticlesViewSelector} from "@/features/ArticlesViewSelector";
+import {ArticleView} from "@/entities/Article";
 import {articlePageActions} from "../../model/slices/articlePageSlice";
 import {useSelector} from "react-redux";
 import {
@@ -13,16 +13,16 @@ import {
     getArticlesPageType,
     getArticlesPageView
 } from "../../model/selectors/articlePageSelectors";
-import {useAppDispatch} from "shared/lib/hooks/useAppDispatch/useAppDispatch";
-import {Card} from "shared/ui/Card/Card";
-import {Input} from "shared/ui/Input/Input";
-import {ArticleSortSelector} from "features/ArticleSortSelector";
-import {ArticleSortField, ArticleType} from "entities/Article/model/types/article";
-import {SortOrder} from "shared/types";
+import {useAppDispatch} from "@/shared/lib/hooks/useAppDispatch/useAppDispatch";
+import {Card} from "@/shared/ui/Card/Card";
+import {Input} from "@/shared/ui/Input/Input";
+import {ArticleSortSelector} from "@/features/ArticleSortSelector";
+import {ArticleSortField, ArticleType} from "@/entities/Article/model/types/article";
+import {SortOrder} from "@/shared/types";
 import {fetchArticlesList} from "../../model/services/fetchArticlesList/fetchArticlesList";
-import {useDebounce} from "shared/lib/hooks/useDebounce/useDebounce";
-import {ArticleTypeTabs} from "features/ArticleTypeTabs/ArticleTypeTabs";
-import {HStack, VStack} from "shared/ui/Stack";
+import {useDebounce} from "@/shared/lib/hooks/useDebounce/useDebounce";
+import {ArticleTypeTabs} from "@/features/ArticleTypeTabs/ArticleTypeTabs";
+import {HStack, VStack} from "@/shared/ui/Stack";
 
 interface ArticlesPageFilterProps {
     className?: string;
