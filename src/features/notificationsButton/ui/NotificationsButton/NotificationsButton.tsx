@@ -6,9 +6,8 @@ import {Button, ButtonTheme} from "@/shared/ui/Button/Button";
 import {Icon} from "@/shared/ui/Icon/Icon";
 import NotificationsIcon from "@/shared/assets/icons/notification-20-20.svg";
 import {NotificationList} from "@/entities/Notification";
-import {Drawer} from "@/shared/ui/Drawer/Drawer";
 import {BrowserView, MobileView} from "react-device-detect";
-import {AnimationProvider} from "@/shared/lib/components/AnimationProvider";
+import {Drawer} from "@/shared/ui/Drawer/Drawer";
 
 interface notificationsButtonProps {
     className?: string;
@@ -44,11 +43,9 @@ export const NotificationsButton = memo((props: notificationsButtonProps) => {
             </BrowserView>
             <MobileView>
                 {trigger}
-                <AnimationProvider>
-                    <Drawer isOpen={isOpenDrawer} onClose={onCloseDrawer}>
-                        <NotificationList/>
-                    </Drawer>
-                </AnimationProvider>
+                <Drawer isOpen={isOpenDrawer} onClose={onCloseDrawer}>
+                    <NotificationList/>
+                </Drawer>
             </MobileView>
         </>
     );
