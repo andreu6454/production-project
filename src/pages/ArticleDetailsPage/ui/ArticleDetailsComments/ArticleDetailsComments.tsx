@@ -1,7 +1,7 @@
 import {classNames} from "@/shared/lib/classNames/classNames";
 import {memo, useCallback, useEffect} from "react";
 import {useTranslation} from "react-i18next";
-import {Text, TextSize} from "@/shared/ui/Text/Text";
+import {Text, TextSize} from "@/shared/ui/Text";
 import {AddCommentForm} from "@/features/AddCommentForm";
 import {CommentList} from "@/entities/Comment";
 import {VStack} from "@/shared/ui/Stack";

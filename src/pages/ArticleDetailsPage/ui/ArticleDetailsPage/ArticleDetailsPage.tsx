@@ -4,7 +4,7 @@ import {useTranslation} from "react-i18next";
 import {memo} from "react";
 import {ArticleDetails} from "@/entities/Article";
 import {useParams} from "react-router-dom";
-import {Text, TextTheme} from "@/shared/ui/Text/Text";
+import {Text, TextTheme} from "@/shared/ui/Text";
 import {DynamicModuleLoader, ReducersList} from "@/shared/lib/components/DynamicModuleLoader/DynamicModuleLoader";
 import {Page} from "@/widgets/Page/Page";
 import {articleDetailsPageReducer} from "../../model/slices";

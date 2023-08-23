@@ -12,7 +12,7 @@ import {
 import {initArticlesPage} from "@/pages/ArticlesPage/model/services/initArticlesPage/initArticlesPage";
 import {useAppDispatch} from "@/shared/lib/hooks/useAppDispatch/useAppDispatch";
 import {useSearchParams} from "react-router-dom";
-import {Text, TextTheme} from "@/shared/ui/Text/Text";
+import {Text, TextTheme} from "@/shared/ui/Text";
 
 interface ArticleInfiniteListProps {
     className?: string;

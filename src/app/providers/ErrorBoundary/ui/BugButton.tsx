@@ -1,4 +1,4 @@
-import {Button, ButtonTheme} from "@/shared/ui/Button/Button";
+import {Button, ButtonTheme} from "@/shared/ui/Button";
 import {useEffect, useState} from "react";
 
 

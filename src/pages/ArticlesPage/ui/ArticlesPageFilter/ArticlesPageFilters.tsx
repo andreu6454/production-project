@@ -14,8 +14,8 @@ import {
     getArticlesPageView
 } from "../../model/selectors/articlePageSelectors";
 import {useAppDispatch} from "@/shared/lib/hooks/useAppDispatch/useAppDispatch";
-import {Card} from "@/shared/ui/Card/Card";
-import {Input} from "@/shared/ui/Input/Input";
+import {Card} from "@/shared/ui/Card";
+import {Input} from "@/shared/ui/Input";
 import {ArticleSortSelector} from "@/features/ArticleSortSelector";
 import {ArticleSortField, ArticleType} from "@/entities/Article/model/types/article";
 import {SortOrder} from "@/shared/types";
