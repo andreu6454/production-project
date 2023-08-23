@@ -26,3 +26,4 @@ root.render(<ErrorBoundary>
 );
 
 
+export {Theme} from "@/shared/const/theme";
