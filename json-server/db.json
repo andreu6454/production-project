@@ -766,9 +766,23 @@
     {
       "id": "1",
       "rate": 4,
-      "feedback": "Хорошая статья",
-      "userId": "1",
+      "feedback": "Хороший профиль",
+      "userId": "666",
       "profileId": "2"
+    },
+    {
+      "userId": "666",
+      "profileId": "1",
+      "rate": 5,
+      "feedback": "",
+      "id": "seItxAH"
+    },
+    {
+      "userId": "2",
+      "profileId": "1",
+      "rate": 5,
+      "feedback": "Крутой профиль!",
+      "id": "GpWCK6y"
     }
   ]
 }
