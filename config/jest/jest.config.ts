@@ -34,6 +34,7 @@ export default {
     moduleNameMapper: {
         '\\.(css|scss)$': 'identity-obj-proxy',
         '\\.svg': path.resolve(__dirname, 'jestEmptyComponent.tsx'),
+        "^@/(.*)$": "<rootDir>/src/$1"
     },
     globals: {
         __IS_DEV__: true,
@@ -48,7 +49,7 @@ export default {
             "openReport": true,
             "inlineSource": true
         }]
-    ]
+    ],
     // Indicates whether the coverage information should be collected while executing the test
     // collectCoverage: false,
 
