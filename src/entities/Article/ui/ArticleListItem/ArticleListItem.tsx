@@ -1,7 +1,7 @@
 import {classNames} from "@/shared/lib/classNames/classNames";
 import cls from './ArticleListItem.module.scss'
 import {HTMLAttributeAnchorTarget, memo} from "react";
-import {Article, ArticleView} from "../../model/types/article";
+import {Article, ArticleBlockType, ArticleTextBlock, ArticleView} from "../../model/types/article";
 import {Text} from "@/shared/ui/Text";
 import EyeIcon from "@/shared/assets/icons/eye-20-20.svg"
 import {Icon} from "@/shared/ui/Icon";
@@ -9,10 +9,9 @@ import {Card} from "@/shared/ui/Card";
 import {Avatar} from "@/shared/ui/Avatar";
 import {Button} from "@/shared/ui/Button";
 import {useTranslation} from "react-i18next";
-import {ArticleBlockType, ArticleTextBlock} from "../../model/types/article";
 import {ArticleTextBlockComponent} from "../ArticleTextBlockComponent/ArticleTextBlockComponent";
 import {AppLink} from "@/shared/ui/AppLink";
-import {RoutePath} from "@/shared/const/router";
+import {getRouteArticleDetails} from "@/shared/const/router";
 
 interface ArticleListItemProps {
     className?: string;
@@ -23,7 +22,7 @@ interface ArticleListItemProps {
 
 
 export const ArticleListItem = memo((props: ArticleListItemProps) => {
-    const {className, article, view,target} = props
+    const {className, article, view, target} = props
 
     const {t} = useTranslation('article')
 
@@ -55,8 +54,8 @@ export const ArticleListItem = memo((props: ArticleListItemProps) => {
                         <ArticleTextBlockComponent block={textBlock} className={cls.textBlock}/>
                     )}
                     <div className={cls.footer}>
-                        <AppLink to={RoutePath.article_details + article.id}>
-                            <Button >{t("Читать далее...")}</Button>
+                        <AppLink to={getRouteArticleDetails(article.id)}>
+                            <Button>{t("Читать далее...")}</Button>
                         </AppLink>
                         {views}
                     </div>
@@ -68,7 +67,7 @@ export const ArticleListItem = memo((props: ArticleListItemProps) => {
     return (
         <AppLink
             target={target}
-            to={RoutePath.article_details + article.id}
+            to={getRouteArticleDetails(article.id)}
             className={classNames(cls.ArticleListItem, {}, [className, cls[view]])}
         >
             <Card>
