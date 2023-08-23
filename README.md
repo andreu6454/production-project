@@ -106,6 +106,7 @@ npm run start:dev или npm run start:dev:vite - запуск сервера + 
 
 - [addCommentForm](/src/features/AddCommentForm)
 - [articleRating](/src/features/articleRating)
+- [profileRating](/src/features/profileRating)
 - [articleRecommendationsList](/src/features/articleRecommendationsList)
 - [articleSortSelector](/src/features/ArticleSortSelector)
 - [articleViewSelector](/src/features/ArticlesViewSelector)

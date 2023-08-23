@@ -22,6 +22,7 @@ export function buildLoaders({isDev,...options}: BuildOptions): webpack.RuleSetR
 
     const cssLoaders = {
         test: /\.s[ac]ss$/i,
+        exclude: /node_modules/,
         use: [
             isDev ? "style-loader" : MiniCssExtractPlugin.loader,
             {
