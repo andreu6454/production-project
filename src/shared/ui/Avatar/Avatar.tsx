@@ -1,6 +1,7 @@
 import {classNames} from "@/shared/lib/classNames/classNames";
 import cls from './Avatar.module.scss'
 import {CSSProperties, useMemo} from "react";
+import {AppImage} from "@/shared/ui/AppImage";
 
 interface AvatarProps {
     className?: string;
@@ -21,7 +22,7 @@ export const Avatar = (props: AvatarProps) => {
     }, [])
 
     return (
-        <img
+        <AppImage
             alt={alt}
             src={src}
             style={styles}
