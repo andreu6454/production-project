@@ -4,7 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "unit": "jest --config ./config/jest/jest.config.ts",
+    "test:unit": "jest --config ./config/jest/jest.config.ts",
+    "test:e2e": "cypress open",
     "start": "webpack serve --env port=3000 mode=development",
     "start:vite": "vite",
     "start:dev:vite": "concurrently \"npm run start:vite\" \"npm run start:dev:server\"",
@@ -48,6 +49,7 @@
     "circular-dependency-plugin": "^5.2.2",
     "copy-webpack-plugin": "^10.2.4",
     "css-loader": "^6.6.0",
+    "cypress": "^12.17.4",
     "eslint": "^8.10.0",
     "eslint-config-airbnb": "^19.0.4",
     "eslint-plugin-i18next": "^5.1.2",

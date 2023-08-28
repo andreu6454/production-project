@@ -28,6 +28,7 @@ const ArticlesPage = ({className}: ArticlesPageProps) => {
     return (
         <DynamicModuleLoader name={'articlesPage'} reducers={reducers} removeAfterUnmount={false}>
             <Page
+                data-testid={"ArticlesPage"}
                 onScrollEnd={onLoadNextPart}
                 className={classNames(cls.ArticlesPage, {}, [className])}
             >
