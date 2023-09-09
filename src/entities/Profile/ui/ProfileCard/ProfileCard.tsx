@@ -82,6 +82,7 @@ export const ProfileCard = (props: ProfileCardProps) => {
 
     return (
         <HStack
+            data-testId={"ProfileCard"}
             gap={'32'}
             justify={'center'}
             max
@@ -93,6 +94,7 @@ export const ProfileCard = (props: ProfileCardProps) => {
 
             <VStack align={'start'} gap={'8'} className={cls.inputsWrapper}>
                 <Input
+                    data-testId={"ProfileCard.firstname"}
                     onChange={onChangeFirstname}
                     value={data?.first}
                     placeholder={t('Имя')}

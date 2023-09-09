@@ -622,6 +622,10 @@
       "roles": [
         "ADMIN"
       ],
+      "features": {
+        "isArticleRatingEnabled": true,
+        "isCounterEnabled": true
+      },
       "avatar": "https://i.pinimg.com/736x/86/95/54/8695540db1e9224367ed9d1a4884ccfc.jpg"
     },
     {
@@ -632,6 +636,11 @@
         "ADMIN",
         "USER"
       ],
+
+      "features": {
+        "isArticleRatingEnabled": true,
+        "isCounterEnabled": false
+      },
       "avatar": "https://i.pinimg.com/564x/71/af/c8/71afc81a9bdb88723d4b36425021e869.jpg"
     },
     {
@@ -642,7 +651,24 @@
         "USER",
         "MANAGER"
       ],
+      "features": {
+        "isArticleRatingEnabled": true,
+        "isCounterEnabled": true
+      },
       "avatar": "https://zet-art.ru/wp-content/uploads/2022/08/unnamed.png"
+    },
+    {
+      "id": "4",
+      "username": "user",
+      "password": "user",
+      "roles": [
+        "USER"
+      ],
+      "features": {
+        "isArticleRatingEnabled": false,
+        "isCounterEnabled": false
+      },
+      "avatar": "https://cdn-icons-png.flaticon.com/512/219/219969.png"
     }
   ],
   "profile": [
@@ -670,7 +696,7 @@
     },
     {
       "id": "2",
-      "first": "User",
+      "first": "test",
       "lastname": "!",
       "age": 30,
       "currency": "RUB",
@@ -678,6 +704,17 @@
       "city": "Erevan",
       "username": "test",
       "avatar": "https://i.pinimg.com/564x/79/79/01/797901c841ad69db628666a18f2c5954.jpg"
+    },
+    {
+      "id": "4",
+      "first": "user",
+      "lastname": "forTest",
+      "age": 21,
+      "currency": "RUB",
+      "country": "Russia",
+      "city": "Saint-Petersburg",
+      "username": "admin",
+      "avatar": "https://cdn-icons-png.flaticon.com/512/219/219969.png"
     }
   ],
   "article-ratings": [
