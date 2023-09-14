@@ -11,7 +11,6 @@ import {
     getArticlesPageType
 } from "../../selectors/articlePageSelectors";
 import {addQueryParams} from "@/shared/lib/url/addQueryParams/addQueryParams";
-import {articlePageActions} from "@/pages/ArticlesPage/model/slices/articlePageSlice";
 
 
 interface FetchArticlesListProps {
@@ -26,9 +25,7 @@ export const fetchArticlesList =
     >(
         'article/fetchArticlesList',
         async (props, thunkAPI) => {
-            const {extra, rejectWithValue, getState, dispatch} = thunkAPI
-
-            dispatch(articlePageActions.initState())
+            const {extra, rejectWithValue, getState} = thunkAPI
 
             const limit = getArticlesPageLimit(getState())
             const sort = getArticlesPageSort(getState())
