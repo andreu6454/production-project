@@ -15,7 +15,8 @@ import {VStack} from "@/shared/ui/Stack";
 import {ArticleRecommendationsList} from "@/features/articleRecommendationsList";
 import {ArticleDetailsComments} from "@/pages/ArticleDetailsPage/ui/ArticleDetailsComments/ArticleDetailsComments";
 import {ArticleRating} from "@/features/articleRating";
-import {getFeatureFlags} from "@/shared/lib/features";
+import {toggleFeatures} from "@/shared/lib/features";
+import {Card} from "@/shared/ui/Card";
 
 
 interface ArticleDetailsPageProps {
@@ -31,9 +32,6 @@ const ArticleDetailsPage = ({className}: ArticleDetailsPageProps) => {
 
     const {id} = useParams<{ id: string }>()
 
-    const isArticleRatingEnabled = getFeatureFlags('isArticleRatingEnabled')
-
-
     if (!id) {
         return (
             <div className={classNames(cls.ArticleDetailesPage, {}, [className])}>
@@ -42,13 +40,20 @@ const ArticleDetailsPage = ({className}: ArticleDetailsPageProps) => {
         )
     }
 
+    const ArticleRatingComponent = toggleFeatures({
+        name: 'isArticleRatingEnabled',
+        on: () => <ArticleRating articleId={id}/>,
+        off: () => <Card>{t('Оценка статей скоро будет добавлена')}</Card>
+    })
+
+
     return (
         <DynamicModuleLoader name={"articleDetailsPage"} removeAfterUnmount reducers={reducers}>
             <Page className={classNames(cls.ArticleDetailesPage, {}, [className])}>
                 <VStack align={'start'} gap={'16'} max>
                     <ArticleDetailsPageHeader/>
                     <ArticleDetails id={id}/>
-                    {isArticleRatingEnabled && <ArticleRating articleId={id}/>}
+                    {ArticleRatingComponent}
                     <ArticleRecommendationsList/>
                     <ArticleDetailsComments id={id}/>
                 </VStack>
