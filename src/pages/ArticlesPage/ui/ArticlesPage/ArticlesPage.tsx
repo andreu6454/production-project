@@ -8,6 +8,7 @@ import {Page} from "@/widgets/Page/Page";
 import {fetchNextArticlesPage} from "../../model/services/fetchNextArticlesPage/fetchNextArticlesPage";
 import {ArticlesPageFilters} from "@/pages/ArticlesPage/ui/ArticlesPageFilter/ArticlesPageFilters";
 import {ArticleInfiniteList} from "@/pages/ArticlesPage/ui/ArticleinfiniteList/ArticleInfiniteList";
+import {ArticlePageGreeting} from "@/features/articlePageGreeting";
 
 interface ArticlesPageProps {
     className?: string;
@@ -32,6 +33,7 @@ const ArticlesPage = ({className}: ArticlesPageProps) => {
                 onScrollEnd={onLoadNextPart}
                 className={classNames(cls.ArticlesPage, {}, [className])}
             >
+                <ArticlePageGreeting/>
                 <ArticlesPageFilters/>
                 <ArticleInfiniteList className={cls.list}/>
             </Page>
