@@ -3,6 +3,9 @@ import type {User, UserSchema} from './model/types/userSchema'
 import {getUserAuthData} from "./model/selectors/getUserAuthData/getUserAuthData";
 import {getUserInited} from "./model/selectors/getUserInited/getUserInited";
 import {getUserRoles, isUserAdmin, isUserManager} from "./model/selectors/roleSelectors/roleSelectors";
+
+
+export {initAuthData} from "./model/services/initAuthData";
 export {saveJsonSettings} from "./model/services/saveJsonSettings";
 
 
@@ -20,3 +23,5 @@ export {
     isUserManager,
     getUserRoles
 }
+
+
