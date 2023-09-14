@@ -626,7 +626,10 @@
         "isArticleRatingEnabled": true,
         "isCounterEnabled": true
       },
-      "avatar": "https://i.pinimg.com/736x/86/95/54/8695540db1e9224367ed9d1a4884ccfc.jpg"
+      "avatar": "https://i.pinimg.com/736x/86/95/54/8695540db1e9224367ed9d1a4884ccfc.jpg",
+      "jsonSettings": {
+        "theme": "app_purple_theme"
+      }
     },
     {
       "id": "666",
@@ -636,12 +639,14 @@
         "ADMIN",
         "USER"
       ],
-
       "features": {
         "isArticleRatingEnabled": true,
         "isCounterEnabled": false
       },
-      "avatar": "https://i.pinimg.com/564x/71/af/c8/71afc81a9bdb88723d4b36425021e869.jpg"
+      "avatar": "https://i.pinimg.com/564x/71/af/c8/71afc81a9bdb88723d4b36425021e869.jpg",
+      "jsonSettings": {
+        "theme": "app_dark_theme"
+      }
     },
     {
       "id": "2",
