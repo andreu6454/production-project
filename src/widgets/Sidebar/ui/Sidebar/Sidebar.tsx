@@ -76,7 +76,7 @@ const Sidebar = memo(({className}: SideBarProps) => {
                         {itemsList}
                     </VStack>
 
-                    <div className={cls.switchers}>
+                    <div className={cls.switchersRedesigned}>
 
                         <ThemeSwitcher/>
                         <LangSwitcher short={collapsed} className={cls.lang}/>

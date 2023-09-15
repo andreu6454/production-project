@@ -29,6 +29,8 @@
 
 .items{
   margin-top: 20px;
+  position: relative;
+  z-index: 1;
 }
 
 
@@ -57,4 +59,13 @@
 
 .appLogo{
   padding-top: 20px;
+}
+
+.switchersRedesigned {
+  position: absolute;
+  bottom: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 220px;
 }

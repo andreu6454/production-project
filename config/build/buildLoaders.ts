@@ -4,10 +4,25 @@ import {BuildOptions} from "./types/config";
 import {buildBabelLoader} from "./loaders/buildBabelLoader";
 
 
-export function buildLoaders({isDev,...options}: BuildOptions): webpack.RuleSetRule[] {
+export function buildLoaders({isDev, ...options}: BuildOptions): webpack.RuleSetRule[] {
     const svgLoader = {
         test: /\.svg$/,
-        use: ['@svgr/webpack'],
+        use: [{
+            loader: '@svgr/webpack',
+            options: {
+                icon: true,
+                svgoConfig: {
+                    plugins: [
+                        {
+                            name: 'convertColors',
+                            params: {
+                                currentColor: true
+                            }
+                        }
+                    ]
+                }
+            }
+        }],
     }
     const fileLoader = {
         test: /\.(png|jpe?g|gif|w0ff2|woff)$/i,
@@ -17,8 +32,8 @@ export function buildLoaders({isDev,...options}: BuildOptions): webpack.RuleSetR
             }
         ]
     }
-    const codeBabelLoader = buildBabelLoader({...options,isDev, isTsx: false})
-    const tsxBabelLoader = buildBabelLoader({...options,isDev, isTsx: true})
+    const codeBabelLoader = buildBabelLoader({...options, isDev, isTsx: false})
+    const tsxBabelLoader = buildBabelLoader({...options, isDev, isTsx: true})
 
     const cssLoaders = {
         test: /\.s[ac]ss$/i,
