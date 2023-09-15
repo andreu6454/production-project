@@ -4,19 +4,19 @@ import {useTranslation} from "react-i18next";
 import {memo} from "react";
 import {ArticleDetails} from "@/entities/Article";
 import {useParams} from "react-router-dom";
-import {Text, TextTheme} from "@/shared/ui/Text";
+import {Text, TextTheme} from "@/shared/ui/deprecated/Text";
 import {DynamicModuleLoader, ReducersList} from "@/shared/lib/components/DynamicModuleLoader/DynamicModuleLoader";
 import {Page} from "@/widgets/Page/Page";
 import {articleDetailsPageReducer} from "../../model/slices";
 import {
     ArticleDetailsPageHeader
 } from "@/pages/ArticleDetailsPage/ui/ArticleDetailsPageHeader/ArticleDetailsPageHeader";
-import {VStack} from "@/shared/ui/Stack";
+import {VStack} from "@/shared/ui/deprecated/Stack";
 import {ArticleRecommendationsList} from "@/features/articleRecommendationsList";
 import {ArticleDetailsComments} from "@/pages/ArticleDetailsPage/ui/ArticleDetailsComments/ArticleDetailsComments";
 import {ArticleRating} from "@/features/articleRating";
 import {ToggleFeatures} from "@/shared/lib/features";
-import {Card} from "@/shared/ui/Card";
+import {Card} from "@/shared/ui/deprecated/Card";
 
 
 interface ArticleDetailsPageProps {

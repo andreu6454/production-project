@@ -2,7 +2,7 @@ import {useTranslation} from "react-i18next";
 import {useSelector} from "react-redux";
 import {getUserAuthData} from "@/entities/User";
 import {useCallback} from "react";
-import {Skeleton} from "@/shared/ui/Skeleton";
+import {Skeleton} from "@/shared/ui/deprecated/Skeleton";
 import {useGetProfileRating, useRateProfile} from "../../api/profileRatingApi";
 import {RatingCard} from "@/entities/Rating";
 

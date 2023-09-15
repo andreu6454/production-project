@@ -14,15 +14,15 @@ import {
     getArticlesPageView
 } from "../../model/selectors/articlePageSelectors";
 import {useAppDispatch} from "@/shared/lib/hooks/useAppDispatch/useAppDispatch";
-import {Card} from "@/shared/ui/Card";
-import {Input} from "@/shared/ui/Input";
+import {Card} from "@/shared/ui/deprecated/Card";
+import {Input} from "@/shared/ui/deprecated/Input";
 import {ArticleSortSelector} from "@/features/ArticleSortSelector";
 import {ArticleSortField, ArticleType} from "@/entities/Article/model/types/article";
 import {SortOrder} from "@/shared/types";
 import {fetchArticlesList} from "../../model/services/fetchArticlesList/fetchArticlesList";
 import {useDebounce} from "@/shared/lib/hooks/useDebounce/useDebounce";
 import {ArticleTypeTabs} from "@/features/ArticleTypeTabs/ArticleTypeTabs";
-import {HStack, VStack} from "@/shared/ui/Stack";
+import {HStack, VStack} from "@/shared/ui/deprecated/Stack";
 
 interface ArticlesPageFilterProps {
     className?: string;

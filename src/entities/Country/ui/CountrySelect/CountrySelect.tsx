@@ -3,7 +3,7 @@ import cls from './CountrySelect.module.scss'
 import {useTranslation} from "react-i18next";
 import {memo, useCallback} from "react";
 import {Country} from "../../model/types/Country";
-import {ListBox} from "@/shared/ui/Popups";
+import {ListBox} from "@/shared/ui/deprecated/Popups";
 interface CountrySelectProps {
     className?: string;
     value?: string;

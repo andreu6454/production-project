@@ -8,7 +8,7 @@ import {getUserInited, initAuthData} from "@/entities/User";
 import {useTheme} from "@/shared/lib/hooks/useTheme/useTheme";
 import {useAppDispatch} from "@/shared/lib/hooks/useAppDispatch/useAppDispatch";
 import {PageLoader} from "@/widgets/PageLoader/PageLoader";
-import {VStack} from "@/shared/ui/Stack";
+import {VStack} from "@/shared/ui/deprecated/Stack";
 import {ToggleFeatures} from "@/shared/lib/features";
 import {MainLayout} from "@/shared/layouts/MainLayout";
 

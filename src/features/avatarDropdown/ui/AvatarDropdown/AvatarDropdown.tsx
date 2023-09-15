@@ -1,8 +1,8 @@
 import {classNames} from '@/shared/lib/classNames/classNames';
 import {useTranslation} from 'react-i18next';
 import {memo, useCallback} from 'react';
-import {Avatar} from "@/shared/ui/Avatar";
-import {DropDown} from "@/shared/ui/Popups";
+import {Avatar} from "@/shared/ui/deprecated/Avatar";
+import {DropDown} from "@/shared/ui/deprecated/Popups";
 import {useDispatch, useSelector} from "react-redux";
 import {getUserAuthData, isUserAdmin, isUserManager, userActions} from "@/entities/User";
 import {getRouteAdmin, getRouteProfile} from "@/shared/const/router";
