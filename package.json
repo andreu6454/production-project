@@ -14,7 +14,8 @@
     "build:prod": "webpack --env mode=production apiUrl=https://production-project-server-sigma-wheat.vercel.app/",
     "build:dev": "webpack --env mode=development",
     "generate:slice": "node ./scripts/createSlice/index.js",
-    "postinstall": "rm -rf node_modules/.cache"
+    "postinstall": "rm -rf node_modules/.cache",
+    "remove-feature": "ts-node ./scripts/remove-feature.ts"
   },
   "keywords": [],
   "author": "",
