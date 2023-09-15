@@ -9,6 +9,7 @@ import {useSelector} from "react-redux";
 import {StateSchema} from "@/app/providers/StoreProvider";
 import {useThrottle} from "@/shared/lib/hooks/useThrottle/useThrottle";
 import {TestsProps} from "@/shared/types/tests";
+import {toggleFeatures} from "@/shared/lib/features";
 
 interface PageProps extends TestsProps {
     className?: string;
@@ -46,11 +47,25 @@ export const Page = memo((props: PageProps) => {
         }))
     }, 500)
 
+
+    toggleFeatures({
+        name: "isAppRedesigned",
+        on: () => cls.PageRedesigned,
+        off: () => cls.Page
+    })
+
     return (
         <main
             onScroll={onScrollHandler}
             ref={wrapperRef}
-            className={classNames(cls.Page, {}, [className])}
+            className={
+                classNames(
+                    toggleFeatures({
+                        name: "isAppRedesigned",
+                        on: () => cls.PageRedesigned,
+                        off: () => cls.Page
+                    }), {}, [className])
+            }
             id={PAGE_ID}
             data-testid={props["data-testid"] ?? 'Page'}
         >

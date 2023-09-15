@@ -9,6 +9,8 @@ import {useTheme} from "@/shared/lib/hooks/useTheme/useTheme";
 import {useAppDispatch} from "@/shared/lib/hooks/useAppDispatch/useAppDispatch";
 import {PageLoader} from "@/widgets/PageLoader/PageLoader";
 import {VStack} from "@/shared/ui/Stack";
+import {ToggleFeatures} from "@/shared/lib/features";
+import {MainLayout} from "@/shared/layouts/MainLayout";
 
 
 const App = () => {
@@ -30,18 +32,34 @@ const App = () => {
     }
 
     return (
-        <div className={classNames('app', {}, [theme])}>
+        <ToggleFeatures
+            feature={'isAppRedesigned'}
+            on={
+                <div className={classNames('app_redesigned', {}, [theme])}>
+                    <Suspense fallback={""}>
+                        <MainLayout
+                            sidebar={<Sidebar/>}
+                            content={<AppRouter/>}
 
-            <Suspense fallback={""}>
-                <Navbar/>
-                <div className={"content-page"}>
-                    <Sidebar/>
-                    {inited && <AppRouter/>}
+                            header={<Navbar/>}
+                            toolbar={<div>123123</div>}
+                        />
+                    </Suspense>
                 </div>
-            </Suspense>
-
-        </div>
-    );
+            }
+            off={
+                <div className={classNames('app', {}, [theme])}>
+                    <Suspense fallback={""}>
+                        <Navbar/>
+                        <div className={"content-page"}>
+                            <Sidebar/>
+                            <AppRouter/>
+                        </div>
+                    </Suspense>
+                </div>
+            }
+        />
+    )
 };
 
 export default App;
