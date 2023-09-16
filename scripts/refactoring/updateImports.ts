@@ -19,6 +19,7 @@ files.forEach((sourceFile) => {
 
         if (isAbsolute(value)) {
             importDeclaration.setModuleSpecifier(`@/${value}`);
+            // importDeclaration.setModuleSpecifier(value.replace('src', "@"));
         }
     });
 });

@@ -11,7 +11,7 @@ import {articleDetailsPageReducer} from "../../model/slices";
 import {
     ArticleDetailsPageHeader
 } from "@/pages/ArticleDetailsPage/ui/ArticleDetailsPageHeader/ArticleDetailsPageHeader";
-import {VStack} from "@/shared/ui/deprecated/Stack";
+import {VStack} from "@/shared/ui/redesigned/Stack";
 import {ArticleRecommendationsList} from "@/features/articleRecommendationsList";
 import {ArticleDetailsComments} from "@/pages/ArticleDetailsPage/ui/ArticleDetailsComments/ArticleDetailsComments";
 import {ArticleRating} from "@/features/articleRating";

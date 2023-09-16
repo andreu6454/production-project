@@ -4,7 +4,7 @@ import {useTranslation} from "react-i18next";
 import {Select, SelectOption} from "@/shared/ui/deprecated/Select";
 import {ArticleSortField} from "@/entities/Article/model/types/article";
 import {SortOrder} from "@/shared/types";
-import {HStack} from "@/shared/ui/deprecated/Stack";
+import {HStack} from "@/shared/ui/redesigned/Stack";
 
 interface ArticleSortSelectorProps {
     className?: string;

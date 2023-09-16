@@ -23,7 +23,7 @@ import {ArticleBlock, ArticleBlockType} from "../../model/types/article";
 import {ArticleCodeBlockComponent} from "@/entities/Article/ui/ArticleCodeBlockComponent/ArticleCodeBlockComponent";
 import {ArticleImageBlockComponent} from "@/entities/Article/ui/ArticleImageBlockComponent/ArticleImageBlockComponent";
 import {ArticleTextBlockComponent} from "@/entities/Article/ui/ArticleTextBlockComponent/ArticleTextBlockComponent";
-import {HStack, VStack} from "@/shared/ui/deprecated/Stack";
+import {HStack, VStack} from "@/shared/ui/redesigned/Stack";
 
 interface ArticleDetailsProps {
     className?: string;

@@ -3,7 +3,7 @@ import {Listbox as HListBox} from "@headlessui/react";
 import cls from './ListBox.module.scss'
 import {classNames} from "@/shared/lib/classNames/classNames";
 import {Button} from "@/shared/ui/deprecated/Button";
-import {HStack} from "@/shared/ui/deprecated/Stack";
+import {HStack} from "@/shared/ui/redesigned/Stack";
 import {DropDownDirection} from "@/shared/types/ui";
 import {mapDirection} from "../../styles/consts";
 import popupCls from '../../styles/popup.module.scss'

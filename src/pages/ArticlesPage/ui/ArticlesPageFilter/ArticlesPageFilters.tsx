@@ -22,7 +22,7 @@ import {SortOrder} from "@/shared/types";
 import {fetchArticlesList} from "../../model/services/fetchArticlesList/fetchArticlesList";
 import {useDebounce} from "@/shared/lib/hooks/useDebounce/useDebounce";
 import {ArticleTypeTabs} from "@/features/ArticleTypeTabs/ArticleTypeTabs";
-import {HStack, VStack} from "@/shared/ui/deprecated/Stack";
+import {HStack, VStack} from "@/shared/ui/redesigned/Stack";
 
 interface ArticlesPageFilterProps {
     className?: string;

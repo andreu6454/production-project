@@ -1,12 +1,9 @@
-import {Flex, FlexProps} from "@/shared/ui/deprecated/Stack/Flex/Flex";
+import {Flex, FlexProps} from "@/shared/ui/redesigned/Stack/Flex/Flex";
 
 
 type HStackProps = Omit<FlexProps, 'direction'>
 
-/**
- * Устарел, используем новые компонент из папки redesigned
- * @deprecated
- */
+
 export const HStack = (props: HStackProps) => {
 
     return (

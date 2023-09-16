@@ -5,7 +5,7 @@ import {useSelector} from "react-redux";
 import {Currency} from "@/entities/Currency/model/types/types";
 import {Country} from "@/entities/Country/model/types/Country";
 import {Text, TextTheme} from "@/shared/ui/deprecated/Text";
-import {VStack} from "@/shared/ui/deprecated/Stack";
+import {VStack} from "@/shared/ui/redesigned/Stack";
 import {getProfileForm} from "../../model/selectors/getProfileForm/getProfileForm";
 import {getProfileError} from "../../model/selectors/getProfileError/getProfileError";
 import {getProfileReadonly} from "../../model/selectors/getProfileReadonly/getProfileReadonly";

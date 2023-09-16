@@ -9,7 +9,7 @@ import {useSelector} from "react-redux";
 import {getAddCommentFormText} from "../../model/selectors/addCommentFormSelectors";
 import {addCommentFormActions, addCommentFormReducer} from "../../model/slices/addCommentFromSlice";
 import {useAppDispatch} from "@/shared/lib/hooks/useAppDispatch/useAppDispatch";
-import {HStack} from "@/shared/ui/deprecated/Stack";
+import {HStack} from "@/shared/ui/redesigned/Stack";
 
 export interface AddCommentFormProps {
     className?: string;

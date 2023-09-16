@@ -44,10 +44,6 @@ export interface FlexProps extends DivProps{
     ref?: ((instance: HTMLDivElement | null) => void) | RefObject<HTMLDivElement> | null | undefined
 }
 
-/**
- * Устарел, используем новые компонент из папки redesigned
- * @deprecated
- */
 export const Flex = memo((props: FlexProps) => {
     const {
         className,

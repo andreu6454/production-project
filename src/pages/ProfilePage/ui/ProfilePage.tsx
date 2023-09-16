@@ -1,6 +1,6 @@
 import {classNames} from "@/shared/lib/classNames/classNames";
 import {Page} from "@/widgets/Page/Page";
-import {VStack} from "@/shared/ui/deprecated/Stack";
+import {VStack} from "@/shared/ui/redesigned/Stack";
 import {EditableProfileCard, EditableProfileCardHeader} from "@/features/editableProfileCard";
 import {useParams} from "react-router-dom";
 import {Text, TextTheme} from "@/shared/ui/deprecated/Text";

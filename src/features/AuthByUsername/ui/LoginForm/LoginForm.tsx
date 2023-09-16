@@ -14,7 +14,7 @@ import {getLoginIsLoading} from "../../model/selectors/getLoginIsLoading/getLogi
 import {getLoginError} from "../../model/selectors/getLoginError/getLoginError";
 import {DynamicModuleLoader, ReducersList} from "@/shared/lib/components/DynamicModuleLoader/DynamicModuleLoader";
 import {useAppDispatch} from "@/shared/lib/hooks/useAppDispatch/useAppDispatch";
-import {VStack} from "@/shared/ui/deprecated/Stack";
+import {VStack} from "@/shared/ui/redesigned/Stack";
 
 interface LoginFormProps {
     className?: string;
