@@ -15,8 +15,6 @@ export const initAuthData =
 
             const userId = localStorage.getItem(USER_LOCALSTORAGE_KEY)?.slice(1,-1);
 
-            console.log(userId)
-
             if (!userId) {
                 return rejectWithValue(i18n.t('error'))
             }

@@ -1,6 +1,5 @@
 .link {
   margin-left: 10px;
-
 }
 
 .item {
@@ -19,5 +18,38 @@
     opacity: 0;
     transition: 0.2s opacity;
     width: 0;
+  }
+}
+
+.itemRedesigned {
+  width: 100%;
+  padding: 0 16px;
+  display: flex;
+  align-items: center;
+}
+
+.collapsedRedesigned {
+  padding: 0 8px;
+
+  .link {
+    opacity: 0;
+    width: 0;
+    display: none;
+  }
+}
+
+
+
+.active {
+  background: linear-gradient(89.97deg, rgba(29, 89, 255, 0.3) 1.15%, rgba(94, 211, 243, 0) 99.97%);
+  position: relative;
+
+  &::before {
+    content: "";
+    position: absolute;
+    width: 2px;
+    left: 0;
+    background: var(--accent-redesigned);
+    height: 100%;
   }
 }

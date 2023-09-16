@@ -5,41 +5,96 @@
 
   position: relative;
   transition: width 0.3s;
-}
-
-.switchers {
-  position: absolute;
-  bottom: 20px;
-  display: flex;
-  justify-content: center;
-  width: 100%;
-}
-
-.lang {
-  margin-left: 20px;
-}
-
-.collapsedBtn {
-  position: absolute;
-  right: -32px;
-  bottom: 40px;
-  z-index: 2;
-}
-
-
-.items{
-  margin-top: 20px;
-  position: relative;
-  z-index: 1;
-}
-
-
-
-.collapsed {
-  width: var(--sidebar-width-collapsed);
 
   .switchers {
+    position: absolute;
+    bottom: 20px;
+    display: flex;
+    justify-content: center;
+    width: 100%;
+  }
+
+  .lang {
+    margin-left: 20px;
+  }
+
+  .collapsedBtn {
+    position: absolute;
+    right: -32px;
+    bottom: 40px;
+    z-index: 2;
+  }
+
+
+  .items {
+    margin-top: 20px;
+    position: relative;
+    z-index: 1;
+  }
+
+
+  .collapsed {
+    width: var(--sidebar-width-collapsed);
+
+    .switchers {
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .lang {
+      margin-left: 0;
+    }
+
+  }
+
+}
+
+
+.SidebarRedesigned {
+  background: var(--light-bg-redesigned);
+  height: 100%;
+  width: 220px;
+  border-radius: 32px;
+  position: relative;
+
+  .appLogo {
+    padding-top: 20px;
+  }
+
+  .items {
+    margin-top: 20px;
+  }
+
+  .switchersRedesigned {
+    position: absolute;
+    bottom: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 16px;
+    width: 100%;
+  }
+
+  .collapsedBtn {
+    position: absolute;
+    top: 50%;
+    right: 0;
+    z-index: 2;
+    transform: rotate(90deg);
+  }
+}
+
+.collapsedRedesigned {
+  width: 50px;
+
+  .switchersRedesigned {
     flex-direction: column;
+    align-items: center;
+  }
+
+  .items {
+    margin-top: 20px;
+    display: flex;
     align-items: center;
   }
 
@@ -47,25 +102,4 @@
     margin-left: 0;
   }
 
-}
-
-
-.SidebarRedesigned{
-  background: var(--light-bg-redesigned);
-  height: 100%;
-  width: 220px;
-  border-radius: 32px;
-}
-
-.appLogo{
-  padding-top: 20px;
-}
-
-.switchersRedesigned {
-  position: absolute;
-  bottom: 40px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 220px;
 }
