@@ -1,5 +1,5 @@
 .Card {
-  border-radius: 32px;
+
 }
 
 .withOutPaddings {
@@ -10,9 +10,14 @@
   background: var(--dark-bg-redesigned);
 }
 
+.light {
+  background: var(--light-bg-redesigned);
+}
+
 .outlined {
   border: 1px solid var(--accent-redesigned);
 }
+
 
 .max {
   width: 100%;
@@ -32,4 +37,12 @@
 
 .gap_24 {
   padding: 23px;
+}
+
+.round {
+  border-radius: 40px;
+}
+
+.squared {
+  border-radius: 12px;
 }
