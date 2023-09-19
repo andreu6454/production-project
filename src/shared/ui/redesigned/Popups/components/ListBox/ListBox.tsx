@@ -50,7 +50,7 @@ export function ListBox<T extends string>(props: ListBoxProps<T>) {
 
     return (
         <HStack>
-            {label && <span className={cls.label}>{`${label}>`}</span>}
+            {label && <span className={cls.label}>{label}</span>}
             <HListBox
                 disabled={readonly}
                 as={'div'}
@@ -84,7 +84,7 @@ export function ListBox<T extends string>(props: ListBoxProps<T>) {
                             {({active}) => (
                                 <li className={
                                     classNames(cls.item, {
-                                        [popupCls.active]: active,
+                                        [cls.active]: active,
                                         [cls.selected]: value === item.content,
                                         [popupCls.disabled]: item.disabled,
                                     })

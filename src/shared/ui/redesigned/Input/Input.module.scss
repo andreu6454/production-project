@@ -2,7 +2,7 @@
   display: flex;
   align-items: center;
   border-radius: 48px;
-  height: 32px;
+  width: 100%;
   padding: 8px 16px;
   border: 2px solid var(--icon-redesigned);
 }
@@ -30,6 +30,18 @@
   &::placeholder {
     color: var(--hint-redesigned);
   }
+}
+
+.s {
+  height: 32px;
+}
+
+.m {
+  height: 38px;
+}
+
+.l {
+  height: 44px;
 }
 
 .isFocused {

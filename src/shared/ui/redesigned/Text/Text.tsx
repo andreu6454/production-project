@@ -14,7 +14,7 @@ interface TextProps {
     className?: string;
     title?: string,
     text?: string,
-    variant?: string,
+    variant?: TextVariant,
     align?: TextAlign,
     size?: TextSize
 }

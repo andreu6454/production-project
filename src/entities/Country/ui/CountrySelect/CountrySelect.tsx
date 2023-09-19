@@ -1,9 +1,10 @@
-import {classNames} from "@/shared/lib/classNames/classNames";
-import cls from './CountrySelect.module.scss'
 import {useTranslation} from "react-i18next";
 import {memo, useCallback} from "react";
 import {Country} from "../../model/types/Country";
-import {ListBox} from "@/shared/ui/deprecated/Popups";
+import {ListBox as ListBoxDeprecated} from "@/shared/ui/deprecated/Popups";
+import {ToggleFeatures} from "@/shared/lib/features";
+import {ListBox} from "@/shared/ui/redesigned/Popups";
+
 interface CountrySelectProps {
     className?: string;
     value?: string;
@@ -18,32 +19,35 @@ const options = [
     {value: Country.Ukraine, content: Country.Ukraine},
     {value: Country.Kazakhstan, content: Country.Kazakhstan},
 ]
-export const CountrySelect = memo((props: CountrySelectProps) => {
 
-    const {
-        readonly,
-        className,
-        value,
-        onChange
-    } = props
+export const CountrySelect = memo(
+    ({className, value, onChange, readonly}: CountrySelectProps) => {
+        const {t} = useTranslation();
 
-    const {t} = useTranslation()
+        const onChangeHandler = useCallback(
+            (value: string) => {
+                onChange?.(value as Country);
+            },
+            [onChange],
+        );
 
-    const onChangeHandler = useCallback((value: string) => {
-        onChange?.(value as Country)
-    }, [])
+        const props = {
+            className,
+            value,
+            defaultValue: t('Укажите страну'),
+            label: t('Укажите страну'),
+            items: options,
+            onChange: onChangeHandler,
+            readonly,
+            direction: 'top-right' as const,
+        };
 
-
-    return (
-        <ListBox
-            value={value}
-            defaultValue={t('Укажите страну')}
-            items={options}
-            className={classNames(cls.CurrencySelect, {}, [className])}
-            onChange={onChangeHandler}
-            readonly={readonly}
-            direction={'top-right'}
-            label={t('Укажите страну')}
-        />
-    )
-});
+        return (
+            <ToggleFeatures
+                feature="isAppRedesigned"
+                on={<ListBox {...props} />}
+                off={<ListBoxDeprecated {...props} />}
+            />
+        );
+    },
+);
