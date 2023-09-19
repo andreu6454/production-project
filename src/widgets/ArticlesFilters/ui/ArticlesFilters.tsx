@@ -9,6 +9,8 @@ import {ArticleTypeTabs} from "@/features/ArticleTypeTabs/ArticleTypeTabs";
 import {VStack} from "@/shared/ui/redesigned/Stack";
 import {ArticleSortField, ArticleType} from "@/entities/Article";
 import {SortOrder} from "@/shared/types";
+import SearchIcon from '@/shared/assets/icons/search.svg'
+import {Icon} from "@/shared/ui/redesigned/Icon";
 
 interface ArticlesFiltersProps {
     className?: string;
@@ -42,7 +44,12 @@ export const ArticlesFilters = memo((props: ArticlesFiltersProps) => {
             className={classNames(cls.ArticlesFilters, {}, [className])}
         >
             <VStack gap={'32'} align={'start'}>
-                <Input onChange={onChangeSearch} value={search} placeholder={t("Поиск")}/>
+                <Input
+                    onChange={onChangeSearch}
+                    value={search}
+                    placeholder={t("Поиск")}
+                    addonLeft={<Icon Svg={SearchIcon}/>}
+                />
                 <ArticleSortSelector
                     sort={sort}
                     order={order}
