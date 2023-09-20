@@ -16,7 +16,8 @@ interface TextProps {
     text?: string,
     variant?: TextVariant,
     align?: TextAlign,
-    size?: TextSize
+    size?: TextSize,
+    bold?: boolean
 }
 
 type HeaderTagType = 'h1' | 'h2' | 'h3'
@@ -42,7 +43,8 @@ export const Text = memo((props: TextProps) => {
         text,
         variant = 'primary',
         align = 'left',
-        size = "m"
+        size = "m",
+        bold
     } = props
 
     const HeaderTag = mapSizeToHeaderTag[size]
@@ -51,7 +53,7 @@ export const Text = memo((props: TextProps) => {
     const additionalClass = [className, cls[variant], cls[align], cls[sizeClass]]
 
     return (
-        <div className={classNames(cls.Text, {}, additionalClass)}>
+        <div className={classNames(cls.Text, {[cls.bold]: bold}, additionalClass)}>
             {title && <HeaderTag className={cls.title}>{title}</HeaderTag>}
             {text && <p className={cls.text}>{text}</p>}
         </div>

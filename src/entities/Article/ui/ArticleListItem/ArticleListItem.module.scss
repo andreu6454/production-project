@@ -1,6 +1,5 @@
 .ArticleListItem {
 }
-
 .SMALL {
   width: 230px;
   transition: 0.2s;
@@ -94,12 +93,23 @@
     margin: 16px 0;
   }
 
-  .textBlock{
+  .textBlock {
     max-height: 200px;
     overflow-y: hidden;
   }
+
   .footer {
     display: flex;
     align-items: center;
+  }
+}
+
+.ArticleListItemRedesigned{
+  &.BIG{
+    width: 100%;
+  }
+  &.SMALL{
+    width: 240px;
+    height: 350px;
   }
 }

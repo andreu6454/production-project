@@ -39,7 +39,7 @@
   text-align: center;
 }
 
-.size_s{
+.size_s {
   .title {
     font: var(--font-m-redesigned)
   }
@@ -66,5 +66,11 @@
 
   .text {
     font: var(--font-l-redesigned)
+  }
+}
+
+.bold {
+  .title, .text {
+    font-weight: 700;
   }
 }
