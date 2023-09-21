@@ -38,5 +38,9 @@
   "Здесь вы можете искать и просматривать статьи на различные темы": "Here you can search and view articles on various topics",
   "Настройки пользователя": "Users settings",
   "Вариант интерфейса": "Interface variant",
-  "Настройки": "Settings"
+  "Настройки": "Settings",
+  "Просмотров": "views",
+  "{{count}} Просмотров_zero": "0 views",
+  "{{count}} Просмотров_one": "1 view",
+  "{{count}} Просмотров_other": "{{count}} views"
 }
