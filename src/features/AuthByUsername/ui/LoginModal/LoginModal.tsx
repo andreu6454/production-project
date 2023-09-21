@@ -1,5 +1,5 @@
 import {classNames} from "@/shared/lib/classNames/classNames";
-import {Modal} from "@/shared/ui/deprecated/Modal";
+import {Modal} from "@/shared/ui/redesigned/Modal";
 import {Suspense} from "react";
 import {LoginFormAsync} from "@/features/AuthByUsername/ui/LoginForm/LoginForm.async";
 import {Loader} from "@/shared/Loader/Loader";
