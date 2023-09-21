@@ -2,14 +2,18 @@ import {classNames} from "@/shared/lib/classNames/classNames";
 import cls from './AddCommentForm.module.scss'
 import {memo, useCallback} from "react";
 import {useTranslation} from "react-i18next";
-import {Input} from "@/shared/ui/deprecated/Input";
-import {Button} from "@/shared/ui/deprecated/Button";
+import {Input as InputDeprecated} from "@/shared/ui/deprecated/Input";
+import {Button as ButtonDeprecated} from "@/shared/ui/deprecated/Button";
 import {DynamicModuleLoader, ReducersList} from "@/shared/lib/components/DynamicModuleLoader/DynamicModuleLoader";
 import {useSelector} from "react-redux";
 import {getAddCommentFormText} from "../../model/selectors/addCommentFormSelectors";
 import {addCommentFormActions, addCommentFormReducer} from "../../model/slices/addCommentFromSlice";
 import {useAppDispatch} from "@/shared/lib/hooks/useAppDispatch/useAppDispatch";
 import {HStack} from "@/shared/ui/redesigned/Stack";
+import {ToggleFeatures} from "@/shared/lib/features";
+import {Input} from "@/shared/ui/redesigned/Input";
+import {Button} from "@/shared/ui/redesigned/Button";
+import {Card} from "@/shared/ui/redesigned/Card";
 
 export interface AddCommentFormProps {
     className?: string;
@@ -39,22 +43,51 @@ const AddCommentForm = memo((props: AddCommentFormProps) => {
 
     return (
         <DynamicModuleLoader name={"addCommentForm"} reducers={reducers}>
-            <HStack
-                justify={'between'}
-                max className={classNames(cls.AddCommentForm, {}, [className])}
-            >
-                <Input
-                    className={cls.input}
-                    placeholder={t("Введите текст комментария")}
-                    value={text}
-                    onChange={onCommentTextChange}
-                />
-                <Button
-                    onClick={onSendHandler}
-                >
-                    {t("Отправить")}
-                </Button>
-            </HStack>
+            <ToggleFeatures
+                feature={'isAppRedesigned'}
+                on={
+                    <Card max padding={'24'} border={'round'}>
+                        <HStack
+                            gap={'16'}
+                            justify={'between'}
+                            max
+                            className={classNames('', {}, [className])}
+                        >
+                            <Input
+                                className={cls.input}
+                                placeholder={t("Введите текст комментария")}
+                                value={text}
+                                onChange={onCommentTextChange}
+                            />
+                            <Button
+                                onClick={onSendHandler}
+                            >
+                                {t("Отправить")}
+                            </Button>
+                        </HStack>
+                    </Card>
+                }
+                off={
+                    <HStack
+                        justify={'between'}
+                        max
+                        className={classNames(cls.AddCommentForm, {}, [className])}
+                    >
+                        <InputDeprecated
+                            className={cls.input}
+                            placeholder={t("Введите текст комментария")}
+                            value={text}
+                            onChange={onCommentTextChange}
+                        />
+                        <ButtonDeprecated
+                            onClick={onSendHandler}
+                        >
+                            {t("Отправить")}
+                        </ButtonDeprecated>
+                    </HStack>
+                }
+            />
+
         </DynamicModuleLoader>
     );
 });

@@ -5,12 +5,15 @@ import {useSelector} from "react-redux";
 import {getUserAuthData} from "@/entities/User";
 import {useAppDispatch} from "@/shared/lib/hooks/useAppDispatch/useAppDispatch";
 import {HStack} from "@/shared/ui/redesigned/Stack";
-import {Text} from "@/shared/ui/deprecated/Text";
-import {Button, ButtonTheme} from "@/shared/ui/deprecated/Button";
+import {Text as TextDeprecated} from "@/shared/ui/deprecated/Text";
+import {Button as ButtonDeprecated, ButtonTheme} from "@/shared/ui/deprecated/Button";
 import {getProfileReadonly} from "../../model/selectors/getProfileReadonly/getProfileReadonly";
 import {getProfileData} from "../../model/selectors/getProfileData/getProfileData";
 import {profileActions} from "../../model/slice/profileSlice";
 import {updateProfileData} from "../../model/services/updateProfileData/updateProfileData";
+import {ToggleFeatures} from "@/shared/lib/features";
+import {Text} from "@/shared/ui/redesigned/Text";
+import {Button} from "@/shared/ui/redesigned/Button";
 
 interface EditableProfileCardHeaderProps {
     className?: string;
@@ -44,25 +47,61 @@ export const EditableProfileCardHeader = memo((props: EditableProfileCardHeaderP
 
     return (
         <HStack max justify={'between'} className={classNames('', {}, [className])}>
-            <Text title={t('Профиль')}/>
+            <ToggleFeatures
+                feature={'isAppRedesigned'}
+                on={
+                    <Text title={t('Профиль')}/>
+                }
+                off={
+                    <TextDeprecated title={t('Профиль')}/>
+                }
+            />
+
             {canEdit &&
                 <>
                     {readonly ?
                         (
-                            <Button theme={ButtonTheme.OUTLINE} onClick={onEdit}>
-                                {t('Редактировать')}
-                            </Button>
+                            <ToggleFeatures
+                                feature={'isAppRedesigned'}
+                                on={
+                                    <Button variant={'outline'} onClick={onEdit}>
+                                        {t('Редактировать')}
+                                    </Button>
+                                }
+                                off={
+                                    <ButtonDeprecated theme={ButtonTheme.OUTLINE} onClick={onEdit}>
+                                        {t('Редактировать')}
+                                    </ButtonDeprecated>
+                                }
+                            />
+
                         ) :
                         (
-                            <HStack gap={'8'}>
-                                <Button theme={ButtonTheme.OUTLINE} onClick={onSave}>
-                                    {t('Сохранить')}
-                                </Button>
-                                <Button theme={ButtonTheme.OUTLINE_RED}
-                                        onClick={onCancelEdit}>
-                                    {t('Отменить')}
-                                </Button>
-                            </HStack>
+                            <ToggleFeatures
+                                feature={'isAppRedesigned'}
+                                on={
+                                    <HStack gap={'8'}>
+                                        <Button variant={'outline'} onClick={onSave}>
+                                            {t('Сохранить')}
+                                        </Button>
+                                        <Button variant={'outline-red'}
+                                                onClick={onCancelEdit}>
+                                            {t('Отменить')}
+                                        </Button>
+                                    </HStack>
+                                }
+                                off={
+                                    <HStack gap={'8'}>
+                                        <ButtonDeprecated theme={ButtonTheme.OUTLINE} onClick={onSave}>
+                                            {t('Сохранить')}
+                                        </ButtonDeprecated>
+                                        <ButtonDeprecated theme={ButtonTheme.OUTLINE_RED}
+                                                          onClick={onCancelEdit}>
+                                            {t('Отменить')}
+                                        </ButtonDeprecated>
+                                    </HStack>
+                                }
+                            />
                         )
                     }
                 </>

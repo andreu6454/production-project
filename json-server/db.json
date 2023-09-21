@@ -618,6 +618,12 @@
       "userId": "666",
       "text": "Просто новый комментарий",
       "id": "OqaRvJd"
+    },
+    {
+      "articleId": "1",
+      "userId": "666",
+      "text": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam corporis cumque dolore doloremque esse facilis     harum modi odit optio, pariatur perspiciatis possimus provident quisquam quod reprehenderit rerum ut vitae     voluptatem!",
+      "id": "rHe5_E3"
     }
   ],
   "users": [
@@ -654,7 +660,7 @@
       },
       "avatar": "https://i.pinimg.com/564x/71/af/c8/71afc81a9bdb88723d4b36425021e869.jpg",
       "jsonSettings": {
-        "theme": "app_light_theme",
+        "theme": "app_dark_theme",
         "isArticlesPageWasOpened": true
       }
     },
@@ -816,6 +822,18 @@
       "rate": 4,
       "feedback": "",
       "id": "iZOxTK1"
+    },
+    {
+      "userId": "666",
+      "articleId": "16",
+      "rate": 1,
+      "id": "cEXfGE1"
+    },
+    {
+      "userId": "666",
+      "articleId": "11",
+      "rate": 5,
+      "id": "nz9MBqX"
     }
   ],
   "profile-ratings": [
