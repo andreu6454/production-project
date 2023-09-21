@@ -121,10 +121,6 @@ const DrawerAsync = (props: DrawerProps) => {
 };
 
 
-/**
- * Устарел, используем новые компонент из папки redesigned
- * @deprecated
- */
 export const Drawer = memo((props: DrawerProps) => {
     const {
         children,
