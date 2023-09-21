@@ -32,7 +32,7 @@ export const ArticleListItemRedesigned = (props: ArticleListItemProps) => {
 
     const userInfo = (
         <>
-            <Avatar size={32} src={article.user.avatar}/>
+            <Avatar size={32} src={article.user.avatar} className={cls.avatar}/>
             <Text bold text={article.user.username}/>
         </>
     )
@@ -94,17 +94,17 @@ export const ArticleListItemRedesigned = (props: ArticleListItemProps) => {
             to={getRouteArticleDetails(article.id)}
             className={classNames(cls.ArticleListItem, {}, [className, cls[view]])}
         >
-            <Card className={cls.card} border={'round'}>
+            <Card className={cls.card} border={'round'} padding={'0'}>
                 <AppImage
-                    fallback={<Skeleton width={200} height={200}/>}
+                    fallback={<Skeleton width={'100%'} height={200}/>}
                     alt={article.title}
                     src={article.img}
                     className={cls.img}
                 />
-                <VStack align={'start'} gap={'4'} max className={cls.footer}>
+                <VStack align={'start'} gap={'4'} max className={cls.info}>
                     <Text align={'center'} title={article.title} className={cls.title}/>
-                    <HStack gap={'4'} wrap={'wrap'}>{types}</HStack>
-                    <VStack gap={'4'} className={cls.footer} max>
+                    <HStack max gap={'4'} wrap={'wrap'}>{types}</HStack>
+                    <VStack gap={'4'} className={cls.footer} align={'start'} max>
                         <HStack justify={'between'} max>
                             <Text text={article.createdAt} className={cls.date}/>
                             {views}
