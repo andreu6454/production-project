@@ -7,7 +7,7 @@ import {HStack, VStack} from "@/shared/ui/redesigned/Stack";
 import {Avatar} from "@/shared/ui/redesigned/Avatar";
 import {Text} from "@/shared/ui/redesigned/Text";
 import {ArticleEditButton} from "@/features/ArticleEditButton";
-import {BackToArticlesButton} from "@/features/BackToArticlesButton/ui/BackToArticlesButton";
+import {BackToArticlesButton} from "@/features/BackToArticlesButton";
 
 interface ArticleAdditionalInfoProps {
     className?: string;

@@ -3,7 +3,7 @@ import {useSelector} from "react-redux";
 import {getCanEditArticle} from "@/pages/ArticleDetailsPage/model/selectors/article";
 import {HStack} from "@/shared/ui/redesigned/Stack";
 import {ArticleEditButton} from "@/features/ArticleEditButton";
-import {BackToArticlesButton} from "@/features/BackToArticlesButton/ui/BackToArticlesButton";
+import {BackToArticlesButton} from "@/features/BackToArticlesButton";
 
 
 export const ArticleDetailsPageHeader = memo(() => {
