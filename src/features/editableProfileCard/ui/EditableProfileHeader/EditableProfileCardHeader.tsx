@@ -84,8 +84,11 @@ export const EditableProfileCardHeader = memo((props: EditableProfileCardHeaderP
                                         <Button variant={'outline'} onClick={onSave}>
                                             {t('Сохранить')}
                                         </Button>
-                                        <Button variant={'outline-red'}
-                                                onClick={onCancelEdit}>
+                                        <Button
+                                            color={'error'}
+                                            variant={'outline'}
+                                            onClick={onCancelEdit}
+                                        >
                                             {t('Отменить')}
                                         </Button>
                                     </HStack>

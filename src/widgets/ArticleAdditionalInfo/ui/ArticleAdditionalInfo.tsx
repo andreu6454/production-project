@@ -7,6 +7,7 @@ import {HStack, VStack} from "@/shared/ui/redesigned/Stack";
 import {Avatar} from "@/shared/ui/redesigned/Avatar";
 import {Text} from "@/shared/ui/redesigned/Text";
 import {ArticleEditButton} from "@/features/ArticleEditButton";
+import {BackToArticlesButton} from "@/features/BackToArticlesButton/ui/BackToArticlesButton";
 
 interface ArticleAdditionalInfoProps {
     className?: string;
@@ -24,6 +25,7 @@ export const ArticleAdditionalInfo = memo((props: ArticleAdditionalInfoProps) =>
     } = props
     const {t} = useTranslation()
 
+
     return (
         <VStack
             align={'start'}
@@ -36,6 +38,7 @@ export const ArticleAdditionalInfo = memo((props: ArticleAdditionalInfoProps) =>
                 <Text bold text={author?.username}/>
                 <Text bold text={createdAt}/>
             </HStack>
+            <BackToArticlesButton/>
             <ArticleEditButton/>
             <Text text={t('{{count}} Просмотров', {count: views})}/>
         </VStack>

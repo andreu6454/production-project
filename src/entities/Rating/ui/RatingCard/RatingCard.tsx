@@ -112,7 +112,8 @@ export const RatingCard = memo((props: RatingCardProps) => {
                                         {t('Отправить')}
                                     </Button>
                                     <Button
-                                        variant={'outline-red'}
+                                        color={'error'}
+                                        variant={'outline'}
                                         onClick={cancelHandle}
                                     >
                                         {t('Закрыть')}
@@ -157,7 +158,8 @@ export const RatingCard = memo((props: RatingCardProps) => {
                                             {t('Отправить')}
                                         </Button>
                                         <Button
-                                            variant={'outline-red'}
+                                            color={'error'}
+                                            variant={'outline'}
                                             onClick={cancelHandle}
                                         >
                                             {t('Закрыть')}
@@ -196,7 +198,7 @@ export const RatingCard = memo((props: RatingCardProps) => {
         <ToggleFeatures
             feature={'isAppRedesigned'}
             on={
-                <Card max padding={'24'} border={'round'} className={classNames(cls.RatingCard, {}, [className])}>
+                <Card max padding={'24'} border={'partial'} className={classNames(cls.RatingCard, {}, [className])}>
                     {Content}
                 </Card>
             }
