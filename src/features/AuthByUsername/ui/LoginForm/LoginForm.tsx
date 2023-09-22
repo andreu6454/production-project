@@ -19,6 +19,7 @@ import {ToggleFeatures} from "@/shared/lib/features";
 import {Text} from "@/shared/ui/redesigned/Text";
 import {Input} from "@/shared/ui/redesigned/Input";
 import {Button} from "@/shared/ui/redesigned/Button";
+import {useForceUpdate} from "@/shared/lib/render/forceUpdate";
 
 interface LoginFormProps {
     className?: string;
@@ -36,6 +37,7 @@ const LoginForm = memo(({className, onSuccess}: LoginFormProps) => {
     const isLoading = useSelector(getLoginIsLoading)
     const error = useSelector(getLoginError)
 
+    const forceUpdate = useForceUpdate()
 
     const dispatch = useAppDispatch()
 
@@ -50,6 +52,7 @@ const LoginForm = memo(({className, onSuccess}: LoginFormProps) => {
         const result = await dispatch(loginByUserName({username, password}))
         if (result.meta.requestStatus === "fulfilled") {
             onSuccess()
+            forceUpdate()
         }
     }, [dispatch, username, password])
 
