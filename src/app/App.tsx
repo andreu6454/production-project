@@ -11,6 +11,7 @@ import {PageLoader} from "@/widgets/PageLoader/PageLoader";
 import {VStack} from "@/shared/ui/redesigned/Stack";
 import {ToggleFeatures} from "@/shared/lib/features";
 import {MainLayout} from "@/shared/layouts/MainLayout";
+import {AppLoaderLayout} from "@/shared/layouts/AppLoaderLayout";
 
 
 const App = () => {
@@ -27,9 +28,19 @@ const App = () => {
 
     if (!inited) {
         return (
-            <VStack max justify={"center"} align={"center"}>
-                <PageLoader/>
-            </VStack>
+            <ToggleFeatures
+                feature={'isAppRedesigned'}
+                on={
+                     <div id={'app'} className={classNames('app_redesigned', {}, [theme])}>
+                         <AppLoaderLayout/>
+                     </div>
+                }
+                off={
+                    <VStack max justify={"center"} align={"center"}>
+                        <PageLoader/>
+                    </VStack>
+                }
+            />
         )
     }
 
