@@ -1,6 +1,6 @@
 import {classNames, Mods} from "@/shared/lib/classNames/classNames";
 import cls from './Flex.module.scss'
-import {DetailedHTMLProps, HTMLAttributes, memo, ReactNode, RefObject} from "react";
+import {DetailedHTMLProps, HTMLAttributes, ReactNode} from "react";
 
 
 export type FlexJustify = 'start' | 'center' | 'end' | 'between';
@@ -14,7 +14,19 @@ const justifyClasses: Record<FlexJustify, string> = {
     center: cls.justifyCenter,
     end: cls.justifyEnd,
     between: cls.justifyBetween,
-}
+};
+
+const alignClasses: Record<FlexAlign, string> = {
+    start: cls.alignStart,
+    center: cls.alignCenter,
+    end: cls.alignEnd,
+};
+
+const directionClasses: Record<FlexDirection, string> = {
+    row: cls.directionRow,
+    column: cls.directionColumn,
+};
+
 const gapClasses: Record<FlexGap, string> = {
     0: cls.gap0,
     4: cls.gap4,
@@ -22,63 +34,53 @@ const gapClasses: Record<FlexGap, string> = {
     16: cls.gap16,
     24: cls.gap24,
     32: cls.gap32,
-}
-const alignClasses: Record<FlexAlign, string> = {
-    start: cls.alignStart,
-    center: cls.alignCenter,
-    end: cls.alignEnd,
-}
-const directionClasses: Record<FlexDirection, string> = {
-    row: cls.directionRow,
-    column: cls.directionColumn,
-}
+};
 
-type DivProps = DetailedHTMLProps<HTMLAttributes<HTMLDivElement>, HTMLDivElement>;
+type DivProps = DetailedHTMLProps<
+    HTMLAttributes<HTMLDivElement>,
+    HTMLDivElement
+>;
 
-export interface FlexProps extends DivProps{
+export interface FlexProps extends DivProps {
     className?: string;
     children: ReactNode;
     justify?: FlexJustify;
     align?: FlexAlign;
-    direction?: FlexDirection;
+    direction: FlexDirection;
+    wrap?: FlexWrap;
     gap?: FlexGap;
     max?: boolean;
-    wrap?: FlexWrap;
-    ref?: ((instance: HTMLDivElement | null) => void) | RefObject<HTMLDivElement> | null | undefined
 }
 
-export const Flex = memo((props: FlexProps) => {
+export const Flex = (props: FlexProps) => {
     const {
         className,
         children,
         justify = 'start',
         align = 'center',
         direction = 'row',
-        gap = '4',
-        max,
         wrap = 'nowrap',
-        ...other
-    } = props
+        gap,
+        max,
+        ...otherProps
+    } = props;
 
     const classes = [
         className,
         justifyClasses[justify],
         alignClasses[align],
         directionClasses[direction],
-        gapClasses[gap],
-        cls[wrap]
-    ]
+        cls[wrap],
+        gap && gapClasses[gap],
+    ];
 
     const mods: Mods = {
         [cls.max]: max,
-    }
+    };
 
     return (
-        <div
-            className={classNames(cls.Flex, mods, classes)}
-            {...other}
-        >
+        <div className={classNames(cls.Flex, mods, classes)} {...otherProps}>
             {children}
         </div>
     );
-});
+};

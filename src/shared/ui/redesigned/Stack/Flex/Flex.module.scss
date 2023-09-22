@@ -38,10 +38,6 @@
   flex-direction: column;
 }
 
-.gap0 {
-  gap: 0;
-}
-
 .gap4 {
   gap: 4px;
 }
@@ -55,7 +51,7 @@
 }
 
 .gap24 {
-  gap: 24px;
+  gap: 16px;
 }
 
 .gap32 {
@@ -64,6 +60,10 @@
 
 .max {
   width: 100%;
+
+  &.directionColumn {
+    height: 100%;
+  }
 }
 
 .wrap {

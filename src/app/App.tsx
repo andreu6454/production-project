@@ -1,6 +1,6 @@
 import {Suspense, useEffect} from 'react';
 import {classNames} from "@/shared/lib/classNames/classNames";
-import {AppRouter} from "@/app/providers/router";
+import {AppRouter} from "./providers/router";
 import {Navbar} from "@/widgets/Navbar";
 import {Sidebar} from "@/widgets/Sidebar";
 import {useSelector} from "react-redux";
@@ -12,11 +12,13 @@ import {VStack} from "@/shared/ui/redesigned/Stack";
 import {ToggleFeatures} from "@/shared/lib/features";
 import {MainLayout} from "@/shared/layouts/MainLayout";
 import {AppLoaderLayout} from "@/shared/layouts/AppLoaderLayout";
+import {useAppToolbar} from "./lib/useAppToolbar";
 
 
 const App = () => {
     const {theme} = useTheme()
     const inited = useSelector(getUserInited)
+    const toolbar = useAppToolbar()
 
     const dispatch = useAppDispatch()
 
@@ -31,9 +33,9 @@ const App = () => {
             <ToggleFeatures
                 feature={'isAppRedesigned'}
                 on={
-                     <div id={'app'} className={classNames('app_redesigned', {}, [theme])}>
-                         <AppLoaderLayout/>
-                     </div>
+                    <div id={'app'} className={classNames('app_redesigned', {}, [theme])}>
+                        <AppLoaderLayout/>
+                    </div>
                 }
                 off={
                     <VStack max justify={"center"} align={"center"}>
@@ -53,9 +55,8 @@ const App = () => {
                         <MainLayout
                             sidebar={<Sidebar/>}
                             content={<AppRouter/>}
-
                             header={<Navbar/>}
-                            toolbar={<div>123123</div>}
+                            toolbar={toolbar}
                         />
                     </Suspense>
                 </div>
