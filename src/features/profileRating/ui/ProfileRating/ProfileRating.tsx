@@ -2,9 +2,11 @@ import {useTranslation} from "react-i18next";
 import {useSelector} from "react-redux";
 import {getUserAuthData} from "@/entities/User";
 import {useCallback} from "react";
-import {Skeleton} from "@/shared/ui/deprecated/Skeleton";
+import {Skeleton as SkeletonDeprecated} from "@/shared/ui/deprecated/Skeleton";
 import {useGetProfileRating, useRateProfile} from "../../api/profileRatingApi";
 import {RatingCard} from "@/entities/Rating";
+import {ToggleFeatures} from "@/shared/lib/features";
+import {Skeleton} from "@/shared/ui/redesigned/Skeleton";
 
 export interface ProfileRatingProps {
     className?: string;
@@ -53,7 +55,17 @@ const ProfileRating = (props: ProfileRatingProps) => {
     }, [handleRateArticle])
 
     if (isLoading) {
-        return <Skeleton width={'100%'} height={120}/>
+        return (
+            <ToggleFeatures
+                feature={'isAppRedesigned'}
+                on={
+                    <Skeleton border={'20px'} width={'100%'} height={200}/>
+                }
+                off={
+                    <SkeletonDeprecated width={'100%'} height={120}/>
+                }
+            />
+        )
     }
     return (
         <RatingCard

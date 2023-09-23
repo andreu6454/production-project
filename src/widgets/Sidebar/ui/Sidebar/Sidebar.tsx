@@ -1,7 +1,7 @@
 import {classNames} from "@/shared/lib/classNames/classNames";
 import cls from './Sidebar.module.scss'
 import {memo, useMemo, useState} from "react";
-import {ThemeSwitcher} from "src/features/themeSwitcher";
+import {ThemeSwitcher} from "@/features/themeSwitcher";
 import {LangSwitcher} from "@/features/langSwitcher/LangSwitcher";
 import {Button, ButtonSize, ButtonTheme} from "@/shared/ui/deprecated/Button";
 import {SidebarItem} from "../SidebarItem/SidebarItem";

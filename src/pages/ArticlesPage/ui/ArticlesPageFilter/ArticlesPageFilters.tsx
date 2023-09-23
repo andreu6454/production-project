@@ -2,10 +2,10 @@ import {classNames} from "@/shared/lib/classNames/classNames";
 import cls from './ArticlesPageFilters.module.scss'
 import {memo} from "react";
 import {useTranslation} from "react-i18next";
-import {ArticlesViewSelector} from "src/features/articlesViewSelector";
+import {ArticlesViewSelector} from "@/features/articlesViewSelector";
 import {Card} from "@/shared/ui/deprecated/Card";
 import {Input} from "@/shared/ui/deprecated/Input";
-import {ArticleSortSelector} from "src/features/articleSortSelector";
+import {ArticleSortSelector} from "@/features/articleSortSelector";
 import {ArticleTypeTabs} from "@/features/articleTypeTabs/ArticleTypeTabs";
 import {HStack, VStack} from "@/shared/ui/redesigned/Stack";
 import {useArticleFilters} from "../../lib/hooks/useArticleFilters";

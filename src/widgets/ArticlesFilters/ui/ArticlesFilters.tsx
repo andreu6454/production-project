@@ -3,7 +3,7 @@ import cls from './ArticlesFilters.module.scss'
 import {memo} from "react";
 import {useTranslation} from "react-i18next";
 import {Card} from "@/shared/ui/redesigned/Card";
-import {ArticleSortSelector} from "src/features/articleSortSelector";
+import {ArticleSortSelector} from "@/features/articleSortSelector";
 import {Input} from "@/shared/ui/redesigned/Input";
 import {ArticleTypeTabs} from "@/features/articleTypeTabs/ArticleTypeTabs";
 import {VStack} from "@/shared/ui/redesigned/Stack";
