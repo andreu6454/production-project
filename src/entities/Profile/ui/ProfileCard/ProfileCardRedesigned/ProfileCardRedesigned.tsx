@@ -30,7 +30,7 @@ interface ProfileCardRedesignedProps {
 
 export const ProfileCardRedesignedSkeleton = () => {
     return (
-        <Card max padding={'24'}>
+        <Card max padding={'24'} border={'partial'}>
             <VStack max gap={'32'}>
                 <HStack max align={'center'} justify={'center'}>
                     <Skeleton border={'50%'} width={128} height={128}/>

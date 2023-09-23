@@ -29,6 +29,10 @@ export const ArticleEditButton = memo((props: ArticleEditButtonProps) => {
         }
     }, [article, navigate])
 
+    if(!canEdit){
+        return null
+    }
+
     return (
         <ToggleFeatures
             feature={'isAppRedesigned'}

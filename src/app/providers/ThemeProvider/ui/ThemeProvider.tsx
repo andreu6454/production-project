@@ -1,31 +1,31 @@
 import React, {ReactNode, useEffect, useMemo, useState} from 'react';
 import {ThemeContext} from "../../../../shared/lib/context/ThemeContext";
 import {Theme} from "@/shared/const/theme";
-import {useJsonSettings} from "@/entities/User";
 import {LOCAL_STORAGE_THEME_KEY} from "@/shared/const/localStorage";
 
 
 interface ThemeProviderProps {
-    children: ReactNode
+    initialTheme?: Theme;
+    children: ReactNode;
 }
 
 const fallbackTheme = localStorage.getItem(LOCAL_STORAGE_THEME_KEY) as Theme
 
-const ThemeProvider = ({children}: ThemeProviderProps) => {
-    const {theme: defaultTheme} = useJsonSettings()
+const ThemeProvider = ({initialTheme, children}: ThemeProviderProps) => {
+
 
     const [isThemeInited, setIsThemeInited] = useState(false)
 
     const [theme, setTheme] =
-        useState<Theme>(defaultTheme || fallbackTheme || Theme.LIGHT);
+        useState<Theme>(initialTheme || fallbackTheme || Theme.LIGHT);
 
 
     useEffect(() => {
-        if (!isThemeInited && defaultTheme) {
-            setTheme(defaultTheme)
+        if (!isThemeInited && initialTheme) {
+            setTheme(initialTheme)
             setIsThemeInited(true)
         }
-    }, [defaultTheme]);
+    }, [initialTheme]);
 
     useEffect(() => {
         document.body.className = theme;
