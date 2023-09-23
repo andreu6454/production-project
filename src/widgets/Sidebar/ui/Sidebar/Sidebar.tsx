@@ -54,7 +54,7 @@ const Sidebar = memo(({className}: SideBarProps) => {
                         {collapsed ? ">" : "<"}
                     </Button>
 
-                    <VStack role={'navigation'} gap={'0'} className={cls.items}>
+                    <VStack align={'center'} role={'navigation'} gap={'0'} className={cls.items}>
                         {itemsList}
                     </VStack>
 

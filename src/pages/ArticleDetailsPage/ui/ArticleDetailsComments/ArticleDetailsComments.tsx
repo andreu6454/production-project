@@ -15,6 +15,7 @@ import {
 } from "../../model/services/fetchCommentsByArticleId/fetchCommentsByArticleId";
 import {ToggleFeatures} from "@/shared/lib/features";
 import {Text} from "@/shared/ui/redesigned/Text";
+import {getArticleDetailsError} from "@/entities/Article/model/selectors/articleDetails";
 
 interface ArticleDetailsCommentsProps {
     className?: string;
@@ -25,6 +26,7 @@ export const ArticleDetailsComments = memo((props: ArticleDetailsCommentsProps) 
     const {className, id} = props
     const {t} = useTranslation()
     const dispatch = useAppDispatch()
+    const error = useSelector(getArticleDetailsError)
 
     useEffect(() => {
         dispatch(fetchCommentsByArticleId(id))
@@ -40,20 +42,25 @@ export const ArticleDetailsComments = memo((props: ArticleDetailsCommentsProps) 
 
 
     return (
-        <VStack
-            max
-            gap={'8'}
-            align={'start'}
-            className={classNames('', {}, [className])}>
+        <>
+            {!error &&
+                <VStack
+                    max
+                    gap={'8'}
+                    align={'start'}
+                    className={classNames('', {}, [className])}>
 
-            <ToggleFeatures
-                feature={'isAppRedesigned'}
-                on={<Text size={'l'} title={t("Комментарии")}/>}
-                off={<TextDeprecated size={TextSize.L} title={t("Комментарии")}/>}
-            />
-            <AddCommentForm onSendComment={onSendComment}/>
-            <CommentList isLoading={commentsIsLoading} comments={comments}/>
+                    <ToggleFeatures
+                        feature={'isAppRedesigned'}
+                        on={<Text size={'l'} title={t("Комментарии")}/>}
+                        off={<TextDeprecated size={TextSize.L} title={t("Комментарии")}/>}
+                    />
+                    <AddCommentForm onSendComment={onSendComment}/>
+                    <CommentList isLoading={commentsIsLoading} comments={comments}/>
 
-        </VStack>
+                </VStack>
+            }
+        </>
+
     );
 });

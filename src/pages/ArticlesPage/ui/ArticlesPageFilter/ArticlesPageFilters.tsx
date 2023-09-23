@@ -36,7 +36,6 @@ export const ArticlesPageFilters = memo((props: ArticlesPageFilterProps) => {
         <VStack
             gap={'0'}
             align={'start'}
-            max
             className={classNames(cls.ArticlesPageFilter, {}, [className])}>
             <HStack max className={cls.sortWrapper}>
                 <ArticleSortSelector

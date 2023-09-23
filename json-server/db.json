@@ -674,9 +674,14 @@
       ],
       "features": {
         "isArticleRatingEnabled": true,
-        "isCounterEnabled": true
+        "isCounterEnabled": true,
+        "isAppRedesigned": true
       },
-      "avatar": "https://zet-art.ru/wp-content/uploads/2022/08/unnamed.png"
+      "avatar": "https://zet-art.ru/wp-content/uploads/2022/08/unnamed.png",
+      "jsonSettings": {
+        "isArticlesPageWasOpened": true,
+        "theme": "app_light_theme"
+      }
     },
     {
       "id": "4",
@@ -687,7 +692,8 @@
       ],
       "features": {
         "isArticleRatingEnabled": false,
-        "isCounterEnabled": false
+        "isCounterEnabled": false,
+        "isAppRedesigned": true
       },
       "avatar": "https://cdn-icons-png.flaticon.com/512/219/219969.png",
       "jsonSettings": {

@@ -7,6 +7,7 @@ import {useGetProfileRating, useRateProfile} from "../../api/profileRatingApi";
 import {RatingCard} from "@/entities/Rating";
 import {ToggleFeatures} from "@/shared/lib/features";
 import {Skeleton} from "@/shared/ui/redesigned/Skeleton";
+import {getProfileError} from "@/features/editableProfileCard/model/selectors/getProfileError/getProfileError";
 
 export interface ProfileRatingProps {
     className?: string;
@@ -20,6 +21,7 @@ const ProfileRating = (props: ProfileRatingProps) => {
     const {t} = useTranslation('profile');
 
     const userData = useSelector(getUserAuthData)
+    const error = useSelector(getProfileError)
 
 
     const {data, isLoading} = useGetProfileRating({
@@ -68,15 +70,19 @@ const ProfileRating = (props: ProfileRatingProps) => {
         )
     }
     return (
-        <RatingCard
-            onAccept={onAccept}
-            onCancel={onCancel}
-            rate={rating?.rate}
-            className={className}
-            title={t("Оцените профиль")}
-            feedbackTitle={t('Оставьте свой отзыв о профиле')}
-            hasFeedback
-        />
+        <>
+            {
+                !error &&  <RatingCard
+                    onAccept={onAccept}
+                    onCancel={onCancel}
+                    rate={rating?.rate}
+                    className={className}
+                    title={t("Оцените профиль")}
+                    feedbackTitle={t('Оставьте свой отзыв о профиле')}
+                    hasFeedback
+                />
+            }
+        </>
     );
 };
 

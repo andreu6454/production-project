@@ -7,6 +7,7 @@ import {getUserAuthData} from "@/entities/User";
 import {Skeleton as SkeletonDeprecated} from "@/shared/ui/deprecated/Skeleton";
 import {ToggleFeatures} from "@/shared/lib/features";
 import {Skeleton} from "@/shared/ui/redesigned/Skeleton";
+import {getArticleDetailsError} from "@/entities/Article/model/selectors/articleDetails";
 
 export interface ArticleRatingProps {
     className?: string;
@@ -17,7 +18,7 @@ const ArticleRating = memo((props: ArticleRatingProps) => {
     const {className, articleId} = props;
     const {t} = useTranslation('article-details');
     const userData = useSelector(getUserAuthData)
-
+    const error = useSelector(getArticleDetailsError)
 
     const {data, isLoading} = useGetArticleRating({
         articleId,
@@ -64,15 +65,21 @@ const ArticleRating = memo((props: ArticleRatingProps) => {
         )
     }
     return (
-        <RatingCard
-            onAccept={onAccept}
-            onCancel={onCancel}
-            rate={rating?.rate}
-            className={className}
-            title={t("Оцените статью")}
-            feedbackTitle={t('Оставьте свой отзыв о статье, это поможет улучшить качество')}
-            hasFeedback
-        />
+        <>
+            {
+                !error &&
+                <RatingCard
+                    onAccept={onAccept}
+                    onCancel={onCancel}
+                    rate={rating?.rate}
+                    className={className}
+                    title={t("Оцените статью")}
+                    feedbackTitle={t('Оставьте свой отзыв о статье, это поможет улучшить качество')}
+                    hasFeedback
+                />
+            }
+        </>
+
     );
 });
 
