@@ -9,12 +9,8 @@ import {VStack} from "@/shared/ui/redesigned/Stack";
 import {getProfileForm} from "../../model/selectors/getProfileForm/getProfileForm";
 import {getProfileError} from "../../model/selectors/getProfileError/getProfileError";
 import {getProfileReadonly} from "../../model/selectors/getProfileReadonly/getProfileReadonly";
-import {
-    getProfileIsLoading
-} from "../../model/selectors/getProfileIsLoading/getProfileIsLoading";
-import {
-    getProfileValidateErrors
-} from "../../model/selectors/getProfileValidateErrors/getProfileValidateErrors";
+import {getProfileIsLoading} from "../../model/selectors/getProfileIsLoading/getProfileIsLoading";
+import {getProfileValidateErrors} from "../../model/selectors/getProfileValidateErrors/getProfileValidateErrors";
 import {fetchProfileData} from "../../model/services/fetchProfileData/fetchProfileData";
 import {profileActions, profileReducer} from "../../model/slice/profileSlice";
 import {ProfileCard} from "@/entities/Profile";
@@ -75,11 +71,10 @@ export const EditableProfileCard = memo((props: EditableProfileCardProps) => {
         dispatch(profileActions.updateProfile({country: value}))
     }, [dispatch])
 
-    const onChangeAge = useCallback((value?: string) => {
-        let regExp = /^[0-9]/ || ""
-        if (regExp.test(value || '')) {
+    const onChangeAge = useCallback((value: string) => {
+        if (!!Number(value)) {
             dispatch(profileActions.updateProfile({age: Number(value)}))
-        } else if(value === ''){
+        } else if (value === '') {
             dispatch(profileActions.updateProfile({age: 0}))
         }
     }, [dispatch])
