@@ -740,7 +740,7 @@
       "id": "4",
       "first": "user",
       "lastname": "forTest",
-      "age": 66,
+      "age": 0,
       "currency": "RUB",
       "country": "Russia",
       "city": "Saint-Petersburg",

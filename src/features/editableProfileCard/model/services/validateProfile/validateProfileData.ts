@@ -21,7 +21,7 @@ export const validateProfileData = (profile?: Profile) => {
         errors.push(ValidateProfileError.INCORRECT_USER_DATA)
     }
 
-    if ( Number.isNaN(age)) {
+    if (Number.isNaN(age) || age === 0 || age === undefined) {
         errors.push(ValidateProfileError.INCORRECT_AGE)
     }
 
