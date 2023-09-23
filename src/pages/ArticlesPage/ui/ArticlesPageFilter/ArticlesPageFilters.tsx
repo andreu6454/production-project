@@ -2,11 +2,11 @@ import {classNames} from "@/shared/lib/classNames/classNames";
 import cls from './ArticlesPageFilters.module.scss'
 import {memo} from "react";
 import {useTranslation} from "react-i18next";
-import {ArticlesViewSelector} from "@/features/ArticlesViewSelector";
+import {ArticlesViewSelector} from "src/features/articlesViewSelector";
 import {Card} from "@/shared/ui/deprecated/Card";
 import {Input} from "@/shared/ui/deprecated/Input";
-import {ArticleSortSelector} from "@/features/ArticleSortSelector";
-import {ArticleTypeTabs} from "@/features/ArticleTypeTabs/ArticleTypeTabs";
+import {ArticleSortSelector} from "src/features/articleSortSelector";
+import {ArticleTypeTabs} from "@/features/articleTypeTabs/ArticleTypeTabs";
 import {HStack, VStack} from "@/shared/ui/redesigned/Stack";
 import {useArticleFilters} from "../../lib/hooks/useArticleFilters";
 

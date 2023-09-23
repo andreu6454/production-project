@@ -6,8 +6,8 @@ import {User} from "@/entities/User";
 import {HStack, VStack} from "@/shared/ui/redesigned/Stack";
 import {Avatar} from "@/shared/ui/redesigned/Avatar";
 import {Text} from "@/shared/ui/redesigned/Text";
-import {ArticleEditButton} from "@/features/ArticleEditButton";
-import {BackToArticlesButton} from "@/features/BackToArticlesButton";
+import {ArticleEditButton} from "src/features/articleEditButton";
+import {BackToArticlesButton} from "src/features/backToArticlesButton";
 
 interface ArticleAdditionalInfoProps {
     className?: string;

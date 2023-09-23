@@ -1,7 +1,7 @@
 import {Country} from "@/entities/Country/model/types/Country";
 import {Currency} from "@/entities/Currency/model/types/types";
 import {StateSchema} from "@/app/providers/StoreProvider";
-import {getLoginError} from "@/features/AuthByUsername/model/selectors/getLoginError/getLoginError";
+import {getLoginError} from "@/features/authByUsername/model/selectors/getLoginError/getLoginError";
 import {getProfileForm} from "./getProfileForm";
 
 test('should return profile data', () => {

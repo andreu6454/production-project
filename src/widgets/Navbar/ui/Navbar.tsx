@@ -3,7 +3,7 @@ import {classNames} from "@/shared/lib/classNames/classNames";
 import cls from './Navbar.module.scss'
 import {Button as ButtonDeprecated, ButtonTheme} from "@/shared/ui/deprecated/Button";
 import {useTranslation} from "react-i18next";
-import {LoginModal} from "@/features/AuthByUsername";
+import {LoginModal} from "src/features/authByUsername";
 import {useSelector} from "react-redux";
 import {getUserAuthData} from "@/entities/User";
 import {Text, TextTheme} from "@/shared/ui/deprecated/Text";

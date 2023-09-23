@@ -1,13 +1,13 @@
 import {CounterSchema} from "@/entities/Counter";
 import {UserSchema} from "@/entities/User";
-import {LoginSchema} from "@/features/AuthByUsername";
+import {LoginSchema} from "src/features/authByUsername";
 import {AnyAction, CombinedState, EnhancedStore, Reducer, ReducersMapObject} from "@reduxjs/toolkit";
 import {AxiosInstance} from "axios";
 import {To} from "react-router-dom";
 import {NavigateOptions} from "react-router";
 import {ArticleDetailsSchema} from "@/entities/Article";
 import {ArticleDetailsPageSchema} from "@/pages/ArticleDetailsPage";
-import {AddCommentFormSchema} from "@/features/AddCommentForm";
+import {AddCommentFormSchema} from "src/features/addCommentForm";
 import {ArticlePageSchema} from "@/pages/ArticlesPage";
 import {scrollRestorationSchema} from "@/widgets/Page/ScrollRestoration";
 import {rtkApi} from "@/shared/api/rtkApi";

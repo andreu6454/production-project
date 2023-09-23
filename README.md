@@ -78,7 +78,7 @@ npm run start:dev или npm run start:dev:vite - запуск сервера + 
 
 ----
 
-### Работа с данными
+## Работа с данными
 
 Взаимодействие с данными осуществляется с помощью redux toolkit.
 По возможности переиспользуемые сущности необходимо нормализовать с помощью EntityAdapter
@@ -90,7 +90,7 @@ npm run start:dev или npm run start:dev:vite - запуск сервера + 
 
 ----
 
-### Работа с feature-flags
+## Работа с feature-flags
 
 Разрешено использовать feature flags только с помощью хелпера toggleFeatures
 
@@ -123,16 +123,21 @@ off: функция, которая работает после Выключен
 
 ## Фичи (features)
 
-- [addCommentForm](/src/features/AddCommentForm)
+- [addCommentForm](/src/features/addCommentForm)
+- [articleEditButton](/src/features/articleEditButton)
+- [articlePageGreeting](/src/features/articlePageGreeting)
 - [articleRating](/src/features/articleRating)
 - [profileRating](/src/features/profileRating)
 - [articleRecommendationsList](/src/features/articleRecommendationsList)
-- [articleSortSelector](/src/features/ArticleSortSelector)
-- [articleViewSelector](/src/features/ArticlesViewSelector)
-- [articleTypeTabs](/src/features/ArticleTypeTabs)
-- [AuthByUsername](/src/features/AuthByUsername)
+- [articleSortSelector](/src/features/articleSortSelector)
+- [articleViewSelector](/src/features/articlesViewSelector)
+- [articleTypeTabs](/src/features/articleTypeTabs)
+- [authByUsername](/src/features/authByUsername)
 - [avatarDropdown](/src/features/avatarDropdown)
+- [backToArticlesButton](/src/features/backToArticlesButton)
 - [editableProfileCard](/src/features/editableProfileCard)
-- [LangSwitcher](/src/features/LangSwitcher)
+- [langSwitcher](/src/features/langSwitcher)
 - [notificationButton](/src/features/notificationsButton)
-- [ThemeSwitcher](/src/features/ThemeSwitcher)
+- [themeSwitcher](/src/features/themeSwitcher)
+- [scrollToTopButton](/src/features/scrollToTopButton)
+- [uiDesignSwitcher](/src/features/uiDesignSwitcher)

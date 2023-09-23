@@ -2,7 +2,7 @@ import {classNames} from "@/shared/lib/classNames/classNames";
 import {memo, useCallback, useEffect} from "react";
 import {useTranslation} from "react-i18next";
 import {Text as TextDeprecated, TextSize} from "@/shared/ui/deprecated/Text";
-import {AddCommentForm} from "@/features/AddCommentForm";
+import {AddCommentForm} from "src/features/addCommentForm";
 import {CommentList} from "@/entities/Comment";
 import {VStack} from "@/shared/ui/redesigned/Stack";
 import {useSelector} from "react-redux";
