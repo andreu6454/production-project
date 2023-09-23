@@ -45,22 +45,22 @@ export const ArticleDetailsRedesign = (props: ArticleDetailsRedesignProps) => {
     } else {
         content = (
             <>
-            <Text
-                bold
-                size={'l'}
-                title={article?.title}
-            />
-            <Text
-                size={'l'}
-                title={article?.subtitle}
-            />
-            <AppImage
-                src={article?.img}
-                fallback={<Skeleton width={'100%'} height={420} border={'16px'}/>}
-                className={cls.img}
-            />
+                <Text
+                    bold
+                    size={'l'}
+                    title={article?.title}
+                />
+                <Text
+                    size={'l'}
+                    title={article?.subtitle}
+                />
+                <AppImage
+                    src={article?.img}
+                    fallback={<Skeleton width={'100%'} height={420} border={'16px'}/>}
+                    className={cls.img}
+                />
 
-            {article?.blocks.map(renderArticleBlock)}
+                {article?.blocks.map(renderArticleBlock)}
             </>
         )
     }

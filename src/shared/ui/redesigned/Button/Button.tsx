@@ -1,6 +1,6 @@
 import {classNames, Mods} from "@/shared/lib/classNames/classNames";
 import cls from './Button.module.scss'
-import {ButtonHTMLAttributes, FC, memo, ReactNode} from "react";
+import {ButtonHTMLAttributes, FC, ForwardedRef, forwardRef, ReactNode} from "react";
 
 export type ButtonVariant = "clear" | "clearInverted" | 'outline' | 'filled'
 export type ButtonColor = "normal" | "success" | 'error'
@@ -13,14 +13,14 @@ interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
     color?: ButtonColor;
     square?: boolean;
     size?: ButtonSize;
-    disabled?: boolean;
     fullWidth?: boolean;
     addonLeft?: ReactNode;
     addonRight?: ReactNode;
+    Disabled?: boolean;
 }
 
 
-export const Button: FC<ButtonProps> = memo((props) => {
+export const Button: FC<ButtonProps> = forwardRef((props, ref: ForwardedRef<HTMLButtonElement>) => {
 
     const {
         className,
@@ -28,8 +28,8 @@ export const Button: FC<ButtonProps> = memo((props) => {
         variant = "outline",
         square,
         size = 'm',
-        disabled,
         fullWidth,
+        Disabled,
         addonLeft,
         addonRight,
         color = 'normal',
@@ -39,15 +39,16 @@ export const Button: FC<ButtonProps> = memo((props) => {
 
     const mods: Mods = {
         [cls.square]: square,
-        [cls.disabled]: disabled,
+        [cls.disabled]: Disabled,
         [cls.fullWhidth]: fullWidth,
         [cls.withAddon]: Boolean(addonLeft) || Boolean(addonRight),
     }
     return (
         <button
             className={classNames(cls.Button, mods, [className, cls[variant], cls[size], cls[color]])}
-            disabled={disabled}
+            disabled={Disabled}
             {...otherProps}
+            ref={ref}
         >
             <div className={cls.addonLeft}>{addonLeft}</div>
             {children}

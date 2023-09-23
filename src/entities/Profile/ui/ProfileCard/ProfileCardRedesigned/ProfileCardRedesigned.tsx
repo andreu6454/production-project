@@ -114,7 +114,7 @@ export const ProfileCardRedesigned = (props: ProfileCardRedesignedProps) => {
                 <HStack max gap={'24'}>
                     <VStack max gap={'16'} align={'start'}>
                         <Input
-                            data-testId={"ProfileCard.firstname"}
+                            data-testid={"ProfileCard.firstname"}
                             onChange={onChangeFirstname}
                             value={data?.first}
                             label={t('Имя')}

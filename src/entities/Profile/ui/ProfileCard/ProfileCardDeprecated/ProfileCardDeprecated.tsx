@@ -94,7 +94,7 @@ export const ProfileCardDeprecated = (props: ProfileCardProps) => {
 
             <VStack align={'start'} gap={'8'} className={cls.inputsWrapper}>
                 <Input
-                    data-testId={"ProfileCard.firstname"}
+                    data-testid={"ProfileCard.firstname"}
                     onChange={onChangeFirstname}
                     value={data?.first}
                     placeholder={t('Имя')}
