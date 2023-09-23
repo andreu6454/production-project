@@ -15,7 +15,7 @@ interface ArticleEditButtonProps {
 
 export const ArticleEditButton = memo((props: ArticleEditButtonProps) => {
     const {className} = props
-    const {t} = useTranslation()
+    const {t} = useTranslation('article-details')
 
     const article = useSelector(getArticleDetailsData)
 

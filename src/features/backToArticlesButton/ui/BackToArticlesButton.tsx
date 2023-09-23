@@ -9,7 +9,7 @@ import {getRouteArticles} from "@/shared/const/router";
 
 export const BackToArticlesButton = memo(() => {
 
-    const {t} = useTranslation()
+    const {t} = useTranslation('article-details')
 
     const navigate = useNavigate()
 

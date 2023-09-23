@@ -36,7 +36,7 @@ export const ArticlesFilters = memo((props: ArticlesFiltersProps) => {
         onChangeSort,
         onChangeType,
     } = props
-    const {t} = useTranslation()
+    const {t} = useTranslation('article')
 
     return (
         <Card

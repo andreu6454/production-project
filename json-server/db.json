@@ -641,7 +641,7 @@
       },
       "avatar": "https://i.pinimg.com/736x/86/95/54/8695540db1e9224367ed9d1a4884ccfc.jpg",
       "jsonSettings": {
-        "theme": "app_purple_theme",
+        "theme": "app_orange_theme",
         "isArticlesPageWasOpened": true
       }
     },
@@ -697,7 +697,7 @@
       },
       "avatar": "https://cdn-icons-png.flaticon.com/512/219/219969.png",
       "jsonSettings": {
-        "theme": "app_light_theme",
+        "theme": "app_dark_theme",
         "isArticlesPageWasOpened": true
       }
     }
@@ -740,7 +740,7 @@
       "id": "4",
       "first": "user",
       "lastname": "forTest",
-      "age": 21,
+      "age": 66,
       "currency": "RUB",
       "country": "Russia",
       "city": "Saint-Petersburg",

@@ -57,7 +57,7 @@ export const ArticleSortSelector = memo((props: ArticleSortSelectorProps) => {
             on={
                 <div className={classNames(cls.ArticleSortSelectorRedesigned, {}, [className])}>
                     <VStack gap={'8'} align={'start'}>
-                        <Text align={'left'} text={t("Сортировать по:")}/>
+                        <Text align={'left'} text={t("Сортировать по") + ':'}/>
                         <ListBox
                             value={sort}
                             onChange={onChangeSort}

@@ -76,9 +76,11 @@ export const EditableProfileCard = memo((props: EditableProfileCardProps) => {
     }, [dispatch])
 
     const onChangeAge = useCallback((value?: string) => {
-        let regExp = /^[0-9]/
+        let regExp = /^[0-9]/ || ""
         if (regExp.test(value || '')) {
             dispatch(profileActions.updateProfile({age: Number(value)}))
+        } else if(value === ''){
+            dispatch(profileActions.updateProfile({age: 0}))
         }
     }, [dispatch])
 

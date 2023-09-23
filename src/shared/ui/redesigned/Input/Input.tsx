@@ -10,7 +10,7 @@ type InputSize = 's' | 'm' | 'l'
 
 interface InputProps extends HTMLInputProps {
     className?: string;
-    value?: string,
+    value?: string | number,
     onChange?: (value: string) => void,
     autofocus?: boolean,
     readOnly?: boolean,
