@@ -9,6 +9,8 @@ export enum AppRoutes {
     ADMIN_PANEL = 'admin_panel',
     FORBIDDEN = 'forbidden',
     SETTINGS = 'settings',
+    MOVIES = 'movies',
+    MOVIES_DETAILS = 'movies_details',
 
     NOTFOUND = 'not_found'
 }
@@ -24,6 +26,8 @@ export const getRouteArticleCreate = () => '/articles/new';
 export const getRouteArticleEdit = (id: string) => `/articles/${id}/edit`;
 export const getRouteAdmin = () => '/admin';
 export const getRouteForbidden = () => '/forbidden';
+export const getRouteMovies = () => '/movies';
+export const getRouteMoviesDetails = (id: string) => `movies/${id}`;
 
 
 export const AppRouteByPathPattern: Record<string, AppRoutes> = {
@@ -36,5 +40,7 @@ export const AppRouteByPathPattern: Record<string, AppRoutes> = {
     [getRouteArticleCreate()]: AppRoutes.ARTICLE_CREATE,
     [getRouteArticleEdit(':id')]: AppRoutes.ARTICLE_EDIT,
     [getRouteAdmin()]: AppRoutes.ADMIN_PANEL,
+    [getRouteMovies()]: AppRoutes.MOVIES,
+    [getRouteMoviesDetails(':id')]: AppRoutes.MOVIES_DETAILS,
     [getRouteForbidden()]: AppRoutes.FORBIDDEN
 }

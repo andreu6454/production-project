@@ -1,0 +1,1 @@
+export {MoviesDetailsPageAsync as MovieDetailsPage} from "./ui/MovieDetailsPage/MoviesDetailsPage.async";

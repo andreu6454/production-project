@@ -9,9 +9,10 @@ import MainIcon from '@/shared/assets/icons/home.svg';
 import ArticleIcon from '@/shared/assets/icons/article.svg';
 import AboutIcon from '@/shared/assets/icons/Info.svg';
 import ProfileIcon from '@/shared/assets/icons/avatar.svg';
+import MovieIcon from '@/shared/assets/icons/movie-icon.svg';
 
 import {SidebarItemType} from "../types/sidebar";
-import {getRouteAbout, getRouteArticles, getRouteMain, getRouteProfile} from "@/shared/const/router";
+import {getRouteAbout, getRouteArticles, getRouteMain, getRouteMovies, getRouteProfile} from "@/shared/const/router";
 import {toggleFeatures} from "@/shared/lib/features";
 
 export const getSidebarItems = createSelector(
@@ -60,6 +61,12 @@ export const getSidebarItems = createSelector(
                         on: () => ArticleIcon,
                     }),
                     text: 'Статьи',
+                    authOnly: true,
+                },
+                {
+                    path: getRouteMovies(),
+                    Icon: MovieIcon,
+                    text: 'Фильмы',
                     authOnly: true,
                 },
             );

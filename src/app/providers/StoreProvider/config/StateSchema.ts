@@ -12,6 +12,8 @@ import {ArticlePageSchema} from "@/pages/ArticlesPage";
 import {scrollRestorationSchema} from "@/widgets/Page/ScrollRestoration";
 import {rtkApi} from "@/shared/api/rtkApi";
 import {ProfileSchema} from "@/features/editableProfileCard";
+import {MoviesPageSchema} from "@/pages/MoviesPage";
+import {MovieDetailsSchema} from "@/entities/Movie/";
 
 
 export interface StateSchema {
@@ -26,8 +28,9 @@ export interface StateSchema {
     articleDetails?: ArticleDetailsSchema,
     addCommentForm?: AddCommentFormSchema,
     articlesPage?: ArticlePageSchema,
-    articleDetailsPage?: ArticleDetailsPageSchema
-
+    articleDetailsPage?: ArticleDetailsPageSchema,
+    moviesPage?: MoviesPageSchema
+    movieDetails?: MovieDetailsSchema
 }
 
 export type StateSchemaKey = keyof StateSchema;

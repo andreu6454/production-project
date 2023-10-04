@@ -13,10 +13,12 @@ import {
     getRouteAbout, getRouteAdmin, getRouteArticleCreate,
     getRouteArticleDetails, getRouteArticleEdit,
     getRouteArticles, getRouteForbidden,
-    getRouteMain, getRouteProfile, getRouteSettings,
+    getRouteMain, getRouteMovies, getRouteMoviesDetails, getRouteProfile, getRouteSettings,
 } from "@/shared/const/router";
 import {AppRouteProps} from "@/shared/types/router";
 import {SettingsPage} from "@/pages/SettingsPage";
+import {MoviesPage} from "@/pages/MoviesPage";
+import {MovieDetailsPage} from "@/pages/MovieDetailsPage/";
 
 
 export const routeConfig: Record<AppRoutes, AppRouteProps> = {
@@ -38,6 +40,16 @@ export const routeConfig: Record<AppRoutes, AppRouteProps> = {
     [AppRoutes.PROFILE]: {
         path: getRouteProfile(':id'),
         element: <ProfilePage/>,
+        authOnly: true
+    },
+    [AppRoutes.MOVIES]: {
+        path: getRouteMovies(),
+        element: <MoviesPage/>,
+        authOnly: true
+    },
+    [AppRoutes.MOVIES_DETAILS]: {
+        path: getRouteMoviesDetails(':id'),
+        element: <MovieDetailsPage/>,
         authOnly: true
     },
     [AppRoutes.ARTICLES]: {
