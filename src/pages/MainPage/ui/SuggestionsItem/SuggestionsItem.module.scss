@@ -1,0 +1,10 @@
+.SuggestionsItem {
+  width: 240px;
+  height: 350px;
+  &:hover{
+    transform: scale(110%);
+  }
+  .container{
+    padding: 16px;
+  }
+}

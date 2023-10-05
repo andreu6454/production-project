@@ -43,5 +43,8 @@
   "Просмотров": "views",
   "{{count}} Просмотров_zero": "0 views",
   "{{count}} Просмотров_one": "1 view",
-  "{{count}} Просмотров_other": "{{count}} views"
+  "{{count}} Просмотров_other": "{{count}} views",
+  "Articles": "Articles",
+  "Здесь вы можете найти фильм и информацию о нем!": "You can find the film and information about it!",
+  "Здесь вы можете искать и просматривать статьи на различные темы!": "You can search and view articles on various topics!"
 }
