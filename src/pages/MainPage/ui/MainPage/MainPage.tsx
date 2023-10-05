@@ -9,7 +9,7 @@ const MainPage = () => {
     const {t} = useTranslation('main')
 
     return (
-        <Page data-testid={"MainPage"}>
+        <Page data-testid="MainPage">
             <VStack gap={'32'} max>
                 <Text size={'l'} bold title={t('Главная страница')}/>
                 <Card max padding={'24'} border={'partial'} variant={"outlined"}>

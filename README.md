@@ -120,6 +120,7 @@ off: функция, которая работает после Выключен
 - [Profile](/src/entities/Profile)
 - [Rating](/src/entities/Rating)
 - [User](/src/entities/User)
+- [Movie](/src/entities/Movie)
 
 ## Фичи (features)
 
@@ -141,3 +142,5 @@ off: функция, которая работает после Выключен
 - [themeSwitcher](/src/features/themeSwitcher)
 - [scrollToTopButton](/src/features/scrollToTopButton)
 - [uiDesignSwitcher](/src/features/uiDesignSwitcher)
+- [moviesCountryTabs](/src/features/moviesCountryTabs)
+- [moviesGenreTabs](/src/features/moviesGenreTabs)
