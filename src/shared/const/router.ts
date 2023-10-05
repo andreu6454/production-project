@@ -27,7 +27,7 @@ export const getRouteArticleEdit = (id: string) => `/articles/${id}/edit`;
 export const getRouteAdmin = () => '/admin';
 export const getRouteForbidden = () => '/forbidden';
 export const getRouteMovies = () => '/movies';
-export const getRouteMoviesDetails = (id: string) => `movies/${id}`;
+export const getRouteMoviesDetails = (id: string) => `/movies/${id}`;
 
 
 export const AppRouteByPathPattern: Record<string, AppRoutes> = {

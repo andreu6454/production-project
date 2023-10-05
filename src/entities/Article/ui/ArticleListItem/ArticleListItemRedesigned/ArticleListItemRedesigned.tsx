@@ -1,7 +1,7 @@
 import {classNames} from "@/shared/lib/classNames/classNames";
 import {useTranslation} from "react-i18next";
 import {Article, ArticleBlockType, ArticleTextBlock, ArticleView} from "../../../model/types/article";
-import {HTMLAttributeAnchorTarget} from "react";
+import {HTMLAttributeAnchorTarget, memo} from "react";
 import {Text} from "@/shared/ui/redesigned/Text";
 import cls from "./ArticleListItemRedesigned.module.scss";
 import {Icon} from "@/shared/ui/redesigned/Icon";
@@ -22,7 +22,7 @@ interface ArticleListItemProps {
     target?: HTMLAttributeAnchorTarget
 }
 
-export const ArticleListItemRedesigned = (props: ArticleListItemProps) => {
+export const ArticleListItemRedesigned = memo((props: ArticleListItemProps) => {
     const {className, article, view, target} = props
 
     const {t} = useTranslation('article')
@@ -118,4 +118,4 @@ export const ArticleListItemRedesigned = (props: ArticleListItemProps) => {
             </Card>
         </AppLink>
     );
-};
+});

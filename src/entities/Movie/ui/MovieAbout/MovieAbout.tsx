@@ -33,7 +33,6 @@ export const MovieAbout = memo((props: MovieAboutProps) => {
     const composer = data?.persons?.filter(
         el => el.profession === "композиторы").map((el) => el.enName).slice(0,3).join(', ')
 
-    console.log(data?.persons)
 
     return (
         <VStack align={'start'} justify={'start'} className={classNames(cls.MovieAbout, {}, [className])}>
@@ -108,7 +107,7 @@ export const MovieAbout = memo((props: MovieAboutProps) => {
                 <span className={cls.fieldName}>
                     {t("Бюджет")}
                 </span>
-                {data?.budget?.value + (data?.budget?.currency || "$")}
+                {(data?.budget?.currency || "$") + data?.budget?.value}
             </span>
             <span className={cls.field}>
                 <span className={cls.fieldName}>

@@ -6,9 +6,9 @@ import {DynamicModuleLoader, ReducersList} from "@/shared/lib/components/Dynamic
 import {Page} from "@/widgets/Page/Page";
 import {useParams} from "react-router-dom";
 import {Text} from "@/shared/ui/redesigned/Text";
-import {MovieDetailsReducer} from "@/entities/Movie/model/slices/movieDetailsSlice";
+import {MovieDetailsReducer} from "@/entities/Movie/";
 import {VStack} from "@/shared/ui/redesigned/Stack";
-import {MovieDetailsContainer} from "@/pages/MovieDetailsPage/ui/MovieDetailsContainer/MovieDetailsContainer";
+import {MovieDetailsContainer} from "../MovieDetailsContainer/MovieDetailsContainer";
 
 interface MovieDetailsPageProps {
     className?: string;

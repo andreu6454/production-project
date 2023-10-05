@@ -1,7 +1,7 @@
 import {classNames} from "@/shared/lib/classNames/classNames";
 import {memo} from "react";
 import {Card} from "@/shared/ui/redesigned/Card";
-import {MovieDetails} from "@/entities/Movie/ui/MovieDetails/MovieDetails";
+import {MovieDetails} from "@/entities/Movie/";
 
 interface MovieDetailsContainerProps {
     className?: string;

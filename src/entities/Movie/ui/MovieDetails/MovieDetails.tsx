@@ -3,7 +3,11 @@ import {memo, useEffect} from "react";
 import {useTranslation} from "react-i18next";
 import {useAppDispatch} from "@/shared/lib/hooks/useAppDispatch/useAppDispatch";
 import {useSelector} from "react-redux";
-import {getMovieDetailsData, getMovieDetailsIsLoading} from "@/entities/Movie/model/selectors/movieDetails";
+import {
+    getMovieDetailsData,
+    getMovieDetailsError,
+    getMovieDetailsIsLoading
+} from "@/entities/Movie/model/selectors/movieDetails";
 import {fetchMovieById} from "@/entities/Movie/model/services/fetchMovieById/fetchMovieById";
 import {AppImage} from "@/shared/ui/redesigned/AppImage";
 import {VStack} from "@/shared/ui/redesigned/Stack";
@@ -11,10 +15,13 @@ import {Text} from "@/shared/ui/redesigned/Text";
 import {MovieAbout} from "@/entities/Movie/ui/MovieAbout/MovieAbout";
 import {StickyContentLayout} from "@/shared/layouts/StickyContentLayout";
 import {MovieDetailsSkeleton} from "@/entities/Movie/ui/MovieDetails/MovieDetailsSkeleton";
+import {MovieDtoV13} from "@openmoviedb/kinopoiskdev_client";
+import {MovieTrailer} from "@/entities/Movie/ui/MovieTrailer/MovieTrailer";
 
 interface MovieDetailsProps {
     className?: string;
-    id?: number
+    id?: number;
+    data?: MovieDtoV13;
 }
 
 export const MovieDetails = memo((props: MovieDetailsProps) => {
@@ -27,6 +34,7 @@ export const MovieDetails = memo((props: MovieDetailsProps) => {
     const dispatch = useAppDispatch()
     const data = useSelector(getMovieDetailsData)
     const isLoading = useSelector(getMovieDetailsIsLoading)
+    const error = useSelector(getMovieDetailsError)
 
 
     useEffect(() => {
@@ -41,8 +49,15 @@ export const MovieDetails = memo((props: MovieDetailsProps) => {
         )
     }
 
-    return (
+    // if (error) {
+    //     return (
+    //         <div className={classNames(cls.ArticleDetailesPage, {}, [className])}>
+    //             <Text variant={'error'} title={"Ошибка"} text={error}/>
+    //         </div>
+    //     )
+    // }
 
+    return (
         <>
             <StickyContentLayout
                 left={
@@ -66,18 +81,7 @@ export const MovieDetails = memo((props: MovieDetailsProps) => {
                     </VStack>
                 }
             />
-            <VStack gap={'16'} align={'center'} max>
-                <Text title={'Трейлер'} bold/>
-                <iframe
-                    width="800px"
-                    height="400px"
-                    src={data?.videos?.trailers?.[0].url}
-                    title="YouTube video player"
-                    frameBorder="0"
-                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                    allowFullScreen
-                />
-            </VStack>
+            <MovieTrailer/>
         </>
     );
 });
