@@ -1,0 +1,55 @@
+import {useSelector} from "react-redux";
+import {
+    getMoviesPageCountry,
+    getMoviesPageGenre,
+    getMoviesPageSearch,
+    getMoviesPageYear
+} from "../../model/selectors/moviesPageSelectors";
+import {useCallback} from "react";
+import {useAppDispatch} from "@/shared/lib/hooks/useAppDispatch/useAppDispatch";
+import {MoviesPageActions} from "../../model/slices/MoviesPageSlice";
+import {useDebounce} from "@/shared/lib/hooks/useDebounce/useDebounce";
+import {fetchMoviesList} from "../../model/services/fetchMoviesList";
+
+export const useMoviesFilters = () => {
+    const year = useSelector(getMoviesPageYear)
+    const country = useSelector(getMoviesPageCountry)
+    const genre = useSelector(getMoviesPageGenre)
+    const search = useSelector(getMoviesPageSearch)
+
+    const dispatch = useAppDispatch()
+
+    const fetchData = useCallback(() => {
+        dispatch(fetchMoviesList())
+    }, [dispatch])
+
+    const debouncedFetchData = useDebounce(fetchData, 500)
+
+    const onChangeYear = useCallback((year: string) => {
+        dispatch(MoviesPageActions.setYear(year))
+        fetchData()
+    }, [dispatch, fetchData])
+    const onChangeCountry = useCallback((country: string) => {
+        dispatch(MoviesPageActions.setCountry(country))
+        fetchData()
+    }, [dispatch, fetchData])
+    const onChangeGenre = useCallback((genre: string) => {
+        dispatch(MoviesPageActions.setGenre(genre))
+        fetchData()
+    }, [dispatch, fetchData])
+    const onChangeSearch = useCallback((search: string) => {
+        dispatch(MoviesPageActions.setSearch(search))
+        debouncedFetchData()
+    }, [dispatch, debouncedFetchData])
+
+    return {
+        year,
+        country,
+        genre,
+        search,
+        onChangeYear,
+        onChangeCountry,
+        onChangeGenre,
+        onChangeSearch
+    }
+}

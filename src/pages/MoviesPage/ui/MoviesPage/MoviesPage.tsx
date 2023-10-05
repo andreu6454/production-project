@@ -9,6 +9,9 @@ import {getMoviesPageData} from "@/pages/MoviesPage/model/selectors/moviesPageSe
 import {useAppDispatch} from "@/shared/lib/hooks/useAppDispatch/useAppDispatch";
 import {fetchMoviesList} from "@/pages/MoviesPage/model/services/fetchMoviesList";
 import {MovieList} from "@/entities/Movie/ui/MovieList/MovieList";
+import {ArticlePageGreeting} from "@/features/articlePageGreeting";
+import {StickyContentLayout} from "@/shared/layouts/StickyContentLayout";
+import {MoviesFiltersContainer} from "@/pages/MoviesPage/ui/FiltersContainer/FiltersContainer";
 
 interface MoviesPageProps {
     className?: string;
@@ -31,9 +34,15 @@ const MoviesPage = memo((props: MoviesPageProps) => {
 
     return (
         <DynamicModuleLoader name={'moviesPage'} reducers={reducers} removeAfterUnmount>
-            <Page className={classNames(cls.MoviesPage, {}, [className])}>
-                <MovieList movies={moviesData?.docs}/>
-            </Page>
+            <StickyContentLayout
+                content={
+                    <Page className={classNames(cls.MoviesPage, {}, [className])}>
+                        <MovieList movies={moviesData?.docs}/>
+                        <ArticlePageGreeting/>
+                    </Page>
+                }
+                right={<MoviesFiltersContainer/>}
+            />
         </DynamicModuleLoader>
     );
 });

@@ -32,8 +32,8 @@ export const MovieListItem = memo((props: MovieListItemProps) => {
             border={'partial'}
             className={classNames('', {}, [className])}
         >
-            <AppLink to={getRouteMoviesDetails(movie?.id + '')}>
-                <HStack justify={'between'} gap={'32'} align={'start'}>
+            <HStack justify={'between'} gap={'32'} align={'start'}>
+                <AppLink to={getRouteMoviesDetails(movie?.id + '')}>
                     <HStack gap={'32'} className={cls.description}>
                         <Text bold title={index + ''}/>
                         <AppImage src={movie.poster?.previewUrl} width={72} height={108}/>
@@ -43,12 +43,12 @@ export const MovieListItem = memo((props: MovieListItemProps) => {
                             <Text Opacity={'80%'} size={'s'} text={description2}/>
                         </VStack>
                     </HStack>
-                    <VStack align={'center'}>
-                        <Text variant={'accent'} bold title={movie.rating?.kp?.toFixed(1) + ''} size={'l'}/>
-                        <Text text={votesCount.toLocaleString('ru-Ru') + ' оценок'}/>
-                    </VStack>
-                </HStack>
-            </AppLink>
+                </AppLink>
+                <VStack align={'center'}>
+                    <Text variant={'accent'} bold title={movie.rating?.kp?.toFixed(1) + ''} size={'l'}/>
+                    <Text size={'s'} align={'center'} title={votesCount.toLocaleString('ru-Ru')} text={'оценок'}/>
+                </VStack>
+            </HStack>
         </Card>
     );
 });

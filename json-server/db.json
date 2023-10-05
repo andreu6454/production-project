@@ -660,7 +660,7 @@
       },
       "avatar": "https://i.pinimg.com/564x/71/af/c8/71afc81a9bdb88723d4b36425021e869.jpg",
       "jsonSettings": {
-        "theme": "app_dark_theme",
+        "theme": "app_orange_theme",
         "isArticlesPageWasOpened": true
       }
     },
@@ -697,7 +697,7 @@
       },
       "avatar": "https://cdn-icons-png.flaticon.com/512/219/219969.png",
       "jsonSettings": {
-        "theme": "app_dark_theme",
+        "theme": "app_orange_theme",
         "isArticlesPageWasOpened": true
       }
     }
