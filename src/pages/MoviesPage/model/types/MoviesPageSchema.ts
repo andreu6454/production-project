@@ -4,6 +4,7 @@ export interface MoviesPageSchema {
     isLoading?: boolean;
     error?: string;
     data?: MovieDocsResponseDtoV13;
+    isInited?: boolean;
 
     page: number;
     limit?: number;

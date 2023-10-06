@@ -6,15 +6,16 @@ import {MovieDtoV13} from "@openmoviedb/kinopoiskdev_client";
 const initialState: MovieDetailsSchema = {
     isLoading: false,
     error: '',
-    data: {} as MovieDtoV13
+    data: {} as MovieDtoV13,
+    isInited: false
 };
 
 export const MovieDetailsSlice = createSlice({
-    name: 'Movie',
+    name: 'MovieDetailsSlice',
     initialState,
     reducers: {
-        template: (state, action: PayloadAction<string>) => {
-
+        setIsLoading: (state, action: PayloadAction<boolean>) => {
+            state.isLoading = action.payload;
         },
     },
     extraReducers: (builder) => {
@@ -25,7 +26,8 @@ export const MovieDetailsSlice = createSlice({
             })
             .addCase(fetchMovieById.fulfilled, (state, action) => {
                 state.isLoading = false;
-                state.data = action.payload
+                state.data = action.payload;
+                state.isInited = true;
             })
             .addCase(fetchMovieById.rejected, (state, action) => {
                 state.isLoading = false;

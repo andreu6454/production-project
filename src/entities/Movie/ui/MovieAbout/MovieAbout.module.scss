@@ -6,12 +6,12 @@
   font: var(--font-s-redesigned);
   overflow-y: hidden;
   overflow-x: hidden;
-  max-width: 550px;
+
 }
 .fieldName{
   width: 160px;
   opacity: 0.8;
 }
 .fieldDescription{
-
+  max-width: 350px;
 }

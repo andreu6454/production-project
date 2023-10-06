@@ -19,7 +19,7 @@ export const MovieListItemSkeleton = () => {
                 </HStack>
                 <VStack gap={'8'} align={'center'}>
                     <Skeleton width={45} height={45} border={'12px'}/>
-                    <Skeleton width={133} height={24} border={'12px'}/>
+                    <Skeleton width={75} height={24} border={'12px'}/>
                 </VStack>
             </HStack>
         </Card>

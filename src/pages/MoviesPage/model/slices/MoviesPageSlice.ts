@@ -1,11 +1,11 @@
 import {createSlice, PayloadAction} from '@reduxjs/toolkit';
 import {MoviesPageSchema} from '../types/MoviesPageSchema';
 import {fetchMoviesList} from "@/pages/MoviesPage/model/services/fetchMoviesList";
-import {fetchMoviesByFilter} from "@/pages/MoviesPage/model/services/fetchMoviesByFilter";
 
 const initialState: MoviesPageSchema = {
     isLoading: false,
     page: 1,
+    isInited: false
 };
 
 export const MoviesPageSlice = createSlice({
@@ -14,6 +14,9 @@ export const MoviesPageSlice = createSlice({
     reducers: {
         setSearch: (state, action: PayloadAction<string>) => {
             state.search = action.payload
+        },
+        setIsLoading: (state, action: PayloadAction<boolean>) => {
+            state.isLoading = action.payload
         },
         setYear: (state, action: PayloadAction<string>) => {
             state.year = action.payload
@@ -34,23 +37,12 @@ export const MoviesPageSlice = createSlice({
             .addCase(fetchMoviesList.fulfilled, (state, action) => {
                 state.isLoading = false;
                 state.data = action.payload;
+                state.isInited = true;
             })
             .addCase(fetchMoviesList.rejected, (state, action) => {
                 state.isLoading = false;
                 state.error = action.payload;
             })
-            .addCase(fetchMoviesByFilter.pending, (state) => {
-                state.isLoading = true;
-                state.error = undefined;
-            })
-            .addCase(fetchMoviesByFilter.fulfilled, (state, action) => {
-                state.isLoading = false;
-                state.data = action.payload;
-            })
-            .addCase(fetchMoviesByFilter.rejected, (state, action) => {
-                state.isLoading = false;
-                state.error = action.payload;
-            });
     },
 });
 

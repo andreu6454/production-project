@@ -17,23 +17,23 @@ export const MoviesGenreTabs = memo((props: MoviesGenreTabsProps) => {
 
     const genreOptions = useMemo(() => [
         {
-            value: 'Драма',
+            value: 'драма',
             content: t('Драма')
         },
         {
-            value: 'Комедия',
+            value: 'комедия',
             content: t('Комедия')
         },
         {
-            value: 'Фантастика',
+            value: 'фантастика',
             content: t('Фантастика')
         },
         {
-            value: 'Детектив',
+            value: 'детектив',
             content: t('Детектив')
         },
         {
-            value: 'Мультфильм',
+            value: 'мультфильм',
             content: t('Мультфильм')
         },
 

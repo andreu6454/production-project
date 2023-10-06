@@ -5,7 +5,7 @@ import {useAppDispatch} from "@/shared/lib/hooks/useAppDispatch/useAppDispatch";
 import {useSelector} from "react-redux";
 import {
     getMovieDetailsData,
-    getMovieDetailsError,
+    getMovieDetailsError, getMovieDetailsIsInited,
     getMovieDetailsIsLoading
 } from "@/entities/Movie/model/selectors/movieDetails";
 import {fetchMovieById} from "@/entities/Movie/model/services/fetchMovieById/fetchMovieById";
@@ -17,6 +17,7 @@ import {StickyContentLayout} from "@/shared/layouts/StickyContentLayout";
 import {MovieDetailsSkeleton} from "@/entities/Movie/ui/MovieDetails/MovieDetailsSkeleton";
 import {MovieDtoV13} from "@openmoviedb/kinopoiskdev_client";
 import {MovieTrailer} from "@/entities/Movie/ui/MovieTrailer/MovieTrailer";
+import {MovieDetailsActions} from "@/entities/Movie/model/slices/movieDetailsSlice";
 
 interface MovieDetailsProps {
     className?: string;
@@ -33,29 +34,23 @@ export const MovieDetails = memo((props: MovieDetailsProps) => {
     }
     const dispatch = useAppDispatch()
     const data = useSelector(getMovieDetailsData)
-    const isLoading = useSelector(getMovieDetailsIsLoading)
+    const isInited = useSelector(getMovieDetailsIsInited)
     const error = useSelector(getMovieDetailsError)
 
 
     useEffect(() => {
+        dispatch(MovieDetailsActions.setIsLoading(true))
         dispatch(fetchMovieById(Number(id)))
+        dispatch(MovieDetailsActions.setIsLoading(false))
     }, []);
 
     const votesCount: number = Number(data?.votes?.kp) || 0
 
-    if (isLoading) {
+    if (!isInited) {
         return (
             <MovieDetailsSkeleton/>
         )
     }
-
-    // if (error) {
-    //     return (
-    //         <div className={classNames(cls.ArticleDetailesPage, {}, [className])}>
-    //             <Text variant={'error'} title={"Ошибка"} text={error}/>
-    //         </div>
-    //     )
-    // }
 
     return (
         <>

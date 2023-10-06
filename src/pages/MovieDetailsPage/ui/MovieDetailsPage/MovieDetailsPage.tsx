@@ -33,6 +33,8 @@ const MovieDetailsPage = memo((props: MovieDetailsPageProps) => {
         )
     }
 
+    // todo Добавить обработку ошибок
+
     return (
         <DynamicModuleLoader name={'movieDetails'} reducers={reducers} removeAfterUnmount>
             <Page className={classNames(cls.MoviesPage, {}, [className])}>

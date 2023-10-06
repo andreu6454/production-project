@@ -8,7 +8,7 @@ import {
     getMoviesPageGenre,
     getMoviesPageSearch,
     getMoviesPageYear
-} from "@/pages/MoviesPage/model/selectors/moviesPageSelectors";
+} from "../selectors/moviesPageSelectors";
 
 export const fetchMoviesList =
     createAsyncThunk<MovieDocsResponseDtoV13, void, ThunkConfig<string>>(
@@ -22,7 +22,6 @@ export const fetchMoviesList =
             const year = getMoviesPageYear(getState())
             const search = getMoviesPageSearch(getState())
 
-            console.log(genre, country, year, search)
             try {
                 const kp = new KinopoiskDev(kpToken)
 
