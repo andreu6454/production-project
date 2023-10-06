@@ -44,20 +44,18 @@ const MoviesPage = memo((props: MoviesPageProps) => {
     const content =
         (isLoading || !isInited) ?
             <MovieListSkeleton/>
-            :
-            <MovieList movies={moviesData?.docs}/>
+            : <MovieList movies={moviesData?.docs}/>
+
 
     // todo Добавить обработку ошибок
     return (
         <DynamicModuleLoader name={'moviesPage'} reducers={reducers} removeAfterUnmount>
-            <StickyContentLayout
-                content={
-                    <Page className={classNames(cls.MoviesPage, {}, [className])}>
-                        {content}
-                    </Page>
-                }
-                right={<MoviesFiltersContainer/>}
-            />
+            <Page className={classNames(cls.MoviesPage, {}, [className])}>
+                <StickyContentLayout
+                    content={content}
+                    right={<MoviesFiltersContainer/>}
+                />
+            </Page>
         </DynamicModuleLoader>
     );
 });

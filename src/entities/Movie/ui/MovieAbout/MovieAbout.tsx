@@ -191,6 +191,17 @@ export const MovieAbout = memo((props: MovieAboutProps) => {
                     </span>
                 </HStack>
             }
+            {data?.movieLength
+                &&
+                <HStack className={cls.field}>
+                    <span className={cls.fieldName}>
+                        {t("Время")}
+                    </span>
+                    <span className={cls.fieldDescription}>
+                        {data?.movieLength + t(' мин')}
+                    </span>
+                </HStack>
+            }
         </VStack>
     );
 });

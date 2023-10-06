@@ -19,7 +19,7 @@ export const MovieListItem = memo((props: MovieListItemProps) => {
     const {className, movie, index} = props
 
     const description =
-        `${movie?.countries?.[0].name}*${movie?.genres?.[0].name}`
+        `${movie?.countries?.[0]?.name}*${movie?.genres?.[0]?.name}`
 
     const description2 = movie.shortDescription
 
@@ -36,16 +36,16 @@ export const MovieListItem = memo((props: MovieListItemProps) => {
                 <AppLink to={getRouteMoviesDetails(movie?.id + '')}>
                     <HStack gap={'32'} className={cls.description}>
                         <Text bold title={index + ''}/>
-                        <AppImage src={movie.poster?.previewUrl} width={72} height={108}/>
+                        <AppImage src={movie?.poster?.previewUrl} width={72} height={108}/>
                         <VStack>
-                            <Text title={movie.name} text={movie.alternativeName} bold/>
+                            <Text title={movie?.name || ''} text={movie?.alternativeName} bold/>
                             <Text Opacity={'80%'} size={'s'} text={description}/>
                             <Text Opacity={'80%'} size={'s'} text={description2}/>
                         </VStack>
                     </HStack>
                 </AppLink>
                 <VStack align={'center'}>
-                    <Text variant={'accent'} bold title={movie.rating?.kp?.toFixed(1) + ''} size={'l'}/>
+                    <Text variant={'accent'} bold title={movie?.rating?.kp?.toFixed(1) + ''} size={'l'}/>
                     <Text size={'s'} align={'center'} title={votesCount.toLocaleString('ru-Ru')} text={'оценок'}/>
                 </VStack>
             </HStack>

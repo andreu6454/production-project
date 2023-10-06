@@ -144,3 +144,4 @@ off: функция, которая работает после Выключен
 - [uiDesignSwitcher](/src/features/uiDesignSwitcher)
 - [moviesCountryTabs](/src/features/moviesCountryTabs)
 - [moviesGenreTabs](/src/features/moviesGenreTabs)
+- [moviesSortSelector](/src/features/movieSortSelector)

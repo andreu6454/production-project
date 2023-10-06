@@ -10,6 +10,7 @@ import {HStack, VStack} from "@/shared/ui/redesigned/Stack";
 import {Button} from "@/shared/ui/redesigned/Button";
 import {MoviesCountryTabs} from "@/features/moviesCountryTabs";
 import {MoviesGenreTabs} from "@/features/moviesGenreTabs";
+import {MovieSortSelector} from "@/features/movieSortSelector";
 
 interface MoviesFiltersProps {
     className?: string;
@@ -17,10 +18,12 @@ interface MoviesFiltersProps {
     genre: string | null;
     country: string | null;
     search: string | '';
+    sort: string | '';
     onChangeYear: (year: string) => void;
     onChangeGenre: (genre: string) => void;
     onChangeCountry: (country: string) => void;
     onChangeSearch: (search: string) => void;
+    onChangeSort: (sort: string) => void;
 }
 
 
@@ -31,10 +34,12 @@ export const MoviesFilters = memo((props: MoviesFiltersProps) => {
         genre,
         country,
         search,
+        sort,
         onChangeYear,
         onChangeGenre,
         onChangeCountry,
-        onChangeSearch
+        onChangeSearch,
+        onChangeSort
     } = props
 
     const {t} = useTranslation('movies')
@@ -45,6 +50,7 @@ export const MoviesFilters = memo((props: MoviesFiltersProps) => {
         onChangeCountry('')
         onChangeYear('')
         onChangeSearch('')
+        onChangeSort('')
     }, [])
 
     return (
@@ -62,6 +68,7 @@ export const MoviesFilters = memo((props: MoviesFiltersProps) => {
                 />
                 <MoviesCountryTabs country={country || ''} onChangeCountry={onChangeCountry}/>
                 <MoviesGenreTabs genre={genre || ''} onChangeGenre={onChangeGenre}/>
+                <MovieSortSelector sort={sort} onChangeSort={onChangeSort}/>
                 <HStack max justify={'end'} align={"end"}>
                     <Button onClick={cancel}>
                         {t('Сбросить')}

@@ -12,7 +12,7 @@ const MainPage = () => {
         <Page data-testid="MainPage">
             <VStack gap={'32'} max>
                 <Text size={'l'} bold title={t('Главная страница')}/>
-                <Card max padding={'24'} border={'partial'} variant={"outlined"}>
+                <Card max padding={'24'} border={'partial'} variant={"light"}>
                     <VStack max gap={'16'}>
                         <Text size={'m'} title={t('Мои приложения')}/>
                         <Suggestions/>

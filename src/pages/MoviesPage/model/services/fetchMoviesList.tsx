@@ -6,7 +6,7 @@ import i18n from "@/shared/config/i18n/i18n";
 import {
     getMoviesPageCountry,
     getMoviesPageGenre,
-    getMoviesPageSearch,
+    getMoviesPageSearch, getMoviesPageSort,
     getMoviesPageYear
 } from "../selectors/moviesPageSelectors";
 
@@ -21,6 +21,7 @@ export const fetchMoviesList =
             const country = getMoviesPageCountry(getState())
             const year = getMoviesPageYear(getState())
             const search = getMoviesPageSearch(getState())
+            const sort = getMoviesPageSort(getState())
 
             try {
                 const kp = new KinopoiskDev(kpToken)
@@ -38,6 +39,9 @@ export const fetchMoviesList =
                 }
                 if (search) {
                     filters = {...filters, name: search}
+                }
+                if (sort) {
+                    filters = {...filters, sortField: sort}
                 }
 
                 const {data} = await kp.movie.getByFilters(filters)

@@ -25,7 +25,11 @@ export const SuggestionsItem = memo((props: SuggestionsItemProps) => {
     } = props
 
     return (
-        <Card padding={'0'} border={"partial"} className={classNames(cls.SuggestionsItem, {}, [className])}>
+        <Card
+            padding={'0'}
+            border={"partial"}
+            className={classNames(cls.SuggestionsItem, {}, [className])}
+        >
             <AppLink to={to}>
                 <VStack max gap={'16'} align={'center'}>
                     {img}

@@ -14,4 +14,5 @@ export interface MoviesPageSchema {
     genre?: string;
     year?: string;
     search?: string;
+    sort?: string;
 }

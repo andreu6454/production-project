@@ -2,7 +2,7 @@ import {useSelector} from "react-redux";
 import {
     getMoviesPageCountry,
     getMoviesPageGenre,
-    getMoviesPageSearch,
+    getMoviesPageSearch, getMoviesPageSort,
     getMoviesPageYear
 } from "../../model/selectors/moviesPageSelectors";
 import {useCallback} from "react";
@@ -16,6 +16,7 @@ export const useMoviesFilters = () => {
     const country = useSelector(getMoviesPageCountry)
     const genre = useSelector(getMoviesPageGenre)
     const search = useSelector(getMoviesPageSearch)
+    const sort = useSelector(getMoviesPageSort)
 
     const dispatch = useAppDispatch()
 
@@ -37,6 +38,10 @@ export const useMoviesFilters = () => {
         dispatch(MoviesPageActions.setGenre(genre))
         fetchData()
     }, [dispatch, fetchData])
+    const onChangeSort = useCallback((sort: string) => {
+        dispatch(MoviesPageActions.setSort(sort))
+        fetchData()
+    }, [dispatch, fetchData])
     const onChangeSearch = useCallback((search: string) => {
         dispatch(MoviesPageActions.setSearch(search))
         debouncedFetchData()
@@ -47,9 +52,11 @@ export const useMoviesFilters = () => {
         country,
         genre,
         search,
+        sort,
         onChangeYear,
         onChangeCountry,
         onChangeGenre,
+        onChangeSort,
         onChangeSearch
     }
 }

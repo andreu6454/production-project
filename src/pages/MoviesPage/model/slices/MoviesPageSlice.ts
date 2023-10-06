@@ -5,7 +5,8 @@ import {fetchMoviesList} from "@/pages/MoviesPage/model/services/fetchMoviesList
 const initialState: MoviesPageSchema = {
     isLoading: false,
     page: 1,
-    isInited: false
+    isInited: false,
+    sort: ''
 };
 
 export const MoviesPageSlice = createSlice({
@@ -26,6 +27,9 @@ export const MoviesPageSlice = createSlice({
         },
         setGenre: (state, action: PayloadAction<string>) => {
             state.genre = action.payload
+        },
+        setSort: (state, action: PayloadAction<string>) => {
+            state.sort = action.payload
         },
     },
     extraReducers: (builder) => {

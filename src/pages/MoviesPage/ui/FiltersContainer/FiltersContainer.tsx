@@ -1,21 +1,19 @@
 import {MoviesFilters} from "@/widgets/MoviesFilters/";
 import {useMoviesFilters} from "@/pages/MoviesPage/lib/hooks/useMoviesFilters";
 
-interface FiltersContainerProps {
-    className?: string;
-}
-
-export const MoviesFiltersContainer = (props: FiltersContainerProps) => {
+export const MoviesFiltersContainer = () => {
 
     const {
         year,
         genre,
         country,
         search,
+        sort,
         onChangeYear,
         onChangeGenre,
         onChangeCountry,
-        onChangeSearch
+        onChangeSearch,
+        onChangeSort
     } = useMoviesFilters()
 
     return (
@@ -24,6 +22,8 @@ export const MoviesFiltersContainer = (props: FiltersContainerProps) => {
             genre={genre}
             country={country}
             search={search || ''}
+            sort={sort}
+            onChangeSort={onChangeSort}
             onChangeYear={onChangeYear}
             onChangeGenre={onChangeGenre}
             onChangeCountry={onChangeCountry}
