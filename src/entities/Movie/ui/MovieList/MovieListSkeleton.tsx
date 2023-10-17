@@ -8,6 +8,10 @@ export const MovieListSkeleton = () => {
             <MovieListItemSkeleton/>
             <MovieListItemSkeleton/>
             <MovieListItemSkeleton/>
+            <MovieListItemSkeleton/>
+            <MovieListItemSkeleton/>
+            <MovieListItemSkeleton/>
+            <MovieListItemSkeleton/>
         </VStack>
     );
 };
