@@ -5,15 +5,19 @@ import {kpToken} from "@/shared/const/kinopoisk";
 import i18n from "@/shared/config/i18n/i18n";
 import {
     getMoviesPageCountry,
-    getMoviesPageGenre,
+    getMoviesPageGenre, getMoviesPagePageNum,
     getMoviesPageSearch, getMoviesPageSort,
     getMoviesPageYear
 } from "../selectors/moviesPageSelectors";
 
+type FetchMoviesListProps = {
+    replace?: boolean
+}
+
 export const fetchMoviesList =
-    createAsyncThunk<MovieDocsResponseDtoV13, void, ThunkConfig<string>>(
+    createAsyncThunk<MovieDocsResponseDtoV13, FetchMoviesListProps, ThunkConfig<string>>(
         'movies/fetchMoviesList',
-        async (_, thunkAPI
+        async (props, thunkAPI
         ) => {
             const {rejectWithValue, getState} = thunkAPI
 
@@ -22,6 +26,7 @@ export const fetchMoviesList =
             const year = getMoviesPageYear(getState())
             const search = getMoviesPageSearch(getState())
             const sort = getMoviesPageSort(getState())
+            const page = getMoviesPagePageNum(getState())
 
             try {
                 const kp = new KinopoiskDev(kpToken)
@@ -44,8 +49,7 @@ export const fetchMoviesList =
                     filters = {...filters, sortField: sort}
                 }
 
-                const {data} = await kp.movie.getByFilters(filters)
-
+                const {data} = await kp.movie.getByFilters({...filters, page: page})
 
                 if (!data) {
                     throw new Error()

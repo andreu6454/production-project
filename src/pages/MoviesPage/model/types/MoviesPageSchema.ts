@@ -1,6 +1,7 @@
-import {MovieDocsResponseDtoV13} from "@openmoviedb/kinopoiskdev_client";
+import {MovieDocsResponseDtoV13, MovieDtoV13} from "@openmoviedb/kinopoiskdev_client";
+import {EntityState} from "@reduxjs/toolkit";
 
-export interface MoviesPageSchema {
+export interface MoviesPageSchema extends EntityState<MovieDtoV13> {
     isLoading?: boolean;
     error?: string;
     data?: MovieDocsResponseDtoV13;
