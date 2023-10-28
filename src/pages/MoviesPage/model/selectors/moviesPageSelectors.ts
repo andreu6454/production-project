@@ -12,3 +12,4 @@ export const getMoviesPageCountry = (state: StateSchema) => state.moviesPage?.co
 export const getMoviesPageYear = (state: StateSchema) => state.moviesPage?.year || null
 export const getMoviesPageGenre = (state: StateSchema) => state.moviesPage?.genre || null
 export const getMoviesPageSort = (state: StateSchema) => state.moviesPage?.sort || ''
+export const getMoviesPageHasMore = (state: StateSchema) => state.moviesPage?.hasMore || false

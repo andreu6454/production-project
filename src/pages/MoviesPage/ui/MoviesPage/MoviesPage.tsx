@@ -5,7 +5,7 @@ import {Page} from "@/widgets/Page/Page";
 import {DynamicModuleLoader, ReducersList} from "@/shared/lib/components/DynamicModuleLoader/DynamicModuleLoader";
 import {getMovies, MoviesPageActions, MoviesPageReducer} from "@/pages/MoviesPage/model/slices/MoviesPageSlice";
 import {useSelector} from "react-redux";
-import {getMoviesPageIsInited, getMoviesPageIsLoading} from "@/pages/MoviesPage/model/selectors/moviesPageSelectors";
+import {getMoviesPageIsLoading} from "@/pages/MoviesPage/model/selectors/moviesPageSelectors";
 import {useAppDispatch} from "@/shared/lib/hooks/useAppDispatch/useAppDispatch";
 import {fetchMoviesList} from "@/pages/MoviesPage/model/services/fetchMoviesList";
 import {MovieList} from "@/entities/Movie/ui/MovieList/MovieList";
@@ -27,9 +27,7 @@ const MoviesPage = memo((props: MoviesPageProps) => {
     const dispatch = useAppDispatch()
 
     const moviesData = useSelector(getMovies.selectAll)
-
     const isLoading = useSelector(getMoviesPageIsLoading)
-    const isInited = useSelector(getMoviesPageIsInited)
 
     useEffect(() => {
         dispatch(MoviesPageActions.setIsLoading(true))

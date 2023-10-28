@@ -9,6 +9,7 @@ export interface MoviesPageSchema extends EntityState<MovieDtoV13> {
 
     page: number;
     limit?: number;
+    hasMore?: boolean;
 
     //filters
     country?: string;

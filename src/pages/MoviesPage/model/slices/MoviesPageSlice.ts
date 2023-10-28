@@ -17,6 +17,7 @@ const initialState: MoviesPageSchema = {
     page: 1,
     isInited: false,
     sort: '',
+    hasMore: false,
     ids: [],
     entities: {}
 };
@@ -62,6 +63,7 @@ export const MoviesPageSlice = createSlice({
                 } else {
                     moviesAdapter.addMany(state, action.payload.docs)
                 }
+                state.hasMore = action.payload.pages > 1;
                 state.isLoading = false;
                 state.data = action.payload;
                 state.isInited = true;
