@@ -2,7 +2,7 @@ import {FeatureFlags} from "@/shared/types/featureFlags";
 import {LOCAL_STORAGE_LAST_DESIGN_KEY} from "@/shared/const/localStorage";
 
 const defaultFeatures: FeatureFlags = {
-    isAppRedesigned: localStorage.getItem(LOCAL_STORAGE_LAST_DESIGN_KEY) === 'new'
+    isAppRedesigned: true
 }
 
 let featureFlags: FeatureFlags = {
