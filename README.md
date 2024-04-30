@@ -7,6 +7,19 @@ npm run start:dev или npm run start:dev:vite - запуск сервера + 
 
 ----
 
+```
+ Логин для теста: admin
+ Пароль для теста: 123
+ 
+ Логин для теста2: user
+ Пароль для теста2: user
+ 
+ Логин для теста2: test
+ Пароль для теста3: test
+```
+
+----
+
 ## Скрипты
 
 - `npm run start` - Запуск frontend проекта на webpack dev server
