@@ -14,7 +14,7 @@ npm run start:dev или npm run start:dev:vite - запуск сервера + 
  Логин для теста2: user
  Пароль для теста2: user
  
- Логин для теста2: test
+ Логин для теста3: test
  Пароль для теста3: test
 ```
 
